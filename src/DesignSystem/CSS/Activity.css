@@ -1,0 +1,27 @@
+.MainActivity {
+    position: relative;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    z-index: 10;
+    background: var(--bg-color);
+    border-radius: var(--radius-system);
+}
+
+    .Group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+        .Row {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+.Map {
+    position: fixed;
+}

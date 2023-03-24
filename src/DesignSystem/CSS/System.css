@@ -17,7 +17,16 @@
     --font-sans-serif: -apple-system, "SF Pro", "SF Pro Display", "Pretendard Variable", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-monospace: "FiraCode Variable", "Pretendard Variable", monospace;
     --body-color: var(--colorless-0);
+    --box-color: var(--colorless-95);
     --bg-color: var(--colorless-100);
+    --radius-system: 8px;
+    --radius-activity: 24px;
+}
+
+.dark {
+    --body-color: var(--colorless-100);
+    --box-color: var(--colorless-5);
+    --bg-color: var(--colorless-0);
 }
 
 *,
@@ -28,8 +37,9 @@
 }
 
 html {
-    background: var(--bg-color);
+    background: var(--colorless-60);
     color: var(--body-color);
+    font-size: 10px;
     transition: background .2s ease-out, color .2s ease-out;    
 }
 
@@ -40,7 +50,6 @@ body {
     min-height: 100vh; 
     min-height: -webkit-fill-available;
     font-family: var(--font-sans-serif);
-    font-size: 12pt;
     width: 100%;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -55,6 +64,14 @@ body::-webkit-scrollbar {
 }
 
 /* Base */
+
+.System {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 12px;
+}
+
 .System-Title-Icon {
     font-size: 3rem;
 }

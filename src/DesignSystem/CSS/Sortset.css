@@ -1,0 +1,16 @@
+.Sortset {
+    background: var(--bg-color);
+    width: min-content;
+    height: min-content;
+    padding: 8px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: .2px;
+    line-height: 1;
+    border-radius: var(--radius-activity);
+}
+
+.DesktopSearch-Sortset {
+    display: flex;
+    gap: 8px;
+}
