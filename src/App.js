@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as geolib from 'geolib';
-import './App.css';
+import './DesignSystem/System.css';
 
 function App() {
   const [latitude, setLatitude] = React.useState(0);
