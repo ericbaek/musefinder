@@ -1,4 +1,4 @@
-.Sortset {
+.FilterSet {
     background: var(--bg-color);
     width: min-content;
     height: min-content;
@@ -10,7 +10,7 @@
     border-radius: var(--radius-activity);
 }
 
-.DesktopSearch-Sortset {
+.DesktopSearch-FilterSet {
     display: flex;
     gap: 8px;
 }
