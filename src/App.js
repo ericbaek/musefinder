@@ -7,8 +7,6 @@ import Card from './DesignSystem/Component/In-Content/Card';
 import Search from './DesignSystem/Component/In-Content/Search';
 import Sortset from './DesignSystem/Component/In-Content/Sortset';
 
-import examplemap from './DesignSystem/Image/examplemap.png'
-
 function App() {
 
   var NoAccent = { display : 'none' }
