@@ -1,6 +1,7 @@
 :root {
     --colorless-100: hsl(0, 0%, 100%);
     --colorless-95: hsl(0, 0%, 95%);
+    --colorless-95-tp: hsl(0, 0%, 95%, 0.90);
     --colorless-90: hsl(0, 0%, 90%);
     --colorless-85: hsl(0, 0%, 85%);
     --colorless-80: hsl(0, 0%, 80%);
@@ -12,6 +13,7 @@
     --colorless-20: hsl(0, 0%, 20%);
     --colorless-15: hsl(0, 0%, 15%);
     --colorless-10: hsl(0, 0%, 10%);
+    --colorless-5-tp: hsl(0, 0%, 5%, 0.90);
     --colorless-5: hsl(0, 0%, 5%);
     --colorless-0: hsl(0, 0%, 0%);
     --font-sans-serif: -apple-system, "SF Pro", "SF Pro Display", "Pretendard Variable", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -20,6 +22,7 @@
     --border-color: var(--colorless-90);
     --box-color: var(--colorless-95);
     --bg-color: var(--colorless-100);
+    --bg-color-transparent: var(--colorless-95-tp);
     --radius-system: 8px;
     --radius-activity: 24px;
 }
@@ -29,6 +32,7 @@
     --border-color: var(--colorless-10);
     --box-color: var(--colorless-5);
     --bg-color: var(--colorless-0);
+    --bg-color-transparent: var(--colorless-5-tp);
 }
 
 *,

@@ -12,10 +12,13 @@
         line-height: 1;
     }
 
-    .ContentTitle .Paragraph {
-        color: hsl(213, 100%, 56%);
+    .ContentTitle .Paragraph, .ContentMenuText {
         font-weight: 600;
         font-size: 1.5rem;
         letter-spacing: -.4pt;
         line-height: 1;
+    }
+
+    .ContentTitle .Paragraph {
+        color: hsl(213, 100%, 56%);
     }
