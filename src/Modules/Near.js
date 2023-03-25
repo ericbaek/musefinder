@@ -27,18 +27,26 @@ function Near() {
       {name:"펀시티 건대점", address:"서울 광진구 동일로22길 81 1층", latitude:37.539794, longitude:127.070410},
       {name:"범계 게임천국", address:"합정역 2번 출구에서 127m", latitude:37.390380, longitude:126.952117}
     ]
+
+    // User Location을 저장하고 기준으로 모든 아케이드의 위치를 업데이트 함.
+    const userLocation = { latitude, longitude };
+    const arcadesWithDistance = arcades.map((arcade) => {
+      const distanceInMeters = geolib.getDistance(userLocation, arcade);
+      const distanceInKm = distanceInMeters / 1000;
+      return { ...arcade, distance: distanceInKm };
+    });
+    console.log(arcadesWithDistance);
     
-    let ArcadesByDistances = [];
-    ArcadesByDistances = geolib.orderByDistance({latitude, longitude}, arcades);
-    console.log(ArcadesByDistances);
+    // distance 기준으로 정렬하기
+    arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
     return (
       <div>
-          <Card Title={ArcadesByDistances[0].name} Paragraph={ArcadesByDistances[0].address} AccentText="3.2km" Accent={ BGLocationNear }></Card>
+          <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }></Card>
           <hr></hr>
-          <Card Title={ArcadesByDistances[1].name} Paragraph={ArcadesByDistances[1].address} AccentText="6.3km" Accent={ BGLocationMedium }></Card>
+          <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText={arcadesWithDistance[1].distance} Accent={ BGLocationMedium }></Card>
           <hr></hr>
-          <Card Title={ArcadesByDistances[2].name} Paragraph={ArcadesByDistances[2].address} AccentText="12km" Accent={ BGLocationFar }></Card>
+          <Card Title={arcadesWithDistance[2].name} Paragraph={arcadesWithDistance[2].address} AccentText={arcadesWithDistance[2].distance} Accent={ BGLocationFar }></Card>
       </div>
     );
 }
