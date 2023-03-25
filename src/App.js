@@ -1,5 +1,6 @@
 import './DesignSystem/Import.js';
 import Near from './Modules/Near';
+import SearchFind from './Modules/SearchFind'
 
 import Sort from './Sort';
 import Alert from './DesignSystem/Component/In-Content/Alert';
@@ -20,7 +21,10 @@ function App() {
 
   return (
     <div className="System"> { /* 시스템 전반 Flex / Column / Padding / Gap */ }
-      
+
+      {/* <SearchFind /> */}
+      {/* 차후 Search 관련 function은 전부 위 모듈로 변경예정 */}
+
       <div className="DesktopSearch"> { /* 데스크톱 환경에서의 검색창 + 메인 액티비티 */ }
         <div className="SearchTop">
           <Search Icon="" Placeholder="검색" Sort=""/>
