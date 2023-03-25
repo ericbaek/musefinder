@@ -16,10 +16,14 @@
         gap: 16px;
     }
 
+        .Column {
+            display: flex;
+            flex-direction: column;
+        }
+
         .Row {
             display: flex;
             flex-direction: row;
-            gap: 8px;
         }
 
 .Map {

@@ -44,3 +44,8 @@
             letter-spacing: -.4pt;
             line-height: 1;
         }
+
+.Group-Card {
+    background: var(--box-color);
+    border-radius: var(--radius-system);
+}
