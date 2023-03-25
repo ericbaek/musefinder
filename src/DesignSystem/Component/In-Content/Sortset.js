@@ -5,7 +5,7 @@ class Sortset extends Component {
 
 	render(){
 		return (
-            <div className="Sortset">{this.props.Text}</div>
+            <div className="Sortset">{this.props.Title}</div>
 		);
 	}
 }

@@ -1,6 +1,7 @@
 import './DesignSystem/Import.js';
 import Near from './Modules/Near';
 
+import Sort from './Sort';
 import Alert from './DesignSystem/Component/In-Content/Alert';
 import ContentTitle from './DesignSystem/Component/In-Content/ContentTitle';
 import Card from './DesignSystem/Component/In-Content/Card';
@@ -24,10 +25,10 @@ function App() {
         <div className="SearchTop">
           <Search Icon="" Placeholder="검색" Sort=""></Search>
           <div className="DesktopSearch-Sortset">
-            <Sortset Text="IIDX"></Sortset>
-            <Sortset Text="SDVX"></Sortset>
-            <Sortset Text="유비트"></Sortset>
-            <Sortset Text="팝픈뮤직"></Sortset>
+            <Sortset Title="IIDX"></Sortset>
+            <Sortset Title="SDVX"></Sortset>
+            <Sortset Title="유비트"></Sortset>
+            <Sortset Title="팝픈뮤직"></Sortset>
           </div>
         </div>
         <div className="MainActivity"> { /* 메인 액티비티 */ }
@@ -51,7 +52,7 @@ function App() {
           </div>
         </div>
       </div>
-
+      <Sort/>
     </div>
   );
 }
