@@ -42,11 +42,11 @@ function Near() {
 
     return (
       <div>
-          <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText="3.2km" Accent={ BGLocationNear }/>
+          <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }/>
           <hr></hr>
-          <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText="6.3km" Accent={ BGLocationMedium }/>
+          <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText={arcadesWithDistance[1].distance} Accent={ BGLocationMedium }/>
           <hr></hr>
-          <Card Title={arcadesWithDistance[2].name} Paragraph={arcadesWithDistance[2].address} AccentText="12km" Accent={ BGLocationFar }/>
+          <Card Title={arcadesWithDistance[2].name} Paragraph={arcadesWithDistance[2].address} AccentText={arcadesWithDistance[2].distance} Accent={ BGLocationFar }/>
       </div>
     );
 }
