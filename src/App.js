@@ -41,11 +41,12 @@ function App() {
           <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
             <ContentTitle Title="근처 오락실" Paragraph=""></ContentTitle>
             <div className="Column Group-Card">
-              <Card Title="영등포 G2존" Paragraph="위치" AccentText="3.2km" Accent={ BGLocationNear }></Card>
+              {/* <Card Title="영등포 G2존" Paragraph="위치" AccentText="3.2km" Accent={ BGLocationNear }></Card>
               <hr></hr>
               <Card Title="목동 G스타디움" Paragraph="위치" AccentText="6.3km" Accent={ BGLocationMedium }></Card>
               <hr></hr>
-              <Card Title="홍대 짱오락실" Paragraph="위치" AccentText="12km" Accent={ BGLocationFar }></Card>
+              <Card Title="홍대 짱오락실" Paragraph="위치" AccentText="12km" Accent={ BGLocationFar }></Card> */}
+              <Near />
             </div>
           </div>
         </div>

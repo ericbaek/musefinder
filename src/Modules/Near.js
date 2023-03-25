@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import * as geolib from 'geolib';
 
+import '../DesignSystem/Import.js';
+import Card from '../DesignSystem/Component/In-Content/Card';
+
 function Near() {
+    var BGLocationNear = { background : 'hsl(213, 100%, 56%)', color : 'white' } /* < 5km */
+    var BGLocationMedium = { background : 'hsl(39, 85%, 53%)', color : 'white' } /* < 10km */
+    var BGLocationFar = { background : 'hsl(0, 79%, 56%)', color : 'white' } /* > 10km */
 
     const [latitude, setLatitude] = React.useState(0);
     const [longitude, setLongitude] = React.useState(0);
@@ -28,11 +34,14 @@ function Near() {
 
     return (
       <div>
+          <Card Title={ArcadesByDistances[0].name} Paragraph={ArcadesByDistances[0].address} AccentText="3.2km" Accent={ BGLocationNear }></Card>
+          <hr></hr>
+          <Card Title="목동 G스타디움" Paragraph="위치" AccentText="6.3km" Accent={ BGLocationMedium }></Card>
+          <hr></hr>
+          <Card Title="홍대 짱오락실" Paragraph="위치" AccentText="12km" Accent={ BGLocationFar }></Card>
+
           <div>
           귀하의 위치는 { latitude }, { longitude }입니다.
-          </div>
-          <div>
-            1위. <b>{ArcadesByDistances[0].name}</b><span>({ArcadesByDistances[0].address})</span>
           </div>
           <div>
             2위. <b>{ArcadesByDistances[1].name}</b><span>({ArcadesByDistances[1].address})</span>
