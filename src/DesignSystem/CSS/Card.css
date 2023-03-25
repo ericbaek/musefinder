@@ -33,11 +33,13 @@
         }
 
     .Card .AccentColor {
-        padding: 8px 12px;
+        width: 58px;
+        padding: 10px 0;
         border-radius: var(--radius-system);
     }
 
         .Card .AccentText {
+            text-align: center;
             color: var(--colorless-100);
             font-weight: 600;
             font-size: 1.5rem;
