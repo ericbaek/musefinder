@@ -31,7 +31,7 @@ function App() {
             <Sortset Title="팝픈뮤직"></Sortset>
           </div>
         </div>
-        <div className="MainActivity"> { /* 메인 액티비티 */ }
+        <div className="MainActivity MainActivity-DesktopSearch"> { /* 메인 액티비티 */ }
           <div className="Group">
             <ContentTitle Title="저장한 장소" Paragraph="관리"></ContentTitle>
             <div className="Row Gap-8">
