@@ -33,7 +33,8 @@ function Near() {
     const arcadesWithDistance = arcades.map((arcade) => {
       const distanceInMeters = geolib.getDistance(userLocation, arcade);
       const distanceInKm = distanceInMeters / 1000;
-      return { ...arcade, distance: distanceInKm };
+      return { ...arcade, distance: distanceInKm};
+      // parseFloat(distanceinKm.toPrecision(4)); 를 사용해서 round-up 할 수 있음.
     });
     console.log(arcadesWithDistance);
     
