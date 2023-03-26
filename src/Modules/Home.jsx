@@ -9,6 +9,8 @@ import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
 import FilterSet from '../DesignSystem/Component/In-Content/FilterSet';
 import Search from '../DesignSystem/Component/In-Content/Search';
 
+import ConvertDistance from './ConvertDistance';
+
 
 function Home() {
 
@@ -82,8 +84,8 @@ function Home() {
             <div className="Group">
               <ContentTitle Title="저장한 장소" Paragraph="관리"/>
               <div className="Row Gap-8">
-                <Card Title="펀시티 건대점" Paragraph="1.4km" AccentText="" Accent={ NoAccent }/>
-                <Card Title="노원 노리존" Paragraph="4.8km" AccentText="" Accent={ NoAccent }/>
+                <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
               </div>
             </div>
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
@@ -91,17 +93,17 @@ function Home() {
               <div className="Column Group-Card">
                 <Card Title={arcadesWithDistance[0].name} 
                 Paragraph={arcadesWithDistance[0].address} 
-                AccentText={`${arcadesWithDistance[0].distance.toFixed(0)}km`}
+                AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
                 Accent={ BGLocationNear }/>
                 <hr></hr>
                 <Card Title={arcadesWithDistance[1].name} 
                 Paragraph={arcadesWithDistance[1].address} 
-                AccentText={`${arcadesWithDistance[1].distance.toFixed(0)}km`}
+                AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
                 Accent={ BGLocationMedium }/>
                 <hr></hr>
                 <Card Title={arcadesWithDistance[2].name} 
                 Paragraph={arcadesWithDistance[2].address} 
-                AccentText={`${arcadesWithDistance[2].distance.toFixed(0)}km`}
+                AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />}
                 Accent={ BGLocationFar }/>
               </div>
             </div>
@@ -123,8 +125,8 @@ function Home() {
             <div className="Group">
               <ContentTitle Title="저장한 장소" Paragraph="관리"/>
               <div className="Row Gap-8">
-                <Card Title="펀시티 건대점" Paragraph="1.4km" AccentText="" Accent={ NoAccent }/>
-                <Card Title="노원 노리존" Paragraph="4.8km" AccentText="" Accent={ NoAccent }/>
+                <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
               </div>
             </div>
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
@@ -132,12 +134,18 @@ function Home() {
               <div className="Column Group-Card">
                 <Card Title={arcadesWithDistance[0].name} 
                 Paragraph={arcadesWithDistance[0].address} 
-                AccentText={`${arcadesWithDistance[0].distance.toFixed(1)} km`}
+                AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
                 Accent={ BGLocationNear }/>
                 <hr></hr>
-                <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText={arcadesWithDistance[1].distance} Accent={ BGLocationMedium }/>
+                <Card Title={arcadesWithDistance[1].name} 
+                Paragraph={arcadesWithDistance[1].address} 
+                AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
+                Accent={ BGLocationMedium }/>
                 <hr></hr>
-                <Card Title={arcadesWithDistance[2].name} Paragraph={arcadesWithDistance[2].address} AccentText={arcadesWithDistance[2].distance} Accent={ BGLocationFar }/>
+                <Card Title={arcadesWithDistance[2].name} 
+                Paragraph={arcadesWithDistance[2].address} 
+                AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />} 
+                Accent={ BGLocationFar }/>
               </div>
             </div>
           </div>

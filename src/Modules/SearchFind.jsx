@@ -4,10 +4,10 @@ import React from 'react';
 
 import '../DesignSystem/Import.js';
 
-function search() {
+function SearchFind() {
     return (
         <div>testing</div>
     );
 }
 
-export default search;
+export default SearchFind;
