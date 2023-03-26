@@ -9,7 +9,6 @@ import Card from '../DesignSystem/Component/In-Content/Card';
 import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
 import FilterSet from '../DesignSystem/Component/In-Content/FilterSet';
 import Search from '../DesignSystem/Component/In-Content/Search';
-import SearchFind from './SearchFind';
 
 
 function Home() {

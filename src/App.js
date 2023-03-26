@@ -1,5 +1,6 @@
 import './DesignSystem/Import.js';
 import Home from './Modules/Home';
+import SearchFind from './Modules/SearchFind';
 
 function App() {
 
