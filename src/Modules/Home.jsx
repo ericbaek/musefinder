@@ -87,7 +87,7 @@ function Home() {
               </div>
             </div>
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
-              <ContentTitle Title="근처 오락실" Paragraph=""/>
+              <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
               <div className="Column Group-Card">
                 <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }/>
                 <hr></hr>
@@ -119,7 +119,7 @@ function Home() {
               </div>
             </div>
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
-              <ContentTitle Title="근처 오락실" Paragraph=""/>
+              <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
               <div className="Column Group-Card">
                 <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }/>
                 <hr></hr>

@@ -1,5 +1,5 @@
 .Search {
-    min-width: 360px;
+    min-width: var(--width-activity);
     display: flex;
     justify-content: space-between;
     align-items: center;

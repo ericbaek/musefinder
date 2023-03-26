@@ -27,6 +27,7 @@
     --bg-color-transparent: var(--colorless-95-tp);
     --radius-system: 8px;
     --radius-activity: 24px;
+    --width-activity: 384px;
 }
 
 .dark {
@@ -127,7 +128,7 @@ hr {
         left: 0;
         right: 0;
     }
-    
+
     .MainActivity {
         width: 100% !important;
     }
