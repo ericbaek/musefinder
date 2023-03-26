@@ -3,14 +3,14 @@
     width: 360px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
     padding: 32px;
     z-index: 10;
     background: var(--bg-color);
-    border-radius: var(--radius-activity);
+    border-radius: var(--radius-activity) var(--radius-activity) 0 0;
 }
 
-    .MainActivity-DesktopSearch {
+    .MainActivity-DesktopHome {
         border-radius: calc(var(--radius-system));
         padding: 24px 24px 28px;
     }
@@ -33,4 +33,9 @@
 
 .Map {
     position: fixed;
+}
+
+.LayoutActivity {
+    display: flex;
+    gap: 16px;
 }

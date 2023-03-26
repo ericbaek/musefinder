@@ -1,5 +1,5 @@
 .FilterSet {
-    background: var(--bg-color);
+    background: var(--box-color);
     width: min-content;
     height: min-content;
     padding: 8px;
@@ -10,7 +10,8 @@
     border-radius: var(--radius-activity);
 }
 
-.DesktopSearch-FilterSet {
+.Group-FilterSet {
+    width: 100%;
     display: flex;
     gap: 8px;
 }

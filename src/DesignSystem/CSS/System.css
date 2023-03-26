@@ -97,3 +97,25 @@ hr {
     margin: 0;
     border: .5px solid var(--border-color);
 }
+
+.General {
+    position: absolute;
+    left: 24px;
+    bottom: 0;
+}
+
+@media (min-width: 1280px) {
+    .General {
+        display: none;
+    }
+}
+
+@media (max-width: 1279.98px) {
+    .Desktop {
+        display: none;
+    }
+
+    .Search {
+        min-width: 100% !important; 
+    }
+}

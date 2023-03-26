@@ -1,10 +1,10 @@
 .Search {
-    width: 360px;
+    min-width: 360px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 6px;
-    background: var(--bg-color);
+    background: var(--box-color);
     border-radius: var(--radius-system);
 }
 
@@ -26,7 +26,7 @@
             border: 0;
             width: 100%;
             height: calc(2.2rem + 24px);
-            background: var(--bg-color);
+            background: var(--box-color);
             color: var(--body-color);
             font-family: var(--font-family);
             font-weight: 500;
@@ -54,14 +54,8 @@
         line-height: 1;
     }
 
-.DesktopSearch {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .SearchTop {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
 }
