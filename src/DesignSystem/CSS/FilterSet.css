@@ -8,7 +8,12 @@
     letter-spacing: .2px;
     line-height: 1;
     border-radius: var(--radius-activity);
+    transition: var(--transition-bg);
 }
+
+    .FilterSet:hover {
+        background: var(--box-hover-color);
+    }
 
 .Group-FilterSet {
     width: 100%;

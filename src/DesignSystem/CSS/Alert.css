@@ -7,7 +7,12 @@
     background: var(--box-color);
     border-radius: var(--radius-system);
     flex-wrap: wrap;
+    transition: var(--transition-bg);
 }
+
+    .Alert:hover {
+        background: var(--box-hover-color);
+    }
 
     .Alert .Left {
         display: flex;

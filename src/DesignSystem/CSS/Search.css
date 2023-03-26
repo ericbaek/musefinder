@@ -6,7 +6,12 @@
     padding: 0 6px;
     background: var(--bg-color);
     border-radius: var(--radius-system);
+    transition: var(--transition-bg);
 }
+
+    .Search:hover {
+        background: var(--bg-hover-color);
+    }
 
     .Search .Left {
         width: 100%;
@@ -18,14 +23,20 @@
         .Search .Icon {
             font-weight: 600;
             font-size: 2.2rem;
-            padding: 12px 6px;
+            padding: 6px;
+            border-radius: var(--radius-circle);
+            transition: var(--transition-bg);
         }
+
+            .Search .Icon:hover {
+                background: var(--icon-hover-color);
+            }
 
         .Search input {
             border: 0;
             width: 100%;
             height: calc(2.2rem + 24px);
-            background: var(--bg-color);
+            background: transparent;
             color: var(--body-color);
             font-family: var(--font-family);
             font-weight: 500;

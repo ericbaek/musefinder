@@ -18,23 +18,34 @@
     --colorless-5-tp: hsl(0, 0%, 5%, 0.90);
     --colorless-5: hsl(0, 0%, 5%);
     --colorless-0: hsl(0, 0%, 0%);
+    --color-dynamic-water: hsl(213, 100%, 56%);
+    --color-dynamic-sand: hsl(39, 85%, 53%);
+    --color-dynamic-coral: hsl(0, 79%, 56%);
     --font-sans-serif: -apple-system, "SF Pro", "SF Pro Display", "Pretendard Variable", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-monospace: "FiraCode Variable", "Pretendard Variable", monospace;
     --body-color: var(--colorless-0);
     --border-color: var(--colorless-90);
     --box-color: var(--colorless-95);
+    --box-hover-color: var(--colorless-90);
     --bg-color: var(--colorless-100);
+    --bg-hover-color: var(--colorless-95);
+    --icon-hover-color: var(--colorless-85);
     --bg-color-transparent: var(--colorless-95-tp);
     --radius-system: 8px;
     --radius-activity: 24px;
+    --radius-circle: 128px;
     --width-activity: 384px;
+    --transition-bg: background .2s ease-out, color .2s ease-out;
 }
 
 .dark {
     --body-color: var(--colorless-100);
     --border-color: var(--colorless-10);
     --box-color: var(--colorless-5);
+    --box-hover-color: var(--colorless-10);
     --bg-color: var(--colorless-0);
+    --bg-hover-color: var(--colorless-5);
+    --icon-hover-color: var(--colorless-15);
     --bg-color-transparent: var(--colorless-5-tp);
 }
 
@@ -49,7 +60,7 @@ html {
     background: var(--colorless-60);
     color: var(--body-color);
     font-size: 10px;
-    transition: background .2s ease-out, color .2s ease-out;    
+    transition: background .2s ease-out, color .2s ease-out;
 }
 
 body {
@@ -120,11 +131,12 @@ hr {
 
     .Search {
         min-width: 100% !important;
-    }
-
-    .Search, .Search input {
         background: var(--box-color) !important;
     }
+
+        .Search:hover {
+            background: var(--box-hover-color) !important;
+        }
 }
 
 @media (max-width: 767.98px) {

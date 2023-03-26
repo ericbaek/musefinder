@@ -7,7 +7,12 @@
     background: var(--box-color);
     border-radius: var(--radius-system);
     flex-wrap: wrap;
+    transition: var(--transition-bg);
 }
+
+    .Card:hover {
+        background: var(--box-hover-color);
+    }
 
     .Card .Left {
         height: 100%;

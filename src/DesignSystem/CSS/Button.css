@@ -8,7 +8,12 @@
     border-radius: var(--radius-system);
     flex-wrap: wrap;
     gap: 2px;
+    transition: var(--transition-bg);
 }
+
+    .Box:hover {
+        background: var(--box-hover-color);
+    }
 
     .Button .Icon {
         font-weight: 800;

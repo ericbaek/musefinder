@@ -18,9 +18,9 @@ function Home() {
     /* Right Accent 미사용 시 { NoAccent } 처리 */
     var NoAccent = { display : 'none' }
     /* 저장한 장소 및 근처 오락실까지의 거리를 기준으로 한 배경색 */
-    var BGLocationNear = { background : 'hsl(213, 100%, 56%)', color : 'white' } /* < 5km */
-    var BGLocationMedium = { background : 'hsl(39, 85%, 53%)', color : 'white' } /* < 10km */
-    var BGLocationFar = { background : 'hsl(0, 79%, 56%)', color : 'white' } /* > 10km */
+    var BGLocationNear = { background : 'var(--color-dynamic-water)', color : 'white' } /* < 15km */
+    var BGLocationMedium = { background : 'var(--color-dynamic-sand)', color : 'white' } /* 15 ~ 50km */
+    var BGLocationFar = { background : 'var(--color-dynamic-coral)', color : 'white' } /* > 50km */
 
     // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
     const [latitude, setLatitude] = React.useState(0);
