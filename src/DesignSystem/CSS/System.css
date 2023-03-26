@@ -40,12 +40,12 @@
 
 .dark {
     --body-color: var(--colorless-100);
-    --border-color: var(--colorless-10);
-    --box-color: var(--colorless-5);
-    --box-hover-color: var(--colorless-10);
+    --border-color: var(--colorless-15);
+    --box-color: var(--colorless-10);
+    --box-hover-color: var(--colorless-15);
     --bg-color: var(--colorless-0);
-    --bg-hover-color: var(--colorless-5);
-    --icon-hover-color: var(--colorless-15);
+    --bg-hover-color: var(--colorless-10);
+    --icon-hover-color: var(--colorless-20);
     --bg-color-transparent: var(--colorless-5-tp);
 }
 
