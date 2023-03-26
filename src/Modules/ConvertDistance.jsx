@@ -9,12 +9,17 @@ function ConvertDistance({ km }) {
   
     // m 단위로 변환하거나
     if (km < 1) {
-      distance = km * 1000;
-      unit = 'm';
+        distance = km * 1000;
+        unit = 'm';
     } else if (km >= 1 && km < 10) {
-      distance = km;
-      unit = 'km';
-      roundup = 1;
+        // 10의 자리수일때
+        distance = km;
+        unit = 'km';
+        roundup = 1;
+    } else if (km > 999) {
+        // GPS 오류시
+        distance = -1;
+        unit = '';
     } else {
         distance = km;
         unit = 'km'
