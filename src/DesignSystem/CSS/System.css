@@ -87,6 +87,7 @@ body::-webkit-scrollbar {
 
 .System {
     display: flex;
+    color: var(--body-color);
     flex-direction: column;
     padding: 24px;
     gap: 12px;
@@ -112,11 +113,18 @@ hr {
     border: .5px solid var(--border-color);
 }
 
-.General {
+.Desktop, .General {
     position: absolute;
     left: 24px;
-    bottom: 0;
 }
+
+    .Desktop {
+        top: 24px;
+    }
+
+    .General {
+        bottom: 0;
+    }
 
 @media (min-width: 1280px) {
     .General {
