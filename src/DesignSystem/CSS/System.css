@@ -1,3 +1,5 @@
+/* Small Mobile < 600 < General Mobile < 768 < Tablet < 1280px: Desktop */
+
 :root {
     --colorless-100: hsl(0, 0%, 100%);
     --colorless-95: hsl(0, 0%, 95%);
@@ -117,5 +119,16 @@ hr {
 
     .Search {
         min-width: 100% !important; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    .General {
+        left: 0;
+        right: 0;
+    }
+    
+    .MainActivity {
+        width: 100% !important;
     }
 }

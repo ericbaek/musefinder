@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import * as geolib from 'geolib';
 
 import '../DesignSystem/Import.js';
-import Alert from '../DesignSystem/Component/In-Content/Alert';
 import Card from '../DesignSystem/Component/In-Content/Card';
 import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
 import FilterSet from '../DesignSystem/Component/In-Content/FilterSet';
