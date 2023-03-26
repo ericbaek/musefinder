@@ -38,7 +38,7 @@ function Home() {
       {
         enableHighAccuracy: true,
         maximumAge: 15,
-        timeout: 30,
+        timeout: 100,
       })
     })
     
@@ -89,11 +89,20 @@ function Home() {
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
               <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
               <div className="Column Group-Card">
-                <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }/>
+                <Card Title={arcadesWithDistance[0].name} 
+                Paragraph={arcadesWithDistance[0].address} 
+                AccentText={`${arcadesWithDistance[0].distance.toFixed(0)}km`}
+                Accent={ BGLocationNear }/>
                 <hr></hr>
-                <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText={arcadesWithDistance[1].distance} Accent={ BGLocationMedium }/>
+                <Card Title={arcadesWithDistance[1].name} 
+                Paragraph={arcadesWithDistance[1].address} 
+                AccentText={`${arcadesWithDistance[1].distance.toFixed(0)}km`}
+                Accent={ BGLocationMedium }/>
                 <hr></hr>
-                <Card Title={arcadesWithDistance[2].name} Paragraph={arcadesWithDistance[2].address} AccentText={arcadesWithDistance[2].distance} Accent={ BGLocationFar }/>
+                <Card Title={arcadesWithDistance[2].name} 
+                Paragraph={arcadesWithDistance[2].address} 
+                AccentText={`${arcadesWithDistance[2].distance.toFixed(0)}km`}
+                Accent={ BGLocationFar }/>
               </div>
             </div>
           </div>
@@ -121,7 +130,10 @@ function Home() {
             <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
               <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
               <div className="Column Group-Card">
-                <Card Title={arcadesWithDistance[0].name} Paragraph={arcadesWithDistance[0].address} AccentText={arcadesWithDistance[0].distance} Accent={ BGLocationNear }/>
+                <Card Title={arcadesWithDistance[0].name} 
+                Paragraph={arcadesWithDistance[0].address} 
+                AccentText={`${arcadesWithDistance[0].distance.toFixed(1)} km`}
+                Accent={ BGLocationNear }/>
                 <hr></hr>
                 <Card Title={arcadesWithDistance[1].name} Paragraph={arcadesWithDistance[1].address} AccentText={arcadesWithDistance[1].distance} Accent={ BGLocationMedium }/>
                 <hr></hr>
