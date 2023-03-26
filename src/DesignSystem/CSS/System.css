@@ -113,18 +113,11 @@ hr {
     border: .5px solid var(--border-color);
 }
 
-.Desktop, .General {
+.General {
     position: absolute;
     left: 24px;
+    bottom: 0;
 }
-
-    .Desktop {
-        top: 24px;
-    }
-
-    .General {
-        bottom: 0;
-    }
 
 @media (min-width: 1280px) {
     .General {
