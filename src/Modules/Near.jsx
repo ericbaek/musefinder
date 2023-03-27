@@ -10,15 +10,15 @@ import * as geolib from 'geolib';
 
 import ConvertDistance from './ConvertDistance';
 
-function Near({latitude, longitude}) {
+export default function Near({latitude, longitude}) {
+    var BGLocationNear = { background : 'var(--color-dynamic-water)', color : 'white' } /* < 15km */
+    var BGLocationMedium = { background : 'var(--color-dynamic-sand)', color : 'white' } /* 15 ~ 50km */
+    var BGLocationFar = { background : 'var(--color-dynamic-coral)', color : 'white' } /* > 50km */
 
     /* Card */
     /* Right Accent 미사용 시 { NoAccent } 처리 */
     var NoAccent = { display : 'none' }
     /* 저장한 장소 및 근처 오락실까지의 거리를 기준으로 한 배경색 */
-    var BGLocationNear = { background : 'var(--color-dynamic-water)', color : 'white' } /* < 15km */
-    var BGLocationMedium = { background : 'var(--color-dynamic-sand)', color : 'white' } /* 15 ~ 50km */
-    var BGLocationFar = { background : 'var(--color-dynamic-coral)', color : 'white' } /* > 50km */
     
     // 테스트용 Array - 위치별로 latitude와 longitude를 가지고 있음
     let arcades = [
@@ -29,12 +29,18 @@ function Near({latitude, longitude}) {
       {name:"범계게임천국", address:"범계역 1번 출구에서 60m", latitude:37.390380, longitude:126.952117}
     ]
 
-    // User Location을 저장하고 기준으로 모든 아케이드에 distance 변수를 추가함
+    // User Location을 저장하고 기준으로 모든 아케이드에 distance 변수와 이에 따른 Accent 변수 추가
     const userLocation = { latitude, longitude };
     const arcadesWithDistance = arcades.map((arcade) => {
       const distanceInMeters = geolib.getDistance(userLocation, arcade);
       const distanceInKm = distanceInMeters / 1000;
-      return { ...arcade, distance: distanceInKm};
+      let accent = BGLocationFar;
+      if (distanceInKm < 15) {
+        accent = BGLocationNear;
+      } else if (distanceInKm >= 15 && distanceInKm <= 50) {
+        accent = BGLocationMedium;
+      }
+      return { ...arcade, distance: distanceInKm, accent};
       // parseFloat(distanceInKm.toPrecision(4)) 를 사용해서 round-up 할 수 있음.
     });
     console.log(arcadesWithDistance);
@@ -49,21 +55,19 @@ function Near({latitude, longitude}) {
                 <Card Title={arcadesWithDistance[0].name} 
                 Paragraph={arcadesWithDistance[0].address} 
                 AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
-                Accent={ BGLocationNear }/>
+                Accent={ arcadesWithDistance[0].accent }/>
                 <hr/>
                 <Card Title={arcadesWithDistance[1].name} 
                 Paragraph={arcadesWithDistance[1].address} 
                 AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
-                Accent={ BGLocationMedium }/>
+                Accent={ arcadesWithDistance[1].accent }/>
                 <hr/>
                 <Card Title={arcadesWithDistance[2].name} 
                 Paragraph={arcadesWithDistance[2].address} 
                 AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />}
-                Accent={ BGLocationFar }/>
+                Accent={ arcadesWithDistance[2].accent }/>
             </div>
             <Button Icon="" Title="더보기"/>
         </div>
     );
 }
-
-export default Near;
