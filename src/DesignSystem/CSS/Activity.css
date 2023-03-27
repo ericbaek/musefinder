@@ -11,15 +11,10 @@
 }
 
     .MainActivity-DesktopHome {
-        border-radius: calc(var(--radius-system));
+        border-radius: calc(var(--radius-system)) !important;
         padding: 24px 24px 28px;
     }
 
 .Map {
     position: fixed;
-}
-
-.LayoutActivity {
-    display: flex;
-    gap: 16px;
 }

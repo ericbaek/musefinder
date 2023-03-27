@@ -29,6 +29,7 @@
     --box-hover-color: var(--colorless-90);
     --bg-color: var(--colorless-100);
     --bg-hover-color: var(--colorless-95);
+    --dragpill-color: var(--colorless-85);
     --icon-hover-color: var(--colorless-85);
     --bg-color-transparent: var(--colorless-95-tp);
     --radius-system: 8px;
@@ -46,6 +47,7 @@
     --box-hover-color: var(--colorless-15);
     --bg-color: var(--colorless-0);
     --bg-hover-color: var(--colorless-10);
+    --dragpill-color: var(--colorless-15);
     --icon-hover-color: var(--colorless-20);
     --bg-color-transparent: var(--colorless-5-tp);
 }
@@ -148,18 +150,40 @@ hr {
     border-radius: var(--radius-circle);
 }
 
-.Desktop, .General {
+.Drag {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    margin: -16px 0;
+    width: 100%;
+    height: 2rem;
+
+}
+.DragPill {
+    width: 3rem;
+    height: .5rem;
+    background: var(--dragpill-color);
+    border-radius: var(--radius-circle);
+}
+
+.Home, .General {
     touch-action: none;
     -webkit-user-drag: none;
 }
 
-    .Active, .General {
+    .Home, .Active, .General {
         position: absolute;
         left: 24px;
     }
 
+    .Home {
+        top: 24px;
+    }
+
     .Active {
-        top: 0;
+        bottom: 0;
     }
 
     .General {
@@ -197,6 +221,7 @@ hr {
     .MainActivity {
         border-radius: 0;
     }
+    
 }
 
 @media (max-width: 1279.98px) {
@@ -222,5 +247,10 @@ hr {
 
     .MainActivity {
         width: 100% !important;
+    }
+
+    .Picture {
+        flex: 0 0 240px !important;
+        height: 320px !important;
     }
 }

@@ -70,7 +70,7 @@ function Home() {
     return (
         /* 1280px 이상에서의 검색창 + 메인 액티비티 */
         <div>
-          <div className="Desktop LayoutActivity Column"> 
+          <div className="Home Desktop Column Gap-16"> 
             <div className="SearchTop">
               <Search Icon="" Placeholder="검색" Sort=""/>
               <div className="Group-FilterSet">
@@ -114,6 +114,9 @@ function Home() {
           { /* 1280px 미만에서의 검색창 + 메인 액티비티 */ }
           <div className="General">
             <div className="MainActivity"> { /* 메인 액티비티 */ }
+              <div className="Drag">
+                  <div className="DragPill"/>
+              </div>
               <div className="SearchTop Column">
                 <Search Icon="" Placeholder="검색" Sort=""/>
                 <div className="Group-FilterSet">

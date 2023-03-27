@@ -9,6 +9,7 @@ function App() {
 
       {/* <SearchFind /> */}
       {/* 차후 Search 관련 function은 전부 위 모듈로 변경예정 */}
+      <Focus />
     </div>
   );
 }

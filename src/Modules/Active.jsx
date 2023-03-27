@@ -41,6 +41,9 @@ function Active() {
     const scrollRef = useHorizontalScroll();
 		return (
             <div className="Active MainActivity"> { /* 메인 액티비티 */ }
+                <div className="Drag">
+                    <div className="DragPill"/>
+                </div>
                 <div className="Group-Picture" ref={scrollRef}>
                     <Picture/>
                     <Picture/>

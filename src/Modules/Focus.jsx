@@ -15,6 +15,9 @@ function Focus() {
 		return (
             <div className="General">
                 <div className="MainActivity"> { /* 메인 액티비티 */ }
+                    <div className="Drag">
+                        <div className="DragPill"/>
+                    </div>
                     <div className="Selected Column Gap-12">
                         <div className="Row Space-Between Align-Items-Center">
                             <div className="Title">펀시티 건대점</div>
