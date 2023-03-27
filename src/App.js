@@ -5,7 +5,6 @@ import Settings from './DesignSystem/Component/In-Content/Settings';
 
 function App() {
   return (
-    <BrowserRouter basename="https://bampudding.github.io/musescore">
       <div>
         <div className="System"> { /* 시스템 전반 Flex / Column / Padding / Gap */ }
 
@@ -16,7 +15,6 @@ function App() {
           <Settings Icon="" Title="뮤즈파인더 베타"/>
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
