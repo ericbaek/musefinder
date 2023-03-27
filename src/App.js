@@ -1,7 +1,7 @@
 import Active from './Modules/Active';
-import Focus from './Modules/Focus';
 import Home from './Modules/Home';
 import SearchFind from './Modules/SearchFind';
+import Settings from './DesignSystem/Component/In-Content/Settings';
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
 
       {/* <SearchFind /> */}
       {/* 차후 Search 관련 function은 전부 위 모듈로 변경예정 */}
-      <Focus />
+      <Active/>
+      <Settings Icon="" Title="뮤즈파인더 베타"/>
     </div>
   );
 }

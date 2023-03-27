@@ -4,16 +4,26 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    padding: 32px;
+    padding: 32px 32px 0 32px;
     z-index: 10;
     background: var(--bg-color);
     border-radius: var(--radius-activity) var(--radius-activity) 0 0;
+    height: fit-content;
+    max-height: 100vh;
 }
 
     .MainActivity-DesktopHome {
         border-radius: calc(var(--radius-system)) !important;
         padding: 24px 24px 28px;
     }
+
+.ActivityDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    overflow-x: hidden;
+    padding-bottom: 32px;
+}
 
 .Map {
     position: fixed;
