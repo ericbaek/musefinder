@@ -1,6 +1,6 @@
 // Home.jsx에서 건내받은 유저의 위치를 기준으로 가장 가까운 아케이드를 찾아내는 js
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import '../DesignSystem/Import.js';
 import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
@@ -48,26 +48,31 @@ export default function Near({latitude, longitude}) {
     // distance 기준으로 정렬하기
     arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
+    const [numCards, setNumCards] = useState(3); // initialize to 3 cards
+    console.log(numCards);
+
+    const showMoreList = () => {
+        console.log("Show more 버튼 눌림!");
+        setNumCards(numCards + 1);
+    };
+
     return (
-        <div className="Column Gap-16"> { /* 그룹 내 Flex / Column / Gap */ }
+        <div className="Column Gap-16">
             <ContentTitle Title="근처 오락실" Paragraph="필터"/>
             <div className="Column Group-Card">
-                <Card Title={arcadesWithDistance[0].name} 
-                Paragraph={arcadesWithDistance[0].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
-                Accent={ arcadesWithDistance[0].accent }/>
-                <hr/>
-                <Card Title={arcadesWithDistance[1].name} 
-                Paragraph={arcadesWithDistance[1].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
-                Accent={ arcadesWithDistance[1].accent }/>
-                <hr/>
-                <Card Title={arcadesWithDistance[2].name} 
-                Paragraph={arcadesWithDistance[2].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />}
-                Accent={ arcadesWithDistance[2].accent }/>
+                {arcadesWithDistance.slice(0, numCards).map((arcade, index) => (
+                    <React.Fragment key={index}>
+                        <Card Title={arcade.name} 
+                            Paragraph={arcade.address} 
+                            AccentText={<ConvertDistance km={arcade.distance} />}
+                            Accent={arcade.accent}/>
+                        {index !== numCards - 1 && <hr />} {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
+                    </React.Fragment>
+                ))}
             </div>
-            <Button Icon="" Title="더보기"/>
+            {numCards < arcadesWithDistance.length && (
+                <Button Icon="" Title="더보기" onClick={showMoreList} />
+            )}
         </div>
     );
 }
