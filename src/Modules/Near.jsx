@@ -53,7 +53,7 @@ export default function Near({latitude, longitude}) {
 
     const showMoreList = () => {
         console.log("Show more 버튼 눌림!");
-        setNumCards(numCards + 1);
+        setNumCards(numCards + 3);
     };
 
     return (
@@ -66,7 +66,7 @@ export default function Near({latitude, longitude}) {
                             Paragraph={arcade.address} 
                             AccentText={<ConvertDistance km={arcade.distance} />}
                             Accent={arcade.accent}/>
-                        {index !== numCards - 1 && <hr />} {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
+                        {index !== arcadesWithDistance.length - 1 && index !== numCards - 1 && <hr />} {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
                     </React.Fragment>
                 ))}
             </div>
