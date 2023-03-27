@@ -1,16 +1,2 @@
-name: React app deployement
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Deploy react app to github pages
-      uses: bampudding/musefinder
+- name: Deploy React to GitHub Pages
+  uses: bitovi/github-actions-react-to-ghp@v1.2.0
