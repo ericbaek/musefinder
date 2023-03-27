@@ -1,6 +1,6 @@
-import Active from './Modules/Active';
+// import Active from './Modules/Active';
 import Home from './Modules/Home';
-import SearchFind from './Modules/SearchFind';
+// import SearchFind from './Modules/SearchFind';
 import Settings from './DesignSystem/Component/In-Content/Settings';
 
 function App() {

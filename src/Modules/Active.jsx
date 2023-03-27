@@ -1,6 +1,6 @@
 // Active JS
 
-import React, { useState } from 'react';
+import React from 'react';
 import '../DesignSystem/Import.js';
 
 import '../DesignSystem/CSS/Selected.css';
