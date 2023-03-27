@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 import '../DesignSystem/Import.js';
@@ -22,6 +21,28 @@ function Home() {
     var BGLocationMedium = { background : 'var(--color-dynamic-sand)', color : 'white' } /* 15 ~ 50km */
     var BGLocationFar = { background : 'var(--color-dynamic-coral)', color : 'white' } /* > 50km */
 
+    // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
+    const [latitude, setLatitude] = React.useState(0);
+    const [longitude, setLongitude] = React.useState(0);
+    React.useEffect(() => {
+      navigator.geolocation.getCurrentPosition(
+      (position) => 
+      { 
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+        console.log(position.coords);
+      },
+      (error) =>
+      {
+        console.error(error);
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 15,
+        timeout: 100,
+      })
+    })
+
     return (
         /* 1280px 이상에서의 검색창 + 메인 액티비티 */
         <div>
@@ -43,7 +64,7 @@ function Home() {
                   <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
                 </div>
               </div>
-              <Near />
+              <Near latitude={latitude} longitude={longitude}/>
             </div>
           </div>
 
@@ -70,7 +91,7 @@ function Home() {
                     <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
                   </div>
                 </div>
-                <Near />
+                <Near latitude={latitude} longitude={longitude}/>
               </div>
             </div>
           </div>
