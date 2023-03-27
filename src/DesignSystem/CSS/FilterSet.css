@@ -1,6 +1,6 @@
 .FilterSet {
     background: var(--box-color);
-    width: min-content;
+    width: fit-content;
     height: min-content;
     padding: 8px 10px;
     font-weight: 500;
@@ -19,4 +19,5 @@
     width: 100%;
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }

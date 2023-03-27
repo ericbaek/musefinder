@@ -2,6 +2,7 @@
 
 :root {
     --colorless-100: hsl(0, 0%, 100%);
+    --colorless-100-tp: hsl(0, 0%, 100%, 0.20);
     --colorless-95: hsl(0, 0%, 95%);
     --colorless-95-tp: hsl(0, 0%, 95%, 0.90);
     --colorless-90: hsl(0, 0%, 90%);
@@ -18,6 +19,7 @@
     --colorless-5-tp: hsl(0, 0%, 5%, 0.90);
     --colorless-5: hsl(0, 0%, 5%);
     --colorless-0: hsl(0, 0%, 0%);
+    --colorless-0-tp: hsl(0, 0%, 0%, 0.20);
     --color-dynamic-muse: linear-gradient(135deg, hsl(270, 88%, 70%) 10%, hsl(245, 82%, 67%) 100%);
     --color-dynamic-water: linear-gradient(135deg, hsl(211, 100%, 67%) 10%, hsl(207, 100%, 51%) 100%);
     --color-dynamic-sand: linear-gradient(135deg, hsl(39, 94%, 63%) 10%, hsl(39, 84%, 51%) 100%);
@@ -26,6 +28,7 @@
     --font-monospace: "FiraCode Variable", "Pretendard Variable", monospace;
     --body-color: var(--colorless-0);
     --border-color: var(--colorless-90);
+    --highlayer-bg-color: var(--colorless-100);
     --box-color: var(--colorless-95);
     --box-hover-color: var(--colorless-90);
     --bg-color: var(--colorless-100);
@@ -33,6 +36,7 @@
     --dragpill-color: var(--colorless-85);
     --icon-hover-color: var(--colorless-85);
     --bg-color-transparent: var(--colorless-95-tp);
+    --general-shadow-color: var(--colorless-0-tp);
     --radius-system: 8px;
     --radius-activity: 24px;
     --radius-circle: 128px;
@@ -44,6 +48,7 @@
 .dark {
     --body-color: var(--colorless-100);
     --border-color: var(--colorless-15);
+    --highlayer-bg-color: var(--colorless-5);
     --box-color: var(--colorless-10);
     --box-hover-color: var(--colorless-15);
     --bg-color: var(--colorless-0);
@@ -51,6 +56,7 @@
     --dragpill-color: var(--colorless-15);
     --icon-hover-color: var(--colorless-20);
     --bg-color-transparent: var(--colorless-5-tp);
+    --general-shadow-color: transparent;
 }
 
 *,
@@ -226,6 +232,14 @@ hr {
     .MainActivity {
         border-radius: 0;
     }
+
+    .FilterSettings {
+        top: 24px;
+        bottom: unset !important;
+        width: 384px !important;
+        margin-top: 0 !important;
+        border-radius: var(--radius-system) !important;
+    }
 }
 
 @media (max-width: 1279.98px) {
@@ -235,6 +249,10 @@ hr {
 
     .MainActivity { 
         max-height: 98vh;
+    }
+
+    .FilterSettings {
+        width: 384px !important;
     }
 
     .Search {
@@ -254,6 +272,11 @@ hr {
     }
 
     .MainActivity {
+        width: 100% !important;
+    }
+
+    .FilterSettings {
+        left: 0 !important;
         width: 100% !important;
     }
 
