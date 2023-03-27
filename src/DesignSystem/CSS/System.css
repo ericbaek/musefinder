@@ -35,6 +35,7 @@
     --radius-activity: 24px;
     --radius-circle: 128px;
     --width-activity: 384px;
+    --icon-padding: 0.5rem;
     --transition-bg: background .2s ease-out, color .2s ease-out;
 }
 
@@ -89,7 +90,6 @@ body::-webkit-scrollbar {
     display: flex;
     color: var(--body-color);
     flex-direction: column;
-    padding: 24px;
     gap: 12px;
 }
 
@@ -97,9 +97,34 @@ body::-webkit-scrollbar {
     font-size: 3rem;
 }
 
+.Align-Items-Center {
+    display: flex;
+    align-items: center;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Row {
+    display: flex;
+    flex-direction: row;
+}
+
+.Gap-4 {
+    display: flex;
+    gap: 4px;
+}
+
 .Gap-8 {
     display: flex;
     gap: 8px;
+}
+
+.Gap-12 {
+    display: flex;
+    gap: 12px;
 }
 
 .Gap-16 {
@@ -107,21 +132,70 @@ body::-webkit-scrollbar {
     gap: 16px;
 }
 
-hr {
-    width: 100%;
-    margin: 0;
-    border: .5px solid var(--border-color);
+.Bold {
+    font-weight: 700 !important;
 }
 
-.General {
-    position: absolute;
-    left: 24px;
-    bottom: 0;
+.Space-Between {
+    display: flex;
+    justify-content: space-between;
 }
+
+hr {
+    width: calc(100% - var(--radius-system) * 2.5);
+    margin: 0;
+    border: .4px solid var(--border-color);
+    border-radius: var(--radius-circle);
+}
+
+.Desktop, .General {
+    touch-action: none;
+    -webkit-user-drag: none;
+}
+
+    .Active, .General {
+        position: absolute;
+        left: 24px;
+    }
+
+    .Active {
+        top: 0;
+    }
+
+    .General {
+        bottom: 0;
+    }
+
+.Icon {
+    padding: var(--icon-padding);
+    border-radius: var(--radius-circle);
+    transition: var(--transition-bg);
+}
+
+    .Icon:hover {
+        background: var(--icon-hover-color);
+    }
+
+    .IconMargin-Right {
+        margin-right: -8px;
+    }
+    
+    .IconMargin-Left {
+        margin-left: -8px;
+    }
 
 @media (min-width: 1280px) {
     .General {
         display: none;
+    }
+
+    .Active {
+        height: 100vh;
+        left: 0;
+    }
+
+    .MainActivity {
+        border-radius: 0;
     }
 }
 
@@ -141,7 +215,7 @@ hr {
 }
 
 @media (max-width: 767.98px) {
-    .General {
+    .Active, .General {
         left: 0;
         right: 0;
     }

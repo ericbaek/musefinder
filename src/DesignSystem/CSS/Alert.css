@@ -25,7 +25,12 @@
             font-weight: 600;
             font-size: 1.3rem;
             margin-bottom: 1px;
+            padding: 0;
         }
+
+            .Alert .Icon:hover {
+                background: transparent;
+            }
 
         .Alert .Title {
             font-weight: 600;

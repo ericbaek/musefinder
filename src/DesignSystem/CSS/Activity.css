@@ -15,22 +15,6 @@
         padding: 24px 24px 28px;
     }
 
-    .Group {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-        .Column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .Row {
-            display: flex;
-            flex-direction: row;
-        }
-
 .Map {
     position: fixed;
 }

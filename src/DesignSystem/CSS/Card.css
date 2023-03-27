@@ -53,6 +53,7 @@
         }
 
 .Group-Card {
+    align-items: center;
     background: var(--box-color);
     border-radius: var(--radius-system);
 }

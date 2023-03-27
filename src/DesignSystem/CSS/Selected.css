@@ -1,0 +1,26 @@
+/* Selected */
+
+.Selected .Icon {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.Selected .Title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -.5pt;
+    line-height: 1.2;
+}
+
+.Selected .Paragraph {
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: -.2pt;
+    line-height: 1;
+}
+
+.Group-FocusParagraph {
+    display: flex;
+    gap: 4px;
+}

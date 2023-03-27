@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../../CSS/Picture.css';
 
-class Card extends Component {
+class Picture extends Component {
 
 	render(){
 		return (

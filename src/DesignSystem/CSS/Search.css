@@ -10,7 +10,7 @@
 }
 
     .Search:hover {
-        background: var(--bg-hover-color);
+        background: var(--box-hover-color);
     }
 
     .Search .Left {
@@ -23,14 +23,8 @@
         .Search .Icon {
             font-weight: 600;
             font-size: 2.2rem;
-            padding: 6px;
             border-radius: var(--radius-circle);
-            transition: var(--transition-bg);
         }
-
-            .Search .Icon:hover {
-                background: var(--icon-hover-color);
-            }
 
         .Search input {
             border: 0;
@@ -45,7 +39,7 @@
             line-height: 1;
         }
 
-            .Search input:focus {    
+            .Search input:focus {
                 outline: none;
             }
 

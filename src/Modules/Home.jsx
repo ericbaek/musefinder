@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import * as geolib from 'geolib';
 
 import '../DesignSystem/Import.js';
+import Button from '../DesignSystem/Component/In-Content/Button';
 import Card from '../DesignSystem/Component/In-Content/Card';
 import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
 import FilterSet from '../DesignSystem/Component/In-Content/FilterSet';
@@ -67,53 +68,10 @@ function Home() {
     arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
     return (
-      
-      /* 1280px 이상에서의 검색창 + 메인 액티비티 */
-      <div>
-        <div className="Desktop LayoutActivity Column"> 
-          <div className="SearchTop">
-            <Search Icon="" Placeholder="검색" Sort=""/>
-            <div className="Group-FilterSet">
-              <FilterSet Title="IIDX"/>
-              <FilterSet Title="SDVX"/>
-              <FilterSet Title="유비트"/>
-              <FilterSet Title="팝픈뮤직"/>
-            </div>
-          </div>
-          <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
-            <div className="Group">
-              <ContentTitle Title="저장한 장소" Paragraph="관리"/>
-              <div className="Row Gap-8">
-                <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
-              </div>
-            </div>
-            <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
-              <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
-              <div className="Column Group-Card">
-                <Card Title={arcadesWithDistance[0].name} 
-                Paragraph={arcadesWithDistance[0].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
-                Accent={ BGLocationNear }/>
-                <hr></hr>
-                <Card Title={arcadesWithDistance[1].name} 
-                Paragraph={arcadesWithDistance[1].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
-                Accent={ BGLocationMedium }/>
-                <hr></hr>
-                <Card Title={arcadesWithDistance[2].name} 
-                Paragraph={arcadesWithDistance[2].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />}
-                Accent={ BGLocationFar }/>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        { /* 1280px 미만에서의 검색창 + 메인 액티비티 */ }
-        <div className="General"> 
-          <div className="MainActivity"> { /* 메인 액티비티 */ }
-            <div className="SearchTop Column">
+        /* 1280px 이상에서의 검색창 + 메인 액티비티 */
+        <div>
+          <div className="Desktop LayoutActivity Column"> 
+            <div className="SearchTop">
               <Search Icon="" Placeholder="검색" Sort=""/>
               <div className="Group-FilterSet">
                 <FilterSet Title="IIDX"/>
@@ -122,35 +80,79 @@ function Home() {
                 <FilterSet Title="팝픈뮤직"/>
               </div>
             </div>
-            <div className="Group">
-              <ContentTitle Title="저장한 장소" Paragraph="관리"/>
-              <div className="Row Gap-8">
-                <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+            <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
+              <div className="Column Gap-16">
+                <ContentTitle Title="저장한 장소" Paragraph="관리"/>
+                <div className="Row Gap-8">
+                  <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                  <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+                </div>
+              </div>
+              <div className="Column Gap-16"> { /* 그룹 내 Flex / Column / Gap */ }
+                <ContentTitle Title="근처 오락실" Paragraph="필터"/>
+                <div className="Column Group-Card">
+                  <Card Title={arcadesWithDistance[0].name} 
+                  Paragraph={arcadesWithDistance[0].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
+                  Accent={ BGLocationNear }/>
+                  <hr/>
+                  <Card Title={arcadesWithDistance[1].name} 
+                  Paragraph={arcadesWithDistance[1].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
+                  Accent={ BGLocationMedium }/>
+                  <hr/>
+                  <Card Title={arcadesWithDistance[2].name} 
+                  Paragraph={arcadesWithDistance[2].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />}
+                  Accent={ BGLocationFar }/>
+                </div>
+                <Button Icon="" Title="더보기"/>
               </div>
             </div>
-            <div className="Group"> { /* 그룹 내 Flex / Column / Gap */ }
-              <ContentTitle Title="근처 오락실" Paragraph="더보기"/>
-              <div className="Column Group-Card">
-                <Card Title={arcadesWithDistance[0].name} 
-                Paragraph={arcadesWithDistance[0].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
-                Accent={ BGLocationNear }/>
-                <hr></hr>
-                <Card Title={arcadesWithDistance[1].name} 
-                Paragraph={arcadesWithDistance[1].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
-                Accent={ BGLocationMedium }/>
-                <hr></hr>
-                <Card Title={arcadesWithDistance[2].name} 
-                Paragraph={arcadesWithDistance[2].address} 
-                AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />} 
-                Accent={ BGLocationFar }/>
+          </div>
+
+          { /* 1280px 미만에서의 검색창 + 메인 액티비티 */ }
+          <div className="General">
+            <div className="MainActivity"> { /* 메인 액티비티 */ }
+              <div className="SearchTop Column">
+                <Search Icon="" Placeholder="검색" Sort=""/>
+                <div className="Group-FilterSet">
+                  <FilterSet Title="IIDX"/>
+                  <FilterSet Title="SDVX"/>
+                  <FilterSet Title="유비트"/>
+                  <FilterSet Title="팝픈뮤직"/>
+                </div>
+              </div>
+              <div className="Column Gap-16">
+                <ContentTitle Title="저장한 장소" Paragraph="관리"/>
+                <div className="Row Gap-8">
+                  <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                  <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+                </div>
+              </div>
+              <div className="Column Gap-16"> { /* 그룹 내 Flex / Column / Gap */ }
+                <ContentTitle Title="근처 오락실" Paragraph="필터"/>
+                <div className="Column Group-Card">
+                  <Card Title={arcadesWithDistance[0].name} 
+                  Paragraph={arcadesWithDistance[0].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[0].distance} />}
+                  Accent={ BGLocationNear }/>
+                  <hr/>
+                  <Card Title={arcadesWithDistance[1].name} 
+                  Paragraph={arcadesWithDistance[1].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[1].distance} />}
+                  Accent={ BGLocationMedium }/>
+                  <hr/>
+                  <Card Title={arcadesWithDistance[2].name} 
+                  Paragraph={arcadesWithDistance[2].address} 
+                  AccentText={<ConvertDistance km={arcadesWithDistance[2].distance} />} 
+                  Accent={ BGLocationFar }/>
+                </div>
+                <Button Icon="" Title="더보기"/>
               </div>
             </div>
           </div>
         </div>
-      </div>
     );
 }
 
