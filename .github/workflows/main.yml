@@ -1,51 +1,18 @@
-name: 'Deploy React to GitHub Pages'
-description: 'Build and deploy react code to GitHub pages'
-branding:
-  icon: upload-cloud
-  color: red
-inputs:
-  checkout:
-    description: 'Specifies if this action should checkout the code'
-    required: false
-    default: 'true'
-  path:
-    description: 'Specifies the path of the static assets after building'
-    required: false
-    default: 'dist'
-  build_command:
-    description: 'Specifies the command to run after npm ci for the build'
-    required: false
-    default: 'npm run build'
-outputs:
-  page_url:
-    description: "The URL of the page"
-    value: ${{ steps.deploy.outputs.page_url }}
+name: React app deployement
 
-  
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-runs:
-  using: 'composite'
+jobs:
+  build:
 
-  steps:
-    - name: Checkout if required
-      if: ${{ inputs.checkout == 'true' }}
-      uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
 
-    - name: 'Build'
-      shell: bash
-      run: |
-        echo "::group::Build"
-        npm ci
-        ${{ inputs.build_command }}
-        echo "::endgroup::"
-
-    - name: 'upload'
-      uses: actions/upload-pages-artifact@v1.0.4
-      with: 
-        path: ${{ inputs.path }}
-
-    - id: deploy
-      name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v1
-      with:
-        token: ${{ github.token }}
+    - name: Deploy react app to github pages
+      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1

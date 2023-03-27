@@ -1,6 +1,6 @@
 // Home.jsx에서 건내받은 유저의 위치를 기준으로 가장 가까운 아케이드를 찾아내는 js
 
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 
 import '../DesignSystem/Import.js';
 import ContentTitle from '../DesignSystem/Component/In-Content/ContentTitle';
@@ -16,11 +16,6 @@ export default function Near({latitude, longitude}) {
     var BGLocationNear = { background : 'var(--color-dynamic-water)', color : 'white' } /* < 15km */
     var BGLocationMedium = { background : 'var(--color-dynamic-sand)', color : 'white' } /* 15 ~ 50km */
     var BGLocationFar = { background : 'var(--color-dynamic-coral)', color : 'white' } /* > 50km */
-
-    /* Card */
-    /* Right Accent 미사용 시 { NoAccent } 처리 */
-    var NoAccent = { display : 'none' }
-    /* 저장한 장소 및 근처 오락실까지의 거리를 기준으로 한 배경색 */
     
     // 테스트용 Array - 위치별로 latitude와 longitude를 가지고 있음
     // let arcades = [
