@@ -57,6 +57,18 @@ function Home() {
       })
     })
 
+    function SavedLocation() {
+      return (
+        <div className="Column Gap-16">
+          <ContentTitle Title="저장한 장소" Paragraph="관리"/>
+          <div className="Row Gap-8">
+            <Card Class="Card CardSimple" Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+            <Card Class="Card CardSimple" Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+          </div>
+        </div>
+      )
+    }
+
 
     return (
         <div>
@@ -66,14 +78,7 @@ function Home() {
             <Search Icon="" Placeholder="검색" Filter=""/>
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
               <FilterSettings/>
-
-              <div className="Column Gap-16">
-                <ContentTitle Title="저장한 장소" Paragraph="관리"/>
-                <div className="Row Gap-8">
-                  <Card Class="Card CardSimple" Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                  <Card Class="Card CardSimple" Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
-                </div>
-              </div>
+              <SavedLocation/>
               <Near latitude={latitude} longitude={longitude}/>
             </div>
           </div>
@@ -89,13 +94,7 @@ function Home() {
                   <Search Icon="" Placeholder="검색" Filter=""/>
                   <FilterSettings/>
                 </div>
-                <div className="Column Gap-16">
-                  <ContentTitle Title="저장한 장소" Paragraph="관리"/>
-                  <div className="Row Gap-8">
-                    <Card Class="Card CardSimple" Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                    <Card Class="Card CardSimple" Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
-                  </div>
-                </div>
+                <SavedLocation/>
                 <Near latitude={latitude} longitude={longitude}/>
               </div>
             </div>
