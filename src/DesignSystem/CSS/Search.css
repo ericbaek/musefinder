@@ -1,5 +1,5 @@
 .Search {
-    min-width: var(--width-activity);
+    min-width: var(--width-general);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +38,7 @@
             font-size: 1.8rem;
             letter-spacing: -.2pt;
             line-height: 1;
+            padding: 0;
         }
 
             .Search input:focus {
