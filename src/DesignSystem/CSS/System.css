@@ -40,7 +40,7 @@
     --radius-system: 12px;
     --radius-activity: 24px;
     --radius-circle: 128px;
-    --width-activity: 384px;
+    --width-general: 420px;
     --icon-padding: 0.5rem;
     --transition-bg: background .2s ease-out, color .2s ease-out;
 }
@@ -237,14 +237,6 @@ hr {
     .MainActivity {
         border-radius: 0;
     }
-
-    .FilterSettings {
-        top: 24px;
-        bottom: unset !important;
-        width: 384px !important;
-        margin-top: 0 !important;
-        border-radius: var(--radius-system) !important;
-    }
 }
 
 @media (max-width: 1279.98px) {
@@ -256,13 +248,10 @@ hr {
         max-height: 98vh;
     }
 
-    .FilterSettings {
-        width: 384px !important;
-    }
-
     .Search {
         min-width: 100% !important;
         background: var(--box-color) !important;
+        box-shadow: none !important;
     }
 
         .Search:hover {
@@ -277,11 +266,6 @@ hr {
     }
 
     .MainActivity {
-        width: 100% !important;
-    }
-
-    .FilterSettings {
-        left: 0 !important;
         width: 100% !important;
     }
 

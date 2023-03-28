@@ -1,6 +1,6 @@
 .MainActivity {
     position: relative;
-    width: var(--width-activity);
+    width: var(--width-general);
     display: flex;
     flex-direction: column;
     gap: 32px;
