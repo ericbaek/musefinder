@@ -5,7 +5,7 @@ class Card extends Component {
 
 	render(){
 		return (
-            <div className={this.props.Class} style={this.props.Background}>
+            <div className={`${Card} ${this.props.CardSimple}`} style={this.props.Background}>
                 <div className="Left">
                     <div className="Title">{this.props.Title}</div>
                     <div className="Paragraph">{this.props.Paragraph}</div>
