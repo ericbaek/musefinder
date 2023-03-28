@@ -71,7 +71,7 @@ function Home() {
 
     return (
         <div>
-          <FilterSettings/>
+          { /* <FilterSettings/> */ }
 
           { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
           <div className="Home Desktop Column Gap-16">
@@ -104,7 +104,7 @@ function Home() {
                     <div className="DragPill"/>
                 </div>
                 <div className="SearchTop Column">
-                  <Search Icon="" Placeholder="검색" Sort=""/>
+                  <Search Icon="" Placeholder="검색" Filter=""/>
                   <div className="Group-FilterSet">
                     <FilterSet Title="IIDX"/>
                     <FilterSet Title="SDVX"/>

@@ -10,7 +10,7 @@ class Search extends Component {
                     <div className="Icon">{this.props.Icon}</div>
                     <input placeholder={this.props.Placeholder}></input>
                 </div>
-                <div className="Icon Sort">{this.props.Sort}</div>
+                <div className="Icon Filter">{this.props.Filter}</div>
             </div>
 		);
 	}

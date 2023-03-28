@@ -9,6 +9,7 @@
     line-height: 1;
     border-radius: var(--radius-activity);
     transition: var(--transition-bg);
+    cursor: pointer;
 }
 
     .FilterSet:hover {

@@ -8,6 +8,7 @@
     border-radius: var(--radius-system);
     flex-wrap: wrap;
     transition: var(--transition-bg);
+    cursor: pointer;
 }
 
     .Card:hover {
