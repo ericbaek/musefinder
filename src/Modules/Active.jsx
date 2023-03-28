@@ -76,9 +76,9 @@ function Active() {
                     </div>
                     <div className="Column Gap-16">
                         <div className="OnlyFocus Row Gap-8"> {/* Active 상태에서는 로드하지 않음 */}
-                            <Card Title="IIDX" Paragraph="2대 (T1)" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
-                            <Card Title="SDVX" Paragraph="8대 (L3)" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
-                            <Card Title="마이마이" Paragraph="4대" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
+                            <Card Class="Card CardSimple" Title="IIDX" Paragraph="2대 (T1)" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
+                            <Card Class="Card CardSimple" Title="SDVX" Paragraph="8대 (L3)" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
+                            <Card Class="Card CardSimple" Title="마이마이" Paragraph="4대" AccentText="" Accent={ NoAccent } Background={ PreferGame }/>
                         </div>
                         <div className="Row Gap-8">
                             <Button Icon="" Title="제보하기"/>
@@ -96,19 +96,19 @@ function Active() {
                     <div className="Column Gap-16">
                         <ContentTitle Title="보유 중인 기체" Paragraph=""/>
                         <div className="Column Group-Card">
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="라이트 1000원, 프리미엄 2000원" Paragraph2="3,5번 기체 방송 가능" AccentText="1대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="88대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="88대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="14대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="14대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
                             <hr/>
-                            <Card Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
+                            <Card Class="Card" Title="IIDX" Paragraph="Fuck" AccentText="1대" Accent={ DynamicWater }/>
                         </div>
                     </div>
                 </div>

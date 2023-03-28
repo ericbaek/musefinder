@@ -68,7 +68,7 @@ export default function Near({latitude, longitude}) {
                 ))}
             </div>
             {numCards < arcadesWithDistance.length && (
-                <Button Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} />
+                <Button Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)}/>
             )}
         </div>
     );

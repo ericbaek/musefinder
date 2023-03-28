@@ -5,10 +5,11 @@ class Card extends Component {
 
 	render(){
 		return (
-            <div className="Card" style={this.props.Background}>
+            <div className={this.props.Class} style={this.props.Background}>
                 <div className="Left">
                     <div className="Title">{this.props.Title}</div>
                     <div className="Paragraph">{this.props.Paragraph}</div>
+                    <div className="Paragraph2">{this.props.Paragraph2}</div>
                 </div>
                 
                 <div className="AccentColor" style={this.props.Accent}>

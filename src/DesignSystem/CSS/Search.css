@@ -38,6 +38,7 @@
             font-size: 1.8rem;
             letter-spacing: -.2pt;
             line-height: 1;
+            padding: 0;
         }
 
             .Search input:focus {

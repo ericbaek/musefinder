@@ -68,8 +68,8 @@ function Home() {
               <div className="Column Gap-16">
                 <ContentTitle Title="저장한 장소" Paragraph="관리"/>
                 <div className="Row Gap-8">
-                  <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                  <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+                  <Card Class="Card CardSimple" Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                  <Card Class="Card CardSimple" Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
                 </div>
               </div>
               <Near latitude={latitude} longitude={longitude}/>
@@ -90,8 +90,8 @@ function Home() {
                 <div className="Column Gap-16">
                   <ContentTitle Title="저장한 장소" Paragraph="관리"/>
                   <div className="Row Gap-8">
-                    <Card Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
-                    <Card Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
+                    <Card Class="Card CardSimple" Title="펀시티 건대점" Paragraph={<ConvertDistance km={0.349} />} AccentText="" Accent={ NoAccent }/>
+                    <Card Class="Card CardSimple" Title="노원 노리존" Paragraph={<ConvertDistance km={9.82} />} AccentText="" Accent={ NoAccent }/>
                   </div>
                 </div>
                 <Near latitude={latitude} longitude={longitude}/>

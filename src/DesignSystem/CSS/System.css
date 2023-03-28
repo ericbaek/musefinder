@@ -160,7 +160,7 @@ body::-webkit-scrollbar {
 }
 
 hr {
-    width: calc(100% - var(--radius-system) * 2.5);
+    width: 100%;
     margin: 0;
     border: .4px solid var(--border-color);
     border-radius: var(--radius-circle);
