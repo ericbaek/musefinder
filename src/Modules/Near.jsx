@@ -21,19 +21,19 @@ export default function Near({latitude, longitude}) {
     /* Right Accent 미사용 시 { NoAccent } 처리 */
     var NoAccent = { display : 'none' }
     /* 저장한 장소 및 근처 오락실까지의 거리를 기준으로 한 배경색 */
-    
-    // 테스트용 Array - 위치별로 latitude와 longitude를 가지고 있음
-    // let arcades = [
-    //   {name:"어뮤즈타운", address:"노량진역 3번 출구에서 301m", latitude:37.512765 ,longitude:126.944949},
-    //   {name:"짱오락실 서울대입구점", address:"서울대입구역 3번 출구에서 107m", latitude:37.480471, longitude:126.951978},
-    //   {name:"수원역 짱오락실", address:"수원역 10번 출구", latitude:37.266399, longitude:127.001713},
-    //   {name:"펀시티 건대점", address:"건대입구역 1번 출구에서 162m", latitude:37.539794, longitude:127.070410},
-    //   {name:"범계게임천국", address:"범계역 1번 출구에서 60m", latitude:37.390380, longitude:126.952117}
-    // ]
+
+    const filterGnames = ["maimai DX", "IIDX"]; 
+    const filteredArcades = arcadesData.filter(arcade => 
+        filterGnames.every(filterGname =>
+            arcade.games.some(game => 
+                game.Gname === filterGname)
+        )
+    );
+    console.log(filteredArcades);
 
     // User Location을 저장하고 기준으로 모든 아케이드에 distance 변수와 이에 따른 Accent 변수 추가
     const userLocation = { latitude, longitude };
-    const arcadesWithDistance = arcadesData.map((arcade) => {
+    const arcadesWithDistance = filteredArcades.map((arcade) => {
       const distanceInMeters = geolib.getDistance(userLocation, arcade);
       const distanceInKm = distanceInMeters / 1000;
       let accent = BGLocationFar;
@@ -50,10 +50,12 @@ export default function Near({latitude, longitude}) {
     // distance 기준으로 정렬하기
     arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
+
     const [numCards, setNumCards] = useState(3); // 카드는 3개 노출부터 시작.
     console.log(arcadesWithDistance);
 
     return (
+
         <div className="Column Gap-16">
             <ContentTitle Title="근처 오락실" Paragraph="필터"/>
             <div className="Column Group-Card">

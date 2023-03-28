@@ -57,6 +57,7 @@ function Home() {
       })
     })
 
+
     return (
         <div>
 
@@ -65,6 +66,7 @@ function Home() {
             <Search Icon="" Placeholder="검색" Filter=""/>
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
               <FilterSettings/>
+
               <div className="Column Gap-16">
                 <ContentTitle Title="저장한 장소" Paragraph="관리"/>
                 <div className="Row Gap-8">
