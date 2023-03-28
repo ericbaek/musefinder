@@ -13,31 +13,19 @@ import ConvertDistance from './ConvertDistance';
 
 function FilterSettings() {
   return (
-    <div className="FilterSettings">
-      <ContentTitle Title="고르기" Paragraph="초기화"/>
-      <div className="Column Gap-16">
-        <FilterTitle Title="코나미"/>
-        <div className="Group-FilterSet Row Gap-8">
-          <FilterSet Title="IIDX"/>
-          <FilterSet Title="SDVX"/>
-          <FilterSet Title="유비트"/>
-          <FilterSet Title="팝픈뮤직"/>
-          <FilterSet Title="노스탤지어"/>
-          <FilterSet Title="기타프릭스"/>
-          <FilterSet Title="드럼매니아"/>
-          <FilterSet Title="댄스러시"/>
-          <FilterSet Title="리플렉 비트"/>
-        </div>
+      <div className="Group-FilterSet Row Gap-8">
+        <FilterSet Title="IIDX"/>
+        <FilterSet Title="SDVX"/>
+        <FilterSet Title="유비트"/>
+        <FilterSet Title="팝픈뮤직"/>
+        <FilterSet Title="노스탤지어"/>
+        <FilterSet Title="기타프릭스"/>
+        <FilterSet Title="드럼매니아"/>
+        <FilterSet Title="댄스러시"/>
+        <FilterSet Title="리플렉 비트"/>
+        <FilterSet Title="마이마이"/>
+        <FilterSet Title="츄니즘"/>
       </div>
-      <div className="Column Gap-16">
-        <FilterTitle Title="세가"/>
-        <div className="Group-FilterSet Row Gap-8">
-          <FilterSet Title="마이마이"/>
-          <FilterSet Title="츄니즘"/>
-        </div>
-      </div>
-      <Button Icon="" Title="저장하기"/>
-    </div>
   )
 }
 
@@ -71,20 +59,12 @@ function Home() {
 
     return (
         <div>
-          { /* <FilterSettings/> */ }
 
           { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
           <div className="Home Desktop Column Gap-16">
-            <div className="SearchTop">
-              <Search Icon="" Placeholder="검색" Sort=""/>
-              <div className="Group-FilterSet">
-                <FilterSet Title="IIDX"/>
-                <FilterSet Title="SDVX"/>
-                <FilterSet Title="유비트"/>
-                <FilterSet Title="팝픈뮤직"/>
-              </div>
-            </div>
+            <Search Icon="" Placeholder="검색" Filter=""/>
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
+              <FilterSettings/>
               <div className="Column Gap-16">
                 <ContentTitle Title="저장한 장소" Paragraph="관리"/>
                 <div className="Row Gap-8">
@@ -104,13 +84,8 @@ function Home() {
                     <div className="DragPill"/>
                 </div>
                 <div className="SearchTop Column">
-                  <Search Icon="" Placeholder="검색" Filter=""/>
-                  <div className="Group-FilterSet">
-                    <FilterSet Title="IIDX"/>
-                    <FilterSet Title="SDVX"/>
-                    <FilterSet Title="유비트"/>
-                    <FilterSet Title="팝픈뮤직"/>
-                  </div>
+                  <Search Icon="" Placeholder="검색" Filter=""/>
+                  <FilterSettings/>
                 </div>
                 <div className="Column Gap-16">
                   <ContentTitle Title="저장한 장소" Paragraph="관리"/>

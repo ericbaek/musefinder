@@ -145,6 +145,11 @@ body::-webkit-scrollbar {
     gap: 16px;
 }
 
+.Gap-24 {
+    display: flex;
+    gap: 24px;
+}
+
 .Bold {
     font-weight: 700 !important;
 }
