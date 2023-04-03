@@ -10,6 +10,7 @@ function App() {
       {/* <SearchFind /> */}
       {/* 차후 Search 관련 function은 전부 위 모듈로 변경예정 */}
       <Home/>
+      <Active/>
       {/* <Active/> */}
       <Settings Icon="" Title="뮤즈파인더 베타"/>
     </div>
