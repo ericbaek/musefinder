@@ -22,7 +22,7 @@ export default function Near({latitude, longitude}) {
     var NoAccent = { display : 'none' }
     /* 저장한 장소 및 근처 오락실까지의 거리를 기준으로 한 배경색 */
 
-    const filterGnames = ["maimai DX", "IIDX"]; 
+    const filterGnames = ["IIDX"]; 
     const filteredArcades = arcadesData.filter(arcade => 
         filterGnames.every(filterGname =>
             arcade.games.some(game => 
