@@ -1,6 +1,7 @@
 /* Small Mobile < 600 < General Mobile < 768 < Tablet < 1280px: Desktop */
 
 :root {
+    --font-size: 10px;
     --colorless-100: hsl(0, 0%, 100%);
     --colorless-100-tp: hsl(0, 0%, 100%, 0.20);
     --colorless-95: hsl(0, 0%, 95%);
@@ -70,10 +71,15 @@
     display: none;
 }
 
+html, body {
+    position: fixed;
+    overflow: hidden;
+}
+
 html {
     background: var(--colorless-60);
     color: var(--body-color);
-    font-size: 10px;
+    font-size: var(--font-size);
     transition: background .2s ease-out, color .2s ease-out;
 }
 
@@ -104,6 +110,9 @@ body::-webkit-scrollbar {
     color: var(--body-color);
     flex-direction: column;
     gap: 12px;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .System-Title-Icon {
