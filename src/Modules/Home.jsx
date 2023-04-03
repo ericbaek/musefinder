@@ -11,25 +11,31 @@ import Near from './Near';
 
 import ConvertDistance from './ConvertDistance';
 
-function FilterSettings() {
+function FilterSettings({ setGname }) {
+  const handleFilterSetClick = (gameName) => {
+    setGname((prevGname) => [...prevGname, gameName]);
+  };
+
   return (
-      <div className="Group-FilterSet Row Gap-8">
-        <FilterSet Title="IIDX"/>
-        <FilterSet Title="SDVX"/>
-        <FilterSet Title="유비트"/>
-        <FilterSet Title="팝픈뮤직"/>
-        <FilterSet Title="노스탤지어"/>
-        <FilterSet Title="기타프릭스"/>
-        <FilterSet Title="드럼매니아"/>
-        <FilterSet Title="댄스러시"/>
-        <FilterSet Title="리플렉 비트"/>
-        <FilterSet Title="마이마이"/>
-        <FilterSet Title="츄니즘"/>
-      </div>
-  )
+    <div className="Group-FilterSet Row Gap-8">
+      <FilterSet Title="IIDX" onClick={() => handleFilterSetClick('IIDX')} />
+      <FilterSet Title="SDVX" onClick={() => handleFilterSetClick('SDVX')} />
+      <FilterSet Title="유비트" onClick={() => handleFilterSetClick('유비트')} />
+      <FilterSet Title="팝픈뮤직" onClick={() => handleFilterSetClick('팝픈뮤직')} />
+      <FilterSet Title="노스탤지어" onClick={() => handleFilterSetClick('노스탤지어')} />
+      <FilterSet Title="기타프릭스" onClick={() => handleFilterSetClick('기타프릭스')} />
+      <FilterSet Title="드럼매니아" onClick={() => handleFilterSetClick('드럼매니아')} />
+      <FilterSet Title="댄스러시" onClick={() => handleFilterSetClick('댄스러시')} />
+      <FilterSet Title="리플렉 비트" onClick={() => handleFilterSetClick('리플렉 비트')} />
+      <FilterSet Title="마이마이" onClick={() => handleFilterSetClick('maimai DX')} />
+      <FilterSet Title="츄니즘" onClick={() => handleFilterSetClick('츄니즘')} />
+    </div>
+  );
 }
 
 function Home() {
+    const [gname, setGname] = useState([]);
+    console.log(gname);
 
     /* Card */
     /* Right Accent 미사용 시 { NoAccent } 처리 */
@@ -77,9 +83,9 @@ function Home() {
           <div className="Home Desktop Column Gap-16">
             <Search Icon="" Placeholder="검색" Filter=""/>
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
-              <FilterSettings/>
+              <FilterSettings setGname={setGname}/>
               <SavedLocation/>
-              <Near latitude={latitude} longitude={longitude}/>
+              <Near latitude={latitude} longitude={longitude} gname={gname}/>
             </div>
           </div>
 
@@ -95,7 +101,7 @@ function Home() {
                   <FilterSettings/>
                 </div>
                 <SavedLocation/>
-                <Near latitude={latitude} longitude={longitude}/>
+                <Near latitude={latitude} longitude={longitude} gname={gname}/>
               </div>
             </div>
           </div>
