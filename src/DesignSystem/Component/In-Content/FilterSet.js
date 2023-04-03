@@ -5,7 +5,7 @@ class FilterSet extends Component {
 
 	render(){
 		return (
-            <div className="FilterSet">{this.props.Title}</div>
+            <div className="FilterSet" onClick={this.props.onClick}>{this.props.Title}</div>
 		);
 	}
 }
