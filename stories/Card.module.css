@@ -1,0 +1,76 @@
+.Card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: var(--box-color);
+    flex-wrap: wrap;
+    transition: var(--transition-bg);
+    cursor: pointer;
+}
+
+    .Card:hover {
+        background: var(--box-hover-color);
+    }
+
+    .Card:nth-child(1) {
+        border-radius: var(--radius-system) var(--radius-system) 0 0;
+    }
+    
+    .Card:nth-last-child(1) {
+        border-radius: 0 0 var(--radius-system) var(--radius-system);
+    }
+
+    .Card .Left {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+        .Card .Title {
+            font-weight: 600;
+            font-size: 1.7rem;
+            letter-spacing: -.2pt;
+            line-height: 1.2;
+        }
+
+        .Card .Paragraph {
+            opacity: .7;
+            font-weight: 500;
+            font-size: 1.3rem;
+            letter-spacing: -.2pt;
+            line-height: 1.4;
+        }
+
+        .Card .Paragraph2 {
+            height: fit-content;
+            opacity: .5;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: -.2pt;
+            line-height: 1;
+        }
+
+    .Card .AccentColor {
+        width: 62px;
+        padding: 11px 0;
+        border-radius: var(--radius-system);
+    }
+
+        .Card .AccentText {
+            text-align: center;
+            color: var(--colorless-100);
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -.4pt;
+            line-height: 1;
+        }
+
+.Group-Card {
+    align-items: center;
+    background: var(--box-color);
+    border-radius: var(--radius-system);
+}

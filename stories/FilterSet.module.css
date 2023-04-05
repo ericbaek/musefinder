@@ -1,0 +1,17 @@
+.FilterSet {
+    background: var(--box-color);
+    width: fit-content;
+    height: min-content;
+    padding: 10px 12px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: -.2px;
+    line-height: 1;
+    border-radius: var(--radius-activity);
+    transition: var(--transition-bg);
+    cursor: pointer;
+}
+
+    .FilterSet:hover {
+        background: var(--box-hover-color);
+    }

@@ -1,0 +1,7 @@
+.Picture {
+    flex: 0 0 120px;
+    min-height: 160px;
+    background: var(--box-color);
+    border-radius: var(--radius-system);
+    cursor: pointer;
+}

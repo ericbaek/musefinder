@@ -1,0 +1,327 @@
+/* Small Mobile < 600 < General Mobile < 768 < Tablet < 1280px: Desktop */
+
+:root {
+    --font-size: 10px;
+    --colorless-100: hsl(0, 0%, 100%);
+    --colorless-100-tp: hsl(0, 0%, 100%, 0.20);
+    --colorless-95: hsl(0, 0%, 95%);
+    --colorless-95-tp: hsl(0, 0%, 95%, 0.90);
+    --colorless-90: hsl(0, 0%, 90%);
+    --colorless-85: hsl(0, 0%, 85%);
+    --colorless-80: hsl(0, 0%, 80%);
+    --colorless-70: hsl(0, 0%, 70%);
+    --colorless-60: hsl(0, 0%, 60%);
+    --colorless-50: hsl(0, 0%, 50%);
+    --colorless-40: hsl(0, 0%, 40%);
+    --colorless-30: hsl(0, 0%, 30%);
+    --colorless-20: hsl(0, 0%, 20%);
+    --colorless-15: hsl(0, 0%, 15%);
+    --colorless-10: hsl(0, 0%, 10%);
+    --colorless-5-tp: hsl(0, 0%, 5%, 0.90);
+    --colorless-5: hsl(0, 0%, 5%);
+    --colorless-0: hsl(0, 0%, 0%);
+    --colorless-0-tp: hsl(0, 0%, 0%, 0.20);
+    --color-dynamic-muse: linear-gradient(135deg, hsl(270, 88%, 70%) 10%, hsl(245, 82%, 67%) 100%);
+    --color-dynamic-water: linear-gradient(135deg, hsl(211, 100%, 67%) 10%, hsl(207, 100%, 51%) 100%);
+    --color-dynamic-sand: linear-gradient(135deg, hsl(39, 94%, 63%) 10%, hsl(39, 84%, 51%) 100%);
+    --color-dynamic-coral: linear-gradient(135deg, hsl(0, 86%, 69%) 10%, hsl(0, 86%, 61%) 100%);
+    --font-sans-serif: -apple-system, "SF Pro", "SF Pro Display", "Pretendard Variable", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", 'Min Icon VF';
+    --font-monospace: "FiraCode Variable", "Pretendard Variable", monospace;
+    --body-color: var(--colorless-0);
+    --border-color: var(--colorless-90);
+    --highlayer-bg-color: var(--colorless-100);
+    --box-color: var(--colorless-95);
+    --box-hover-color: var(--colorless-90);
+    --bg-color: var(--colorless-100);
+    --bg-hover-color: var(--colorless-95);
+    --desktop-search-hover-color: var(--colorless-95);
+    --dragpill-color: var(--colorless-85);
+    --icon-hover-color: var(--colorless-85);
+    --bg-color-transparent: var(--colorless-95-tp);
+    --general-shadow-color: var(--colorless-0-tp);
+    --radius-system: 12px;
+    --radius-activity: 24px;
+    --radius-circle: 128px;
+    --width-general: 420px;
+    --icon-padding: 0.5rem;
+    --transition-bg: background .2s ease-out, color .2s ease-out;
+}
+
+.dark {
+    --body-color: var(--colorless-100);
+    --border-color: var(--colorless-15);
+    --highlayer-bg-color: var(--colorless-5);
+    --box-color: var(--colorless-10);
+    --box-hover-color: var(--colorless-15);
+    --bg-color: var(--colorless-0);
+    --bg-hover-color: var(--colorless-10);
+    --dragpill-color: var(--colorless-15);
+    --icon-hover-color: var(--colorless-20);
+    --bg-color-transparent: var(--colorless-5-tp);
+    --general-shadow-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    word-break: keep-all;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    color: var(--body-color);
+    font-size: var(--font-size);
+    transition: background .2s ease-out, color .2s ease-out;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    min-height: 100vh; 
+    min-height: -webkit-fill-available;
+    font-family: var(--font-sans-serif);
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Base */
+
+.System {
+    display: flex;
+    color: var(--body-color);
+    flex-direction: column;
+    gap: 12px;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.System-Title-Icon {
+    font-size: 3rem;
+}
+
+.Align-Items-Center {
+    display: flex;
+    align-items: center;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Row {
+    display: flex;
+    flex-direction: row;
+}
+
+.Gap-4 {
+    display: flex;
+    gap: 4px;
+}
+
+.Gap-8 {
+    display: flex;
+    gap: 8px;
+}
+
+.Gap-12 {
+    display: flex;
+    gap: 12px;
+}
+
+.Gap-16 {
+    display: flex;
+    gap: 16px;
+}
+
+.Gap-24 {
+    display: flex;
+    gap: 24px;
+}
+
+.Bold {
+    font-weight: 700 !important;
+}
+
+.Space-Between {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    width: 100%;
+    margin: 0;
+    border: .4px solid var(--border-color);
+    border-radius: var(--radius-circle);
+}
+
+.Drag {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    margin: -24px 0;
+    width: calc(100% - 64px);
+    height: 1rem;
+    z-index: 150;
+}
+
+.DragPill {
+    width: 3rem;
+    height: .5rem;
+    background: var(--dragpill-color);
+    border-radius: var(--radius-circle);
+}
+
+.Home, .General {
+    touch-action: none;
+    -webkit-user-drag: none;
+}
+
+    .Home, .Active, .General {
+        position: absolute;
+        left: 24px;
+    }
+
+    .Home {
+        top: 24px;
+    }
+
+    .Active {
+        bottom: 0;
+    }
+
+    .General {
+        bottom: 0;
+    }
+
+.Icon {
+    padding: var(--icon-padding);
+    border-radius: var(--radius-circle);
+    transition: var(--transition-bg);
+}
+
+    .Icon:hover {
+        background: var(--icon-hover-color);
+    }
+
+    .IconMargin-Right {
+        margin-right: -8px;
+    }
+    
+    .IconMargin-Left {
+        margin-left: -8px;
+    }
+
+@media (min-width: 1280px) {
+    .General {
+        display: none;
+    }
+
+    .Active {
+        height: 100vh;
+        left: 0;
+    }
+
+    .MainActivity {
+        max-height: 100%;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 1279.98px) {
+    .Desktop {
+        display: none;
+    }
+
+    .MainActivity { 
+        max-height: 98vh;
+    }
+
+    .ActivityDetails {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .Active, .General {
+        left: 0;
+        right: 0;
+    }
+
+    .MainActivity {
+        width: 100% !important;
+    }
+
+    .Picture {
+        flex: 0 0 240px !important;
+        height: 320px !important;
+    }
+}
+
+/* Others */
+
+.SearchTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.Group-FilterSet {
+    width: 100%;
+    display: flex;
+    gap: 10px 8px;
+    flex-wrap: wrap;
+}
+
+.Group-Picture {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 8px;
+    flex: 0 0 auto;
+    overflow-x: hidden;
+    border-radius: var(--radius-system);
+}
+
+
+.Selected .Icon {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.Selected .Title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -1pt;
+    line-height: 1.2;
+}
+
+.Selected .Paragraph {
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: -.2pt;
+    line-height: 1;
+}
+
+.Group-FocusParagraph {
+    display: flex;
+    gap: 4px;
+}
