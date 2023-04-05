@@ -18,7 +18,7 @@ function FilterSettings(props) {
   return (
     <div className="Group-FilterSet Row Gap-8">
       <FilterSet Title="IIDX" onClick={ () => {handleFilterClick(); props.onClick()}} />
-      <FilterSet Title="IIDX 라이트닝" onClick={ () => {handleFilterClick();}} />
+      <FilterSet Title="IIDX 라이트닝" onClick={handleFilterClick}/>
       <FilterSet Title="SDVX" onClick={ () => {handleFilterClick();}} />
       <FilterSet Title="SDVX 발키리" onClick={ () => {handleFilterClick();}} />
       <FilterSet Title="펌프 잇 업" onClick={ () => {handleFilterClick();}} />
