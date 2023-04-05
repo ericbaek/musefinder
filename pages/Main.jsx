@@ -5,8 +5,9 @@ import Card from '@/stories/Card';
 import ContentTitle from '@/stories/ContentTitle';
 import ConvertDistance from '@/modules/ConvertDistance';
 import FilterSet from '@/stories/FilterSet';
-import Search from '@/stories/Search';
 import Near from '@/modules/Near';
+import Search from '@/stories/Search';
+import LiveSearch from '@/modules/Search';
 
 function FilterSettings(props) {
 
@@ -90,13 +91,12 @@ function Main() {
       )
     }
 
-
     return (
         <div>
 
           { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
           <div className="Home Desktop Column Gap-16">
-            <Search Icon="" Placeholder="검색" IconFilter=""/>
+            <Search Icon="" Placeholder="검색" IconFilter="" />
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
               <FilterSettings onFilterClick={handleFilterClick}/>
               <SavedLocation/>
