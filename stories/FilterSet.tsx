@@ -1,22 +1,22 @@
 import React from 'react';
 import styles from './FilterSet.module.css';
 
-
-
 interface FilterSetProps {
   Title: string;
+  onClick: (title: string) => void;
 }
 
 export const FilterSet = ({
-  Title, ...props
+  Title,
+  onClick,
+  ...props
 }: FilterSetProps) => {
-
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    props.onClick(Title);
+    onClick(Title);
   };
-  
+
   return (
-    <div className={styles.FilterSet} {...props} onClick={handleClick}>{ Title }</div>
+    <div className={styles.FilterSet} {...props} onClick={handleClick}>{Title}</div>
   );
 };
 
