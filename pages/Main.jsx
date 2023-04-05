@@ -1,6 +1,6 @@
 // Main JS
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@/stories/Card';
 import ContentTitle from '@/stories/ContentTitle';
 import ConvertDistance from '@/modules/ConvertDistance';
@@ -53,18 +53,19 @@ function Main() {
     }
   }
   
-  console.log(FilterList);
+  useEffect(() => {
+    console.log(FilterList);
+  }, [FilterList]);
 
     // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
-    const [latitude, setLatitude] = React.useState(0);
-    const [longitude, setLongitude] = React.useState(0);
-    React.useEffect(() => {
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
+    useEffect(() => {
       navigator.geolocation.getCurrentPosition(
       (position) => 
       { 
         setLatitude(position.coords.latitude);
         setLongitude(position.coords.longitude);
-        console.log(position.coords);
       },
       (error) =>
       {

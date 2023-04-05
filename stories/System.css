@@ -55,6 +55,7 @@
     --box-hover-color: var(--colorless-15);
     --bg-color: var(--colorless-0);
     --bg-hover-color: var(--colorless-10);
+    --desktop-search-hover-color: var(--colorless-10);
     --dragpill-color: var(--colorless-15);
     --icon-hover-color: var(--colorless-20);
     --bg-color-transparent: var(--colorless-5-tp);

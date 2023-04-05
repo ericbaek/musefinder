@@ -1,8 +1,6 @@
 // Active JS
 
-import React from 'react';
-import { useRef, useEffect } from 'react';
-
+import React, { useRef, useEffect } from 'react';
 import Alert from '@/stories/Alert';
 import Button from '@/stories/Button';
 import Card from '@/stories/Card';

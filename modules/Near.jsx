@@ -17,7 +17,6 @@ export default function Near({latitude, longitude, FilterList}) {
                 game.Gname === filterGname)
         )
     );
-    console.log(filteredArcades);
 
     // User Location을 저장하고 기준으로 모든 아케이드에 distance 변수와 이에 따른 Accent 변수 추가
     const userLocation = { latitude, longitude };
@@ -33,14 +32,12 @@ export default function Near({latitude, longitude, FilterList}) {
       return { ...arcade, distance: distanceInKm, distancecolor};
       // parseFloat(distanceInKm.toPrecision(4)) 를 사용해서 round-up 할 수 있음.
     });
-    console.log(arcadesWithDistance);
     
     // distance 기준으로 정렬하기
     arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
 
     const [numCards, setNumCards] = useState(3); // 카드는 3개 노출부터 시작.
-    console.log(arcadesWithDistance);
 
     return (
 
