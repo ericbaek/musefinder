@@ -25,6 +25,7 @@
             font-weight: 600;
             font-size: 2.2rem;
             border-radius: var(--radius-circle);
+            cursor: pointer;
         }
 
         .Search input {
@@ -52,14 +53,6 @@
             letter-spacing: -.2pt;
             line-height: 1;
         }
-
-    .Search .Filter {
-        font-weight: 500;
-        font-size: 2.2rem;
-        letter-spacing: -.2pt;
-        line-height: 1;
-        cursor: pointer;
-    }
 
 
 @media (max-width: 1279.98px) {

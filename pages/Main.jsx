@@ -92,7 +92,7 @@ function Main() {
 
           { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
           <div className="Home Desktop Column Gap-16">
-            <Search Icon="" Placeholder="검색" Filter=""/>
+            <Search Icon="" Placeholder="검색" IconFilter=""/>
             <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
               <FilterSettings onFilterClick={handleFilterClick}/>
               <SavedLocation/>
@@ -108,7 +108,7 @@ function Main() {
                     <div className="DragPill"/>
                 </div>
                 <div className="SearchTop Column">
-                  <Search Icon="" Placeholder="검색" Filter=""/>
+                  <Search Icon="" Placeholder="검색" IconFilter=""/>
                   <FilterSettings onFilterClick={handleFilterClick}/>
                 </div>
                 <SavedLocation/>
