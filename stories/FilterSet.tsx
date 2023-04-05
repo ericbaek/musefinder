@@ -12,7 +12,7 @@ export const FilterSet = ({
 }: FilterSetProps) => {
 
   const handleClick = () => {
-    (Title);
+    console.log(Title);
   };
   
   return (
