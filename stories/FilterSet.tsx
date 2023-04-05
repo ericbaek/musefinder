@@ -11,12 +11,12 @@ export const FilterSet = ({
   Title, ...props
 }: FilterSetProps) => {
 
-  const handleClick = () => {
-    console.log(Title);
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    props.onClick(Title);
   };
   
   return (
-    <div className={styles.FilterSet} {...props} onClick={ () => {handleClick();}}>{ Title }</div>
+    <div className={styles.FilterSet} {...props} onClick={handleClick}>{ Title }</div>
   );
 };
 
