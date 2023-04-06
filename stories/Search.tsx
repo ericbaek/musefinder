@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './Search.module.css';
 
 interface SearchProps {
@@ -19,8 +19,18 @@ export const Search = ({
     }
   };
 
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   return (
-    <div className={styles.Search} {...props}>
+    <div className={`${styles.Search} ${isFocused ? 'focus' : ''}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
       <div className={styles.Left}>
         <div className={`Icon ${styles.Icon}`} onClick={handleIconClick}>
           { Icon }
@@ -30,6 +40,18 @@ export const Search = ({
       <div className={`Icon ${styles.Icon} ${styles.IconFilter}`}>
         { IconFilter }
       </div>
+      <style jsx>{`
+          .focus {
+            background: var(--desktop-search-hover-color);
+          }
+
+          @media (max-width: 1279.98px) {
+              .focus {
+                  background: var(--box-hover-color) !important;
+              }
+          }
+      `}
+      </style>
     </div>
   );
 };

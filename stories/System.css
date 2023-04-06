@@ -32,6 +32,7 @@
     --highlayer-bg-color: var(--colorless-100);
     --box-color: var(--colorless-95);
     --box-hover-color: var(--colorless-90);
+    --box-active-color: var(--colorless-85);
     --bg-color: var(--colorless-100);
     --bg-hover-color: var(--colorless-95);
     --desktop-search-hover-color: var(--colorless-95);
@@ -55,6 +56,7 @@
     --box-hover-color: var(--colorless-15);
     --bg-color: var(--colorless-0);
     --bg-hover-color: var(--colorless-10);
+    --box-active-color: var(--colorless-15);
     --desktop-search-hover-color: var(--colorless-10);
     --dragpill-color: var(--colorless-15);
     --icon-hover-color: var(--colorless-20);
@@ -83,6 +85,7 @@ html {
     color: var(--body-color);
     font-size: var(--font-size);
     transition: background .2s ease-out, color .2s ease-out;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -193,12 +196,12 @@ hr {
     border-radius: var(--radius-circle);
 }
 
-.Home, .Active, .General {
+.Desktop, .Active, .General {
     position: absolute;
     left: 24px;
 }
 
-.Home {
+.Desktop {
     top: 24px;
 }
 
@@ -240,7 +243,8 @@ hr {
     }
 
     .MainActivity {
-        max-height: 100%;
+        overflow: scroll;
+        max-height: calc(100vh - 2.2rem - 88px);
         border-radius: 0;
     }
 }
@@ -272,6 +276,12 @@ hr {
     .Picture {
         flex: 0 0 240px !important;
         height: 320px !important;
+    }
+}
+
+@media (max-width: 387.98px) {
+    :root {
+        --font-size: 9px !important;        
     }
 }
 

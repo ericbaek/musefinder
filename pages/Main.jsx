@@ -91,36 +91,38 @@ function Main() {
       )
     }
 
+    const [isActive, setIsActive] = useState(false);
+
+
     return (
-        <div>
-
-          { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
-          <div className="Home Desktop Column Gap-16">
-            <Search Icon="" Placeholder="검색" IconFilter="" />
-            <div className="MainActivity MainActivity-DesktopHome"> { /* 메인 액티비티 */ }
-              <FilterSettings onFilterClick={handleFilterClick}/>
-              <SavedLocation/>
-              <Near latitude={latitude} longitude={longitude} />
-            </div>
+      <>
+        { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
+        <div className="Desktop Column Gap-16">
+          <Search Icon="" Placeholder="검색" IconFilter="" />
+          <div className={`MainActivity MainActivity-DesktopHome ${isActive ? 'active' : ''}`}>
+            <FilterSettings onFilterClick={handleFilterClick}/>
+            <SavedLocation/>
+            <Near latitude={latitude} longitude={longitude} />
           </div>
+        </div>
 
-          { /* 1280px 미만에서의 검색창 + 메인 액티비티 */ }
-          <div className="General">
-            <div className="MainActivity"> { /* 메인 액티비티 */ }
-              <div className="ActivityDetails">
-                <div className="Drag">
-                    <div className="DragPill"/>
-                </div>
-                <div className="SearchTop Column">
-                  <Search Icon="" Placeholder="검색" IconFilter=""/>
-                  <FilterSettings onFilterClick={handleFilterClick}/>
-                </div>
-                <SavedLocation/>
-                <Near latitude={latitude} longitude={longitude}/>
+        { /* 1280px 미만에서의 검색창 + 메인 액티비티 */ }
+        <div className="General">
+          <div className={`MainActivity ${isActive ? 'active' : ''}`}>
+            <div className="ActivityDetails">
+              <div className="Drag">
+                <div className="DragPill"/>
               </div>
+              <div className="SearchTop Column">
+                <Search Icon="" Placeholder="검색" IconFilter=""/>
+                <FilterSettings onFilterClick={handleFilterClick}/>
+              </div>
+              <SavedLocation/>
+              <Near latitude={latitude} longitude={longitude}/>
             </div>
           </div>
         </div>
+      </>
     );
 }
 
