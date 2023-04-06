@@ -2,8 +2,10 @@
     {
         "name":"어뮤즈타운", 
         "address":"노량진역 3번 출구에서 301m", 
+        "address_absolute":"서울 광진구 화양동", 
         "latitude":37.512765,
         "longitude":126.944949,
+        "image":"https://go.develoid.net/gate/ad/AD0-1.png",
         "games": [
             { "Gname": "maimai DX", "quantity": 2, "price": "1000원", "note": "1대 방송,녹화가능"},
             { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
