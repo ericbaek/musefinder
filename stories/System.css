@@ -170,6 +170,12 @@ body::-webkit-scrollbar {
     justify-content: space-between;
 }
 
+a {
+    width: 100%;
+    color: var(--body-color);
+    text-decoration: none;
+}
+
 hr {
     width: 100%;
     margin: 0;

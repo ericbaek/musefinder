@@ -1,5 +1,7 @@
 // Main JS
 
+import Arcades from '@/Arcades.json';
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Card from '@/stories/Card';
 import ContentTitle from '@/stories/ContentTitle';
@@ -84,25 +86,33 @@ function Main() {
         <div className="Column Gap-16">
           <ContentTitle Title="저장한 장소" Paragraph="관리"/>
           <div className="Row Gap-8">
-            <Card Primary RadiusAll BG='var(--box-color)' Title='펀시티 건대점' Paragraph={<ConvertDistance km={0.349} />}/>
-            <Card Primary RadiusAll BG='var(--box-color)' Title='노원 노리존' Paragraph={<ConvertDistance km={9} />}/>
+            <Link href="/Active">
+              <Card Primary RadiusAll BG='var(--box-color)' Title='펀시티 건대점' Paragraph={<ConvertDistance km={0.349}/>}/>
+            </Link>
+            <Link href="/Active">
+              <Card Primary RadiusAll BG='var(--box-color)' Title='노원 노리존' Paragraph={<ConvertDistance km={9}/>}/>
+            </Link>
           </div>
         </div>
       )
     }
 
-    const [isActive, setIsActive] = useState(false);
+    const isActive = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
 
+    const handleClick = (item) => {
+      setSelectedItem(item);
+    };
 
     return (
       <>
         { /* 1280px 이상에서의 검색창 + 메인 액티비티 */ }
         <div className="Desktop Column Gap-16">
-          <Search Icon="" Placeholder="검색" IconFilter="" />
+          <Search Icon="" Placeholder="검색" IconFilter=""/>
           <div className={`MainActivity MainActivity-DesktopHome ${isActive ? 'active' : ''}`}>
             <FilterSettings onFilterClick={handleFilterClick}/>
             <SavedLocation/>
-            <Near latitude={latitude} longitude={longitude} />
+            <Near latitude={latitude} longitude={longitude}/>
           </div>
         </div>
 

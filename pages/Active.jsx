@@ -1,13 +1,13 @@
 // Active JS
 
+import arcadeData from '@/Arcades.json'
+import { useRouter } from "next/router";
 import React, { useRef, useEffect } from 'react';
 import Alert from '@/stories/Alert';
 import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ContentTitle from '@/stories/ContentTitle';
 import Picture from '@/stories/Picture';
-
-
 
 /* 가로 스크롤 */
 export function useHorizontalScroll() {
@@ -31,6 +31,12 @@ export function useHorizontalScroll() {
 }
 
 function Active() {
+    const router = useRouter();
+    const { id } = router.query;
+  
+    // id를 통해 해당하는 게임센터 데이터를 가져옵니다.
+    const arcade = arcadeData.find((arcade) => arcade.name === id);
+
     const scrollRef = useHorizontalScroll();
 		return (
             <div className='Active MainActivity'> { /* 메인 액티비티 */ }
@@ -46,7 +52,7 @@ function Active() {
                     </div>
                     <div className='Selected Column Gap-12'>
                         <div className='Row Space-Between Align-Items-Center'>
-                            <div className='Title'>펀시티 건대점</div>
+                            <div className='Title'>{arcade.name}</div>
                             <div className='Row Gap-4 IconMargin-Right'>
                                 <div className='Icon'></div> {/* 전화번호 */}
                                 <div className='Icon'></div> {/* 저장한 장소 */}
@@ -67,9 +73,9 @@ function Active() {
                     </div>
                     <div className='Column Gap-16'>
                         <div className='OnlyFocus Row Gap-8'> {/* Active 상태에서는 로드하지 않음 */}
-                            <Card Secondary RadiusAll BG='var(--color-dynamic-muse)' Title='IIDX 라이트닝' Paragraph='2대'/>
-                            <Card Secondary RadiusAll BG='var(--color-dynamic-muse)' Title='SDVX 발키리' Paragraph='2대'/>
-                            <Card Secondary RadiusAll BG='var(--color-dynamic-muse)' Title='maimai DX' Paragraph='2대'/>
+                            <Card RadiusAll BG='var(--color-dynamic-muse)' Title='IIDX' Paragraph='2대'/>
+                            <Card RadiusAll BG='var(--color-dynamic-muse)' Title='SDVX 발키리' Paragraph='2대'/>
+                            <Card RadiusAll BG='var(--color-dynamic-muse)' Title='maimai DX' Paragraph='2대'/>
                         </div>
                         <div className='Row Gap-8'>
                             <Button Icon='' Title='제보하기'/>
@@ -86,13 +92,12 @@ function Active() {
                     </div>
                     <div className='Column Gap-16'>
                         <ContentTitle Title='보유 중인 기체' Paragraph=''/>
-                        <div className='Column Group-Card'>
-                            <Card Primary Title='maimai DX' Paragraph='라이트 500원' Paragraph2_True Paragraph2='3번 방송' Accent AccentBG='var(--color-dynamic-muse)' AccentText='2대'/>
+                        {arcade.games.map((games, index) => (
+                        <div key={index} className='Column Group-Card'>
+                            <Card Primary Title={games.Gname} Paragraph={games.price} Paragraph2_True Paragraph2={games.note} Accent AccentBG='var(--color-dynamic-muse)' AccentText={games.quantity}/>
                             <hr/>
-                            <Card Primary Title='maimai DX' Paragraph='라이트 500원' Paragraph2_True Paragraph2='3번 방송' Accent AccentBG='var(--color-dynamic-muse)' AccentText='2대'/>
-                            <hr/>
-                            <Card Primary Title='maimai DX' Paragraph='라이트 500원' Paragraph2_True Paragraph2='3번 방송' Accent AccentBG='var(--color-dynamic-muse)' AccentText='2대'/>
                         </div>
+                        ))}
                     </div>
                 </div>
             </div>
