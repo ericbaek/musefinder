@@ -243,15 +243,15 @@ hr {
         display: none;
     }
 
-    .Active {
-        height: 100vh;
-        left: 0;
-    }
-
     .MainActivity {
         overflow: scroll;
-        max-height: calc(100vh - 2.2rem - 88px);
-        border-radius: 0;
+    }
+
+    .Active {
+        max-height: calc(100vh - 46px);
+        top: 24px;
+        bottom: 24px;
+        border-radius: var(--radius-system);
     }
 }
 
