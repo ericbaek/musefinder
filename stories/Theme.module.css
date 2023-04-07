@@ -1,0 +1,24 @@
+.Theme {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    padding: 8px;
+    background: var(--box-color);
+    border-radius: var(--radius-circle);
+    transition: var(--transition-bg);
+    cursor: pointer;
+}
+
+    .Theme:hover {
+        background: var(--box-hover-color);
+    }
+
+    .Theme .Icon {
+        font-weight: 800;
+        font-size: 2rem;
+        padding: 0;
+    }
+
+        .Theme .Icon:hover {
+            background: transparent;
+        }

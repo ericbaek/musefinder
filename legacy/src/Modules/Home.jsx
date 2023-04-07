@@ -20,15 +20,21 @@ function FilterSettings(props) {
     <div className="Group-FilterSet Row Gap-8">
       <FilterSet Title="IIDX 라이트닝" onClick={handleFilterClick} />
       <FilterSet Title="SDVX" onClick={handleFilterClick} />
-      <FilterSet Title="유비트" onClick={handleFilterClick} />
+      <FilterSet Title="SDVX 발키리" onClick={handleFilterClick} />
+      <FilterSet Title="펌프 잇 업" onClick={handleFilterClick} />
+      <FilterSet Title="maimai DX" onClick={handleFilterClick} />
+      <FilterSet Title="maimai Finale" onClick={handleFilterClick} />
+      <FilterSet Title="츄니즘" onClick={handleFilterClick} />
       <FilterSet Title="팝픈뮤직" onClick={handleFilterClick} />
+      <FilterSet Title="DDR" onClick={handleFilterClick} />
+      <FilterSet Title="태고의 달인" onClick={handleFilterClick} />
       <FilterSet Title="노스탤지어" onClick={handleFilterClick} />
+      <FilterSet Title="유비트" onClick={handleFilterClick} />
       <FilterSet Title="기타프릭스" onClick={handleFilterClick} />
       <FilterSet Title="드럼매니아" onClick={handleFilterClick} />
       <FilterSet Title="댄스러시" onClick={handleFilterClick} />
       <FilterSet Title="리플렉 비트" onClick={handleFilterClick} />
-      <FilterSet Title="마이마이" onClick={handleFilterClick} />
-      <FilterSet Title="츄니즘" onClick={handleFilterClick} />
+      <FilterSet Title="WACCA" onClick={handleFilterClick} />
     </div>
   );
 }

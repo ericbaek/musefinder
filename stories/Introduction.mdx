@@ -1,0 +1,186 @@
+import './Import.css';
+
+import { Meta } from '@storybook/blocks';
+import Image from 'next/image';
+
+import Code from './assets/code-brackets.svg';
+import Colors from './assets/colors.svg';
+import Comments from './assets/comments.svg';
+import Direction from './assets/direction.svg';
+import Flow from './assets/flow.svg';
+import Plugin from './assets/plugin.svg';
+import Repo from './assets/repo.svg';
+import StackAlt from './assets/stackalt.svg';
+
+<Meta title="HDS/Introduction" />
+
+<style>
+  {`
+    *, html {
+      font-family: var(--font-sans-serif) !important;
+    }
+
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 700;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 2px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item-img-wrapper {
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span,
+    .link-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+# [**Heart 디자인 시스템**](https://github.com/bampudding)을 찾아주셔서 대단히 감사합니다.
+
+<div className="subheading">Heart 디자인의 특징</div>
+
+<div className="link-list">
+  <div className="link-item">
+    <div className="link-item-img-wrapper">
+      <Image src={Plugin} alt="plugin" />
+    </div>
+    <span>
+      <strong>간결한 디자인</strong>
+      군더더기 없이 깔끔하면서도 알차서 만들 때와 볼 때 모두 불편하지 않습니다.
+    </span>
+  </div>
+  <div className="link-item">
+    <div className="link-item-img-wrapper">
+      <Image src={StackAlt} alt="Build" />
+    </div>
+    <span>
+      <strong>경험에 따른 디자인</strong>
+      컴포넌트 하나라도 완벽한 오차보정 및 테스트 끝에 제작됩니다.
+    </span>
+  </div>
+  <div className="link-item">
+    <div className="link-item-img-wrapper">
+      <Image src={Colors} alt="colors" />
+    </div>
+    <span>
+      <strong>직관적인 컴포넌트 이용</strong>
+      알기 쉽고 당연한 명칭을 이용하여 컴포넌트 이용이 용이합니다.
+    </span>
+  </div>
+  <div className="link-item">
+    <div className="link-item-img-wrapper">
+      <Image src={Flow} alt="flow" />
+    </div>
+    <span>
+      <strong>색상 모드 지원</strong>
+      모든 컴포넌트는 라이트와 다크 모드를 지원합니다.
+    </span>
+  </div>
+</div>
+
+
+<div className="subheading">제삼자 디자인 자산</div>
+
+<div className="link-list">
+  <div className="link-item">
+    <span>
+      <strong>Min Icon by 김진성</strong>
+      다양한 굵기와 스타일을 가진 Icon 폰트입니다.
+    </span>
+  </div>
+  <div className="link-item">
+    <span>
+      <strong>프리텐다드 by 길형진</strong>
+      완벽한 산 세리프 폰트입니다.
+    </span>
+  </div>
+</div>
