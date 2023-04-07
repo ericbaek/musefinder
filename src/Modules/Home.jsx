@@ -18,7 +18,7 @@ function FilterSettings(props) {
 
   return (
     <div className="Group-FilterSet Row Gap-8">
-      <FilterSet Title="IIDX" onClick={handleFilterClick} />
+      <FilterSet Title="IIDX 라이트닝" onClick={handleFilterClick} />
       <FilterSet Title="SDVX" onClick={handleFilterClick} />
       <FilterSet Title="유비트" onClick={handleFilterClick} />
       <FilterSet Title="팝픈뮤직" onClick={handleFilterClick} />
