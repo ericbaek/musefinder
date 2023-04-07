@@ -253,6 +253,10 @@ hr {
         bottom: 24px;
         border-radius: var(--radius-system);
     }
+
+    .Drag {
+        display: none;
+    }
 }
 
 @media (max-width: 1279.98px) {

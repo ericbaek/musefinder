@@ -6,7 +6,7 @@ import Darkmode from '@/modules/Theme';
 export default function Home() {
   return (
     <>
-      <Active />
+      <Main />
       <Darkmode />
     </>
   )
