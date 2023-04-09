@@ -86,9 +86,9 @@ function Main() {
         <div className="Column Gap-16">
           <ContentTitle Title="저장한 장소" Paragraph="관리"/>
           <div className="Row Gap-8">
-            <Link href="/Active">
-              <Card Primary RadiusAll BG='var(--box-color)' Title='펀시티 건대점' Paragraph={<ConvertDistance km={0.349}/>}/>
-            </Link>
+            {Arcades.map((arcade) => (
+              <Card key={arcade.id} name={arcade.name} Primary RadiusAll BG='var(--box-color)' Title='펀시티 건대점' Paragraph={<ConvertDistance km={0.349}/>}/>
+            ))}
             <Link href="/Active">
               <Card Primary RadiusAll BG='var(--box-color)' Title='노원 노리존' Paragraph={<ConvertDistance km={9}/>}/>
             </Link>
@@ -98,11 +98,6 @@ function Main() {
     }
 
     const isActive = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const handleClick = (item) => {
-      setSelectedItem(item);
-    };
 
     return (
       <>

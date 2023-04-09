@@ -19,6 +19,6 @@ model User {
 model Arcade {
   id          String  @id @map("_id")
   name        String
-  numMachines Int
+  quantity    Int
   price       Int
 }
