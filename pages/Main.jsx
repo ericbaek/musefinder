@@ -37,7 +37,8 @@ function FilterSettings(props) {
         '드럼매니아',
         '댄스러시',
         '리플렉 비트',
-        'WACCA'
+        'WACCA',
+        '비트온'
       ].map(title => (
         <FilterSet key={title} Title={title} onClick={handleFilterClick} />
       ))}

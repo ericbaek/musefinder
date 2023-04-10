@@ -10,15 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
-  name  String?
-}
-
 model Arcade {
   id          String  @id @map("_id")
   name        String
+  address     String
+  latitude    Float
+  longitude   Float
+  games       Game[]
+}
+
+model Game {
+  id          String  @id @map("_id")
+  name        String
   quantity    Int
-  price       Int
+  price       String
+  note        String
+  arcade      Arcade? @relation(fields: [arcadeId], references: [id])
+  arcadeId    String?
 }
