@@ -10,7 +10,7 @@ import FilterSet from '@/stories/FilterSet';
 import Near from '@/modules/Near';
 import Search from '@/stories/Search';
 import LiveSearch from '@/modules/Search';
-import serverNear from '@/modules/serverNear';
+import ServerNear from '@/modules/serverNear';
 
 function FilterSettings(props) {
 
@@ -125,7 +125,7 @@ function Main() {
                 <FilterSettings onFilterClick={handleFilterClick}/>
               </div>
               {/* <SavedLocation/> */}
-              <serverNear latitude={latitude} longitude={longitude} />
+              <ServerNear latitude={latitude} longitude={longitude} />
               <Near latitude={latitude} longitude={longitude}/>
             </div>
           </div>

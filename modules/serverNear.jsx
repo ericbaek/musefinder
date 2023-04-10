@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContentTitle from '@/stories/ContentTitle';
 
-export default function serverNear({latitude, longitude}) {
+export default function ServerNear({latitude, longitude}) {
     console.log("서버니어 실행됐음!");
     return (
         <div>
