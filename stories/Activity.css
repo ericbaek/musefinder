@@ -9,7 +9,7 @@
     background: var(--bg-color);
     border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     height: fit-content;
-    max-height: 100vh;
+    max-height: calc(100vh - 110px);
     box-shadow: 0px 0px 12px 1px var(--general-shadow-color);
 }
 
