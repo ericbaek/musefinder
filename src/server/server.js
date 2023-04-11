@@ -11,6 +11,7 @@ app.get('/api/arcades', async (req, res) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
+  console.log(userLatitude);
   
   // Get list of arcades from database
   const arcades = await prisma.arcade.findMany();

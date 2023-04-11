@@ -8,19 +8,25 @@ import ConvertDistance from "./ConvertDistance";
 
 export default function ServerNear({latitude, longitude}) {
     const [arcadesWithDistance, setArcades] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const fetchData = async (latitude, longitude) => {
+      console.log(latitude, longitude);
+      if (latitude !== 0 && longitude !== 0){
         try {
           const response = await axios.get(`http://localhost:3001/api/arcades?latitude=${latitude}&longitude=${longitude}`);
           setArcades(response.data);
         } catch (error) {
           console.error(error);
+        } finally {
+          setIsLoading(false);
         }
+      }
     };
 
     useEffect(() => {
-        fetchData(latitude, longitude);
-    }, []);
+      fetchData(latitude, longitude);
+    }, [latitude, longitude]);
 
     const getAccentBG = (distance) => {
         if (distance < 15) {
@@ -33,6 +39,14 @@ export default function ServerNear({latitude, longitude}) {
     };
 
     const [numCards, setNumCards] = useState(3); // 카드는 3개 노출부터 시작.
+
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+  
+    if (arcadesWithDistance.length === 0) {
+      return <div>No arcades found</div>;
+    }
     
     return (
         <div className="Column Gap-16">
