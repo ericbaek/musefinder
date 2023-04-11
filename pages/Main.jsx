@@ -109,7 +109,7 @@ function Main() {
           <div className={`MainActivity MainActivity-DesktopHome ${isActive ? 'active' : ''}`}>
             <FilterSettings onFilterClick={handleFilterClick}/>
             <SavedLocation/>
-            <Near latitude={latitude} longitude={longitude}/>
+            <ServerNear latitude={latitude} longitude={longitude}/>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ function Main() {
               </div>
               {/* <SavedLocation/> */}
               <ServerNear latitude={latitude} longitude={longitude} />
-              <Near latitude={latitude} longitude={longitude}/>
+              {/* <Near latitude={latitude} longitude={longitude}/> */}
             </div>
           </div>
         </div>

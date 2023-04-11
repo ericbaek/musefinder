@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Arcade {
-  id          String  @id @map("_id")
+  id          String  @id @default(uuid()) @map("_id")
   name        String
   address     String
   latitude    Float
@@ -20,7 +20,7 @@ model Arcade {
 }
 
 model Game {
-  id          String  @id @map("_id")
+  id          String  @id @default(uuid()) @map("_id")
   name        String
   quantity    Int
   price       String

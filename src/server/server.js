@@ -9,11 +9,8 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 // Endpoint to get list of arcades sorted by distance from user
 app.get('/api/arcades', async (req, res) => {
   // Get user's location from query parameters
-//   const userLatitude = parseFloat(req.query.latitude);
-//   const userLongitude = parseFloat(req.query.longitude);
-
-    const userLatitude = 37.001054;
-    const userLongitude = 127.077652;
+  const userLatitude = parseFloat(req.query.latitude);
+  const userLongitude = parseFloat(req.query.longitude);
   
   // Get list of arcades from database
   const arcades = await prisma.arcade.findMany();
