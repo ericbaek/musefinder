@@ -6,15 +6,21 @@ import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ConvertDistance from "./ConvertDistance";
 
-export default function ServerNear({latitude, longitude}) {
+export default function ServerNear({latitude, longitude, FilterList}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    console.log(FilterList);
+
+    /* 
+    본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.
+    받아온 json파일은 ID, 아케이드의 lati & Longi, 도로명 주소, 유저로부터 거리를 포함하고 있습니다
+    */
     const fetchData = async (latitude, longitude) => {
       console.log(latitude, longitude);
       if (latitude !== 0 && longitude !== 0){
         try {
-          const response = await axios.get(`http://localhost:3001/api/arcades?latitude=${latitude}&longitude=${longitude}`);
+          const response = await axios.get(`http://localhost:4001/api/arcades?latitude=${latitude}&longitude=${longitude}`);
           setArcades(response.data);
         } catch (error) {
           console.error(error);
@@ -28,6 +34,7 @@ export default function ServerNear({latitude, longitude}) {
       fetchData(latitude, longitude);
     }, [latitude, longitude]);
 
+    // 거리에 따른 Accent 컬러를 바꿉니다.
     const getAccentBG = (distance) => {
         if (distance < 15) {
           return "var(--color-dynamic-water)";
@@ -40,10 +47,12 @@ export default function ServerNear({latitude, longitude}) {
 
     const [numCards, setNumCards] = useState(3); // 카드는 3개 노출부터 시작.
 
+    // API에서 딜레이가 생길때, 유저의 GPS가 0,0 일때 해당 메세지가 표시됩니다.
     if (isLoading) {
-      return <div>Loading...</div>;
+      return <div>Loading... (or maybe GPS Permission denied)</div>;
     }
   
+    // 서버에서 찾아온 아케이드가 없을때 해당 메세지를 표시합니다.
     if (arcadesWithDistance.length === 0) {
       return <div>No arcades found</div>;
     }
