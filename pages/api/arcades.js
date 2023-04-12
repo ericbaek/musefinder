@@ -1,7 +1,5 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
-const app = express();
-const prisma = new PrismaClient();
+// Import the arcades data from the JSON file
+const arcades = require('../../Arcades.json');
 
 /*
 사용자의 위치를 받고 거리별로 가까운 아케이드를 안내하는 API입니다.
@@ -11,9 +9,6 @@ export default async (req, res) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
-  
-  // 데이터베이스에서 아케이드 리스트를 받아옵니다.
-  const arcades = await prisma.arcade.findMany();
 
   // 유저와의 거리를 계산합니다.
   arcades.forEach((arcade) => {
