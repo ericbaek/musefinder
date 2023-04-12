@@ -1,16 +1,7 @@
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const app = express();
-
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.DATABASE_URL,
-    },
-  },
-});
-
+const prisma = new PrismaClient();
 
 /*
 사용자의 위치를 받고 거리별로 가까운 아케이드를 안내하는 API입니다.

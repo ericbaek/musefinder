@@ -14,6 +14,7 @@ app.get('/api/arcades', async (req, res) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
+  console.log(userLatitude);
   
   // 데이터베이스에서 아케이드 리스트를 받아옵니다.
   const arcades = await prisma.arcade.findMany();
