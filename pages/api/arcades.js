@@ -2,15 +2,12 @@ const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const app = express();
 const prisma = new PrismaClient();
-const cors = require('cors');
-
-app.use(cors({ origin: 'http://localhost:3000' }));
 
 /*
 사용자의 위치를 받고 거리별로 가까운 아케이드를 안내하는 API입니다.
 <예정> 필터가 활성화되었다면 필터를 고려하여 가까운 아케이드를 안내합니다.
 */
-app.get('/api/arcades', async (req, res) => {
+export default async (req, res) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
@@ -28,7 +25,7 @@ app.get('/api/arcades', async (req, res) => {
 
   // 정리된 리스트를 json 형태로 보내줍니다.
   res.json(arcades);
-});
+}
 
 // 2개의 위치를 기준으로 거리를 계산해주는 수식
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -49,9 +46,3 @@ function getDistance(lat1, lon1, lat2, lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
-
-// Start server
-const PORT = 4001;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
