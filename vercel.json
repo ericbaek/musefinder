@@ -1,0 +1,13 @@
+{
+    "build": {
+      "env": {
+        "DATABASE_URL": "mongodb+srv://ericbaek:9xgLf8bb7HDHpue@musefinder.zdqz4ua.mongodb.net/cluster0retryWrites=true&w=majority"
+      },
+      "functions": {
+        "api/**/*": {
+          "runtime": "nodejs14"
+        }
+      }
+    }
+  }
+  
