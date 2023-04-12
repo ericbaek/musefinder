@@ -20,7 +20,7 @@ export default function ServerNear({latitude, longitude, FilterList}) {
       console.log(latitude, longitude);
       if (latitude !== 0 && longitude !== 0){
         try {
-          const response = await axios.get(`http://localhost:4001/api/arcades?latitude=${latitude}&longitude=${longitude}`);
+          const response = await axios.get(`/api/arcades?latitude=${latitude}&longitude=${longitude}`);
           setArcades(response.data);
         } catch (error) {
           console.error(error);
