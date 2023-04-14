@@ -104,7 +104,7 @@ function Active() {
                             {filteredArcades.map((arcade) =>
                                 arcade.games.map((game) =>
                                     game.Gname === filterGnames[0] ? (
-                                <Card Primary Title={game.Gname} Paragraph={game.price} Paragraph2_True Paragraph2={game.note} Accent AccentBG='var(--color-dynamic-muse)' AccentText={`${game.quantity}대`}/>
+                                <Card key={game} Primary Title={game.Gname} Paragraph={game.price} Paragraph2_True Paragraph2={game.note} Accent AccentBG='var(--color-dynamic-muse)' AccentText={`${game.quantity}대`}/>
                                 
                                 ) : null
                                 )
