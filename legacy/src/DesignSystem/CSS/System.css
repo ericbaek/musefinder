@@ -43,7 +43,7 @@
     --radius-circle: 128px;
     --width-general: 420px;
     --icon-padding: 0.5rem;
-    --transition-bg: background .2s ease-out, color .2s ease-out;
+    --transition-bg: var(--transition-bg);
 }
 
 .dark {
@@ -80,7 +80,7 @@ html {
     background: var(--colorless-60);
     color: var(--body-color);
     font-size: var(--font-size);
-    transition: background .2s ease-out, color .2s ease-out;
+    transition: var(--transition-bg);
 }
 
 body {

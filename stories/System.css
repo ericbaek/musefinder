@@ -84,7 +84,7 @@ html, body {
 html {
     color: var(--body-color);
     font-size: var(--font-size);
-    transition: background .2s ease-out, color .2s ease-out;
+    transition: var(--transition-bg);
     scroll-behavior: smooth;
 }
 
