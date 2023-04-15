@@ -59,9 +59,9 @@ function Main() {
     }
   }
   
-  useEffect(() => {
-    console.log(FilterList);
-  }, [FilterList]);
+  // useEffect(() => {
+  //   console.log(FilterList);
+  // }, [FilterList]);
 
   // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
   const [latitude, setLatitude] = useState(0);

@@ -10,17 +10,22 @@ export default function ServerNear({latitude, longitude, FilterList}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log(FilterList);
-
     /* 
     본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.
     받아온 json파일은 ID, 아케이드의 lati & Longi, 도로명 주소, 유저로부터 거리를 포함하고 있습니다
     */
-    const fetchData = async (latitude, longitude) => {
-      console.log(latitude, longitude);
+    const fetchData = async (latitude, longitude, FilterList) => {
+      console.log(latitude, longitude,FilterList);
       if (latitude !== 0 && longitude !== 0){
         try {
-          const response = await axios.get(`/api/arcades?latitude=${latitude}&longitude=${longitude}`);
+          let apiUrl = `/api/arcades?latitude=${latitude}&longitude=${longitude}`;
+
+          if (FilterList.length > 0) {
+            const filterListString = FilterList.join(',');
+            apiUrl += `&filterList=${filterListString}`;
+          }
+
+          const response = await axios.get(apiUrl);
           setArcades(response.data);
         } catch (error) {
           console.error(error);
@@ -31,8 +36,8 @@ export default function ServerNear({latitude, longitude, FilterList}) {
     };
 
     useEffect(() => {
-      fetchData(latitude, longitude);
-    }, [latitude, longitude]);
+      fetchData(latitude, longitude, FilterList);
+    }, [latitude, longitude, FilterList]);
 
     // 거리에 따른 Accent 컬러를 바꿉니다.
     const getAccentBG = (distance) => {

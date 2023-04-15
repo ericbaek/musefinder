@@ -9,17 +9,35 @@ export default async (req, res) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
+  // 필터 리스트 받아오기
+  const filterList = req.query.filterList ? req.query.filterList.split(',') : null;
+
+  console.log("API Received:", filterList);
+
+  // Filter the arcades by games
+  const filteredArcades = arcades.filter(arcade => {
+    if (!filterList) {
+      // If filterList is null, return true to include all arcades
+      return true;
+    }
+    return filterList.every(filterGname =>
+      arcade.games.some(game => game.Gname === filterGname)
+    );
+  });
+  
+
+  console.log("\n\n\n\nFilteredArcades:", filteredArcades);
 
   // 유저와의 거리를 계산합니다.
-  arcades.forEach((arcade) => {
+  filteredArcades.forEach((arcade) => {
     arcade.distance = getDistance(userLatitude, userLongitude, arcade.latitude, arcade.longitude);
   });
 
   // 가까운 순으로 다시 정렬합니다.
-  arcades.sort((a, b) => a.distance - b.distance);
+  filteredArcades.sort((a, b) => a.distance - b.distance);
 
   // 정리된 리스트를 json 형태로 보내줍니다.
-  res.json(arcades);
+  res.json(filteredArcades);
 }
 
 // 2개의 위치를 기준으로 거리를 계산해주는 수식
