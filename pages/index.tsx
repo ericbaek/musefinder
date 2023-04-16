@@ -1,15 +1,9 @@
 import React from 'react';
-import Active from './Active';
-import Main from './Main';
-import Darkmode from '@/modules/Theme';
-
+import Main from './main';
 
 export default function Home() {
   return (
-    <>
       <Main />
-      <Darkmode />
-    </>
   )
 }
 

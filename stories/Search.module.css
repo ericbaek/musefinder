@@ -3,28 +3,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6px;
     background: var(--bg-color);
     border-radius: var(--radius-system);
     transition: var(--transition-bg);
-    box-shadow: 0px 0px 12px 1px var(--general-shadow-color);
 }
 
-    .Search .Left {
+    .Left {
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-        .Search .Icon {
+        .LeftIcon {
+            font-family: var(--font-icon);
             font-weight: 600;
             font-size: 2.2rem;
-            border-radius: var(--radius-circle);
+            padding: calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 3) calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 2);
             cursor: pointer;
         }
 
-        .Search input {
+        .Left input {
             border: 0;
             width: 100%;
             height: calc(2.2rem + 24px);
@@ -38,24 +37,31 @@
             padding: 0;
         }
 
-            .Search input:focus {
+            .Left input:focus {
                 outline: none;
             }
 
-        .Search input::placeholder {
-            opacity: .6;
-            font-weight: 500;
-            font-size: 1.8rem;
-            letter-spacing: -.2pt;
-            line-height: 1;
-        }
+            .Left input::placeholder {
+                opacity: .6;
+                font-weight: 500;
+                font-size: 1.8rem;
+                letter-spacing: -.2pt;
+                line-height: 1;
+            }
 
+
+        .RightIcon {
+            font-family: var(--font-icon);
+            font-weight: 600;
+            font-size: 2.2rem;
+            padding: calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 3);
+            cursor: pointer;
+        }
 
 @media (max-width: 1279.98px) {
     .Search {
         min-width: 100% !important;
         background: var(--box-color) !important;
-        box-shadow: none !important;
     }
 
         .Search:hover {

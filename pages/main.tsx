@@ -1,0 +1,118 @@
+import React, { useState, useEffect } from 'react';
+import DragPill from '@/stories/DragPill';
+import Filter from '@/stories/Filter';
+import ServerNear from '@/modules/ServerNear';
+import Search from '@/stories/Search';
+import styles from '@/stories/DragActivity.module.css'
+import Theme from '@/stories/Theme';
+
+
+function FilterSettings(props: any) {
+    function handleFilterClick(title: any) {
+      props.onFilterClick(title);
+    }
+    return (
+        <div className={styles.GroupFilter}>
+        {[
+            'IIDX 라이트닝',
+            'IIDX',
+            'SDVX 발키리',
+            'SDVX',
+            '펌프 잇 업',
+            'maimai DX',
+            'maimai Finale',
+            '츄니즘',
+            '팝픈뮤직',
+            'DDR',
+            '태고의 달인',
+            '노스탤지어',
+            '유비트',
+            '기타프릭스',
+            '드럼매니아',
+            '댄스러시',
+            '리플렉 비트',
+            'WACCA',
+            '비트온'
+        ].map(title => (
+            <Filter Href='#' key={title} Title={title} onClick={handleFilterClick}/>
+        ))}
+        </div>
+    );
+}
+
+function Main() {
+    // 필터 캡슐이 눌릴때 FilterList에 추가할지 제거할지 결정합니다.
+    const [FilterList, setFilterList] = useState([]);
+    
+    function handleFilterClick(title: never) {
+        if (FilterList.includes(title)) {
+        setFilterList(FilterList.filter((t) => t !== title));
+        } else {
+        setFilterList([...FilterList, title]);
+        }
+    }
+    
+    /*
+    useEffect(() => {
+    console.log(FilterList);
+    }, [FilterList]);
+    */
+
+    // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
+    
+    useEffect(() => {
+        const success = (position: any) => { 
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+        };
+    
+        const error = (error: any) => {
+        console.error(error);
+        };
+    
+        const options = {
+        enableHighAccuracy: true,
+        maximumAge: 15,
+        timeout: 10000,
+        };
+    
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error, options);
+        } else {
+        console.error("Geolocation is not supported by this browser.");
+        }
+    }, []);
+
+    // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
+    const isActive = useState(false);
+
+    return (
+        <>
+            <Theme/>
+            <div className={styles.DragActivity}>
+                <div className={styles.Drag}> {/* 드래그 */}
+                    <DragPill/>
+                </div>
+                
+                <div className={styles.GroupMap}>
+
+                    <div className={`${styles.SmallGroupMapSearch} ${isActive ? 'active' : ''}`}>
+                        <Search LeftIcon='' Placeholder='오락실 검색' RightIcon='' V_RightIcon={true}/>
+                        {/* 검색창 다시 만들 예정 */}
+                        <FilterSettings onFilterClick={handleFilterClick}/>
+                    </div>
+
+                    <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                        <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                    </div>
+
+                </div>
+            </div>
+            
+        </>
+    );
+};
+
+export default Main;

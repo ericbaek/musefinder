@@ -14,6 +14,7 @@ type Story = StoryObj<typeof Picture>;
 
 export const Primary: Story = {
   args: {
-    Image: 'https://go.develoid.net/gate/ad/AD0-1.png',
+    Href: 'https://go.develoid.net/gate/bestphoto/BESTPHOTO.html',
+    Image: 'https://go.develoid.net/gate/bestphoto/BESTPHOTO.png',
   },
 };

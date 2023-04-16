@@ -2,14 +2,15 @@ import React, { useRef, useState } from 'react';
 import styles from './Search.module.css';
 
 interface SearchProps {
-  Icon: string;
+  V_RightIcon: boolean;
+  LeftIcon: string;
   Placeholder: string;
-  IconFilter: string;
+  RightIcon: string;
   onClick?: () => void;
 }
 
 export const Search = ({
-  Icon, Placeholder, IconFilter, ...props
+  V_RightIcon, LeftIcon, Placeholder, RightIcon, ...props
 }: SearchProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -29,24 +30,29 @@ export const Search = ({
     setIsFocused(false);
   };
 
+  const vrighticon = V_RightIcon? 'True' : 'False';
   return (
-    <div className={`${styles.Search} ${isFocused ? 'focus' : ''}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
+    <div className={`${styles.Search} ${isFocused ? 'Search_Focus' : ''} ${['V_RightIcon2_', vrighticon].join('')}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
       <div className={styles.Left}>
-        <div className={`Icon ${styles.Icon}`} onClick={handleIconClick}>
-          { Icon }
-        </div>
-        <input ref={inputRef} placeholder={ Placeholder }/>
+        <div className={styles.LeftIcon} onClick={handleIconClick}>{LeftIcon}</div>
+        <input ref={inputRef} placeholder={Placeholder}/>
       </div>
-      <div className={`Icon ${styles.Icon} ${styles.IconFilter}`}>
-        { IconFilter }
-      </div>
+      <div className={`${styles.RightIcon} ${['V_RightIcon_', vrighticon].join('')}`}>{RightIcon}</div>
       <style jsx>{`
-          .focus {
+          .V_RightIcon_False {
+            display: none;
+          }
+
+          .V_RightIcon2_False {
+            padding-right: calc(var(--padding-activity) / 2)
+          }
+
+          .Search_Focus {
             background: var(--desktop-search-hover-color);
           }
 
           @media (max-width: 1279.98px) {
-              .focus {
+              .Search_Focus {
                   background: var(--box-hover-color) !important;
               }
           }

@@ -14,8 +14,11 @@ type Story = StoryObj<typeof Alert>;
 
 export const Primary: Story = {
   args: {
-    Icon: '',
-    Title: '공지사항',
-    Paragraph: '날짜',
+    V_LeftIcon: true,
+    V_Paragraph: true,
+    Href: '/',
+    LeftIcon: '',
+    Title: 'Title',
+    Paragraph: 'Paragraph',
   },
 };

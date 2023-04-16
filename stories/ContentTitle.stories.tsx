@@ -14,7 +14,9 @@ type Story = StoryObj<typeof ContentTitle>;
 
 export const Primary: Story = {
   args: {
-    Title: '제목',
-    Paragraph: '버튼',
+    V_Paragraph: true,
+    Href: '/',
+    Title: 'Title',
+    Paragraph: 'Paragraph',
   },
 };

@@ -1,0 +1,7 @@
+.AccountIcon {
+    width: 3.4rem;
+    height: 3.4rem;
+    background-size: 3.4rem !important;
+    border-radius: var(--radius-circle);
+    cursor: pointer;
+}

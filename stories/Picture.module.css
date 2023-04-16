@@ -1,7 +1,9 @@
 .Picture {
-    flex: 0 0 120px;
-    min-height: 160px;
+    width: 100%;
+    max-height: 260px;
     background: var(--box-color);
     border-radius: var(--radius-system);
     cursor: pointer;
+    object-fit: cover;
+    object-position: bottom;
 }

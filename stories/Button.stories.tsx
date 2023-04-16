@@ -14,7 +14,9 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    Icon: '',
-    Title: '버튼',
+    V_Icon: false,
+    Href: '/',
+    Icon: '',
+    Title: 'Title',
   },
 };

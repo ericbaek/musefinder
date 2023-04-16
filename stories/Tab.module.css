@@ -1,0 +1,15 @@
+.Tab {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-box);
+    background: var(--box-bg-color);
+}
+
+    .Title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1;
+    }

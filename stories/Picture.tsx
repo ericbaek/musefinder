@@ -2,24 +2,20 @@ import React from 'react';
 import styles from './Picture.module.css';
 
 interface PictureProps {
+  Href: string;
   Image: string;
   onClick?: () => void;
 }
 
 export const Picture = ({
-  Image, ...props
+  Href, Image, ...props
 }: PictureProps) => {
   return (
-    <div className={styles.Picture}{...props}>
-      <style jsx>{`
-        {styles.Picture} {
-          background-image: url("${Image}");
-          background-size : cover;
-          background-repeat: no-repeat;
-        }
-      `}</style>
-    </div>
-    
+    <>
+      <a href={Href}>
+        <img className={styles.Picture} src={Image} {...props}/>
+      </a>
+    </>
   );
 };
 

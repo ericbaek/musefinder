@@ -1,0 +1,13 @@
+.GroupPill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+    .Pill {
+        width: 3rem;
+        height: .5rem;
+        border-radius: var(--radius-circle);
+        background: var(--dragpill-color);
+    }

@@ -1,11 +1,11 @@
 // Import the arcades data from the JSON file
-const arcades = require('../../Arcades.json');
+import arcades from '@/Arcades.json';
 
 /*
 사용자의 위치를 받고 거리별로 가까운 아케이드를 안내하는 API입니다.
 <예정> 필터가 활성화되었다면 필터를 고려하여 가까운 아케이드를 안내합니다.
 */
-export default async (req, res) => {
+export default async (req: any, res: any) => {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
@@ -15,12 +15,12 @@ export default async (req, res) => {
   console.log("API Received:", filterList);
 
   // Filter the arcades by games
-  const filteredArcades = arcades.filter(arcade => {
+  const filteredArcades = arcades.filter((arcade: { games: any[]; }) => {
     if (!filterList) {
       // If filterList is null, return true to include all arcades
       return true;
     }
-    return filterList.every(filterGname =>
+    return filterList.every((filterGname: any) =>
       arcade.games.some(game => game.Gname === filterGname)
     );
   });
@@ -29,19 +29,19 @@ export default async (req, res) => {
   console.log("\n\n\n\nFilteredArcades:", filteredArcades);
 
   // 유저와의 거리를 계산합니다.
-  filteredArcades.forEach((arcade) => {
+  filteredArcades.forEach((arcade: any) => {
     arcade.distance = getDistance(userLatitude, userLongitude, arcade.latitude, arcade.longitude);
   });
 
   // 가까운 순으로 다시 정렬합니다.
-  filteredArcades.sort((a, b) => a.distance - b.distance);
+  filteredArcades.sort((a: any, b: any) => a.distance - b.distance);
 
   // 정리된 리스트를 json 형태로 보내줍니다.
   res.json(filteredArcades);
 }
 
 // 2개의 위치를 기준으로 거리를 계산해주는 수식
-function getDistance(lat1, lon1, lat2, lon2) {
+function getDistance(lat1: any, lon1: any, lat2: any, lon2: any) {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(lat2 - lat1);
   const dLon = deg2rad(lon2 - lon1);
@@ -56,6 +56,6 @@ function getDistance(lat1, lon1, lat2, lon2) {
   return d;
 }
 
-function deg2rad(deg) {
+function deg2rad(deg: any) {
   return deg * (Math.PI / 180);
 }

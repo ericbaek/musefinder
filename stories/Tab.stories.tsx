@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from './Theme';
+import { Tab } from './Tab';
 
-const meta: Meta<typeof Theme> = {
-  title: 'HDS/Theme',
-  component: Theme,
+const meta: Meta<typeof Tab> = {
+  title: 'HDS/Tab',
+  component: Tab,
   tags: ['autodocs'],
   argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Theme>;
+type Story = StoryObj<typeof Tab>;
 
 export const Primary: Story = {
   args: {
-    Icon: '',
+    Href: '/',
+    Title: 'Title',
   },
 };

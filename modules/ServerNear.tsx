@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ContentTitle from '@/stories/ContentTitle';
 import axios from 'axios';
-
 import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ConvertDistance from "./ConvertDistance";
+/* import Tab from "@/stories/Tab"; */
 
-export default function ServerNear({latitude, longitude, FilterList}) {
+export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -14,7 +13,8 @@ export default function ServerNear({latitude, longitude, FilterList}) {
     본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.
     받아온 json파일은 ID, 아케이드의 lati & Longi, 도로명 주소, 유저로부터 거리를 포함하고 있습니다
     */
-    const fetchData = async (latitude, longitude, FilterList) => {
+
+    const fetchData = async (latitude: number, longitude: number, FilterList: any[]) => {
       console.log(latitude, longitude,FilterList);
       if (latitude !== 0 && longitude !== 0){
         try {
@@ -40,7 +40,7 @@ export default function ServerNear({latitude, longitude, FilterList}) {
     }, [latitude, longitude, FilterList]);
 
     // 거리에 따른 Accent 컬러를 바꿉니다.
-    const getAccentBG = (distance) => {
+    const getAccentBG = (distance: number) => {
         if (distance < 15) {
           return "var(--color-dynamic-water)";
         } else if (distance >= 15 && distance <= 50) {
@@ -63,34 +63,45 @@ export default function ServerNear({latitude, longitude, FilterList}) {
     }
     
     return (
-        <div className="Column Gap-16">
-          <ContentTitle Title="근처 오락실" />
-          <div className="Column Group-Card">
-            {arcadesWithDistance
-              .slice(0, numCards)
-              .map((arcade, index) => (
-                <React.Fragment key={index}>
-                  <Card
-                    Primary
-                    Title={arcade.name}
-                    Paragraph={arcade.address}
-                    Accent
-                    AccentBG={getAccentBG(arcade.distance)}
-                    AccentText={<ConvertDistance km={arcade.distance} />}
-                  />
-                  {index !== arcadesWithDistance.length - 1 &&
-                    index !== numCards - 1 && <hr />}{" "}
-                  {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
-                </React.Fragment>
+      <>
+          <div className=''>
+              {/* 특정 조건에서만 뜨도록 제작 예정
+              <div className='SmallGroupTab row'>
+                  <Tab Href='/' Title='전체'/>
+                  <Tab Href='/' Title='라이트닝 기체'/>
+              </div>
+              */}
+              {arcadesWithDistance.slice(0, numCards).map((arcade: any, index) => (
+                  <React.Fragment key={index}>
+                      <Card
+                          Href="/active"
+                          Title={arcade.name}
+                          Paragraph={arcade.address}
+                          Paragraph2="Paragraph2"
+                          LeftIcon=""
+                          LeftIconBG="var(--box-icon-color)"
+                          LeftIconImage=""
+                          AccentText={<ConvertDistance km={arcade.distance}/>}
+                          AccentBG={getAccentBG(arcade.distance)}
+                          RightIcon=""
+                          BG="var(--bg-color)"
+                          onClick={() => { } }
+                          V_LeftIcon={false}
+                          V_LeftIconBG
+                          V_Paragraph
+                          V_Paragraph2={false}
+                          V_Accent
+                          V_RightIcon={false}
+                          V_BG={false}
+                      />
+                      {index !== arcadesWithDistance.length - 1 && index !== numCards - 1 && <hr />}
+                      {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
+                  </React.Fragment>
               ))}
           </div>
           {numCards < arcadesWithDistance.length && (
-            <Button
-              Icon=""
-              Title="더보기"
-              onClick={() => setNumCards(numCards + 3)}
-            />
+              <Button Href='' Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} V_Icon={false}/>
           )}
-        </div>
-      );
+      </>
+  );
     }

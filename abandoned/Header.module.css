@@ -1,0 +1,93 @@
+.Header {
+    width: 100%;
+    height: 60px;
+    top: 24px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    z-index: 100;
+    transition: top .2s ease-out, border .2s ease-out;
+    border-bottom: 1px solid transparent;
+}
+
+    .Container {
+        display: flex;
+        justify-content: space-between;
+        width: 1138px;
+        margin-left: 2px;
+    }
+
+    .ServiceLogo {
+        border-radius: calc(var(--radius-system) / 2);
+        padding: 6px 8px;
+    }
+
+        .ServiceLogo:hover {       
+            background: transparent;
+        }
+
+    .Icon {
+        font-size: 2.4rem;
+        border-radius: calc(var(--radius-system) / 2);
+        padding: 6px;
+        transition: background .2s ease-out;
+        font-feature-settings: "ss09" off;
+        cursor: pointer;
+    }
+
+    .HeaderLeft {
+        font-size: 2.4rem;
+    }
+
+    .HeaderMid {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 2.2pt;
+        line-height: 1;
+    }
+
+        .Title {
+            height: auto;
+            margin: 0 14px;
+            padding: 8px;
+            transition: opacity .2s ease-out;
+            opacity: .6;
+        }
+
+        .Title:hover {
+            background: none;
+            opacity: 1;
+        }
+
+    .HeaderRight {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+    }
+
+
+.SemiHeader {
+    width: 100%;
+    height: 60px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background: var(--header-bg-color);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    transition: background .2s ease-out;
+}
+
+@media (max-width: 1279.98px) {
+    .Header, .SemiHeader {
+        display: none;
+    }
+}

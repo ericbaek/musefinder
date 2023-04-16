@@ -1,14 +1,12 @@
-// Home.jsx에서 건내받은 유저의 위치를 기준으로 가장 가까운 아케이드를 찾아내는 js
-
-import React, { useState } from "react";
-import Button from '@/stories/Button';
-import Card from '@/stories/Card';
-import ContentTitle from '@/stories/ContentTitle';
+import React, { useState } from 'react';
 import * as geolib from 'geolib';
-import ConvertDistance from './ConvertDistance';
-import arcadesData from '../Arcades.json';
+import arcadesData from '@/Arcades.json';
+import Button from '@/stories/Button';
+import Card from '@/stories/Card'
+import ConvertDistance from '../ConvertDistance';
+import Tab from '@/stories/Tab';
 
-export default function Near({latitude, longitude, FilterList}) {
+export default function Near({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
 
     const filterGnames = ["IIDX"];
     const filteredArcades = arcadesData.filter(arcade => 
@@ -36,24 +34,45 @@ export default function Near({latitude, longitude, FilterList}) {
     // distance 기준으로 정렬하기
     arcadesWithDistance.sort((a, b) => a.distance - b.distance);
 
-
     const [numCards, setNumCards] = useState(3); // 카드는 3개 노출부터 시작.
 
     return (
-
-        <div className="Column Gap-16">
-            <ContentTitle Title="근처 오락실" Paragraph="필터"/>
-            <div className="Column Group-Card">
+        <>
+            <div className=''>
+                <div className='SmallGroupTab row'>
+                    <Tab Href='/' Title='전체'/>
+                    <Tab Href='/' Title='라이트닝 기체'/>
+                </div>
                 {arcadesWithDistance.slice(0, numCards).map((arcade, index) => (
                     <React.Fragment key={index}>
-                        <Card Primary Title={arcade.name} Paragraph={arcade.address} Accent AccentBG={arcade.distancecolor} AccentText={<ConvertDistance km={arcade.distance} />}/>
+                        <Card
+                            Href="/"
+                            Title={arcade.name}
+                            Paragraph={arcade.address}
+                            Paragraph2="Paragraph2"
+                            LeftIcon=""
+                            LeftIconBG="var(--box-icon-color)"
+                            LeftIconImage=""
+                            AccentText={<ConvertDistance km={arcade.distance}/>}
+                            AccentBG={arcade.distancecolor}
+                            RightIcon=""
+                            BG="var(--bg-color)"
+                            onClick={() => { } }
+                            V_LeftIcon={false}
+                            V_LeftIconBG
+                            V_Paragraph
+                            V_Paragraph2={false}
+                            V_Accent
+                            V_RightIcon={false}
+                            V_BG={false}
+                        />
                         {index !== arcadesWithDistance.length - 1 && index !== numCards - 1 && <hr />} {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
                     </React.Fragment>
                 ))}
             </div>
             {numCards < arcadesWithDistance.length && (
-                <Button Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)}/>
+                <Button Href='' Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} V_Icon={false}/>
             )}
-        </div>
+        </>
     );
 }
