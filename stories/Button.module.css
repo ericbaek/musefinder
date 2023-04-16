@@ -1,24 +1,35 @@
 .Button {
-    width: 100%;
-    height: min-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--padding-box);
-    background: var(--box-bg-color);
-    border-radius: var(--radius-box);
-    gap: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: var(--box-color);
+  border-radius: var(--radius-system);
+  flex-wrap: wrap;
+  gap: 2px;
+  transition: var(--transition-bg);
+  cursor: pointer;
+  border: 0;
 }
 
-    .Icon {
-        font-family: var(--font-icon);
-        font-size: 1.6rem;
-        font-weight: 600;
-        font-feature-settings: 'ss09' !important;
-    }
+  .Button:hover {
+      background: var(--box-hover-color);
+  }
 
-    .Title {
-        font-size: 1.7rem;
-        font-weight: 600;
-        line-height: 1;
-    }
+  .Button .Icon {
+      font-weight: 800;
+      font-size: 1.5rem;
+      padding: 0;
+  }
+
+      .Button .Icon:hover {
+          background: transparent;
+      }
+
+  .Button .Title {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: -.4pt;
+      line-height: 1;
+  }

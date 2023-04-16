@@ -1,0 +1,142 @@
+[
+    {
+        "name":"코엑스 펀시티", 
+        "address":"삼성역 6번 출구에서 251m", 
+        "address_absolute":"서울 강남구 영동대로 513 B2층 ", 
+        "latitude":37.511337,
+        "longitude":127.061184,
+        "games": [
+            { "Gname": "태고의 달인", "quantity": 1, "price": "1000원"},
+            { "Gname": "펌프 잇 업", "quantity": 1, "price": "NA"}
+        ]
+    },
+    {
+        "name":"새우주 코인노래뮤직게임", 
+        "address":"굽은다리역 3번 출구에서 201m", 
+        "address_absolute":"서울특별시 강동구 상암로 201 B1층", 
+        "latitude":37.546592,
+        "longitude":127.144963,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "전모드 300원", "note": "IIDX 24 직수입 기체"},
+            { "Gname": "유비트", "quantity": 1, "price": "라이트 300원, 스탠다드 600원, 프리미엄 900원"},
+            { "Gname": "EZ2AC", "quantity": 4, "price": "400원", "note": "FNEX 2대, TT 1대, EC 1대"}
+        ]
+    },
+    {
+        "name":"선광 게임장", 
+        "address":"굽은다리역 3번 출구에서 382m", 
+        "address_absolute":"서울 강동구 양재대로136길 22 B1층", 
+        "latitude": 37.548463,
+        "longitude": 127.144854,
+        "games": [
+            { "Gname": "드럼매니아", "quantity": 1, "price": "300원"},
+            { "Gname": "펌프 잇 업", "quantity": 1, "price": "300원"}
+        ]
+    },
+    {
+        "name":"J&J게임랜드", 
+        "address":"천호역 5번 출구에서 179m", 
+        "address_absolute":"서울 강동구 천호대로157길 6", 
+        "latitude": 37.538005,
+        "longitude": 127.127082,
+        "games": [
+            { "Gname": "비트온", "quantity": 2, "price": "500원"},
+            { "Gname": "펌프 잇 업", "quantity": 1, "price": "1000원"},
+            { "Gname": "태고의 달인", "quantity": 1, "price": "500원"}
+        ]
+    },
+    {
+        "name":"펀존게임센터", 
+        "address":"천호역 5번 출구에서 362m", 
+        "address_absolute":"서울특별시 강동구 올림픽로70길 61 B1층", 
+        "latitude": 37.539324,
+        "longitude": 127.126970,
+        "games": [
+            { "Gname": "DDR", "quantity": 1, "price": "500원, 프리미엄 1000원"},
+            { "Gname": "유비트", "quantity": 2, "price": "라이트 500원, 스탠다드 1000원, 프리미엄 1500원", "note": "우측 기기 패널 불량"},
+            { "Gname": "SDVX", "quantity": 1, "price": "NA"},
+            { "Gname": "리플렉 비트", "quantity": 1, "price": "시간당 4000원"},
+            { "Gname": "팝픈뮤직", "quantity": 1, "price": "일반 500원, 프리미엄 1000원"},
+            { "Gname": "IIDX", "quantity": 1, "price": "1000원"},
+            { "Gname": "드럼매니아", "quantity": 1, "price": "라이트 500원, 스탠다드 1000원, 디럭스 1500원"},
+            { "Gname": "기타프릭스", "quantity": 1, "price": "라이트 500원, 스탠다드 1000원, 디럭스 1500원"},
+            { "Gname": "태고의 달인", "quantity": 1, "price": "1000원"},
+            { "Gname": "펌프 잇 업", "quantity": 1, "price": "1000원"},
+            { "Gname": "EZ2AC", "quantity": 1, "price": "500원"},
+            { "Gname": "노스텔지어", "quantity": 1, "price": "노멀 500원, 포르테 1000원"}
+        ]
+    },
+    {
+        "name":"어뮤즈타운", 
+        "address":"노량진역 3번 출구에서 301m", 
+        "address_absolute":"서울 광진구 화양동", 
+        "latitude":37.512765,
+        "longitude":126.944949,
+        "image":"https://go.develoid.net/gate/ad/AD0-1.png",
+        "games": [
+            { "Gname": "maimai DX", "quantity": 2, "price": "1000원", "note": "1대 방송,녹화가능"},
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    },
+    {
+        "name":"짱오락실 서울대입구점", 
+        "address":"서울대입구역 3번 출구에서 107m", 
+        "latitude":37.480471, 
+        "longitude":126.951978,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    },
+    {
+        "name":"수원역 짱오락실", 
+        "address":"수원역 10번 출구", 
+        "latitude":37.266399, 
+        "longitude":127.001713,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"},
+            { "Gname": "츄니즘", "quantity": 1, "price": "1500원" },
+            { "Gname": "DANCERUSH STARDOM", "quantity": 1, "price": "라이트 1000원, 스탠다드 1000원, 프리미엄 1000원"},
+            { "Gname": "DDR", "quantity": 1, "price": "스탠다드 1000원, 프리미엄 1000원"},
+            { "Gname": "기타프릭스", "quantity": 1, "price": "라이트 1000원, 스탠다드 2000원, 디럭스 3000원"},
+            { "Gname": "드럼마니아", "quantity": 1, "price": "라이트 1000원, 스탠다드 2000원, 디럭스 3000원"},
+            { "Gname": "maimai DX", "quantity": 2, "price": "1000원", "note": "1대 방송,녹화가능"},
+            { "Gname": "sdvx 구기체", "quantity": 9, "price": "1000원"}
+        ]
+    },
+    {
+        "name":"펀시티 건대점", 
+        "address":"건대입구역 1번 출구에서 162m", 
+        "latitude":37.539794, 
+        "longitude":127.070410,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    },
+    {
+        "name":"범계게임천국", 
+        "address":"범계역 1번 출구에서 60m", 
+        "latitude":37.390380, 
+        "longitude":126.952117,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    },
+    {
+        "name":"수유 CGV 게임존", 
+        "address":"수유역 8번 출구에서 555m", 
+        "latitude":37.6423, 
+        "longitude":127.03,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    },
+    {
+        "name":"대왕게임장노래방", 
+        "address":"수유역 8번 출구에서 540m", 
+        "latitude":37.642074, 
+        "longitude":127.028278,
+        "games": [
+            { "Gname": "IIDX", "quantity": 1, "price": "라이트 1000원, 프리미엄 2000원"}
+        ]
+    }
+  ]

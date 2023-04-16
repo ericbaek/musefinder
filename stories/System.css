@@ -1,50 +1,7 @@
 /* Small Mobile < 600 < General Mobile < 768 < Tablet < 1280px: Desktop */
 
 :root {
-
-    --radius-box: 8px;
-    --padding-box: 1.6rem;
-    --box-bg-color: var(--colorless-100);
-    --box-icon-color: hsl(240, 6%, 79%);
-
-    --border-color: hsl(0, 0%, 20%, 0.50);
-    --border2-color: hsl(0, 0%, 20%, 0.50);
-
-
-    /*
-    --border-color: #0000001A;
-    --Elevated-Primary: var(--white);
-    --Elevated-Secondary: 
-    --Elevated-Quaternary: #bcbcc3;
-    --Elevated-Quinary: #acacb4;
-    --Elevated-Secondary-NotTransparent: #e9e9ed;
-    --Label-Secondary: #3C3C4399;
-    --Tertiary: #7676801F;
-    --Tertiary2: #00000017;
-    --Tertiary-NotTransparent: #f8f8f8;
-    --Seperated-Transparent: #FFFFFFBF;
-    --body-bg: #F2F2F7;
-    --body-bg-80: #F2F2F7CC;
-    --body-bg-60: #F2F2F799;
-
-    .Card {
-        padding: --padding-box
-        background: --box-bg-color
-        border-radius: --radius-box
-    }
-
-    .Icon {
-        background: --box-icon-color
-        border-radius: --radius-box
-        font-family: --font-icon
-    }
-    */
-
-    --font-size: 9.5px;
-    --font-icon: 'Musefinder', 'Min Icon VF';
-    --font-monospace: 'FiraCode Variable', 'Pretendard Variable', monospace;
-    --font-sans-serif: -apple-system, 'SF Pro', 'SF Pro Display', 'Pretendard Variable', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
+    --font-size: 10px;
     --colorless-100: hsl(0, 0%, 100%);
     --colorless-100-tp: hsl(0, 0%, 100%, 0.20);
     --colorless-95: hsl(0, 0%, 95%);
@@ -64,77 +21,46 @@
     --colorless-5: hsl(0, 0%, 5%);
     --colorless-0: hsl(0, 0%, 0%);
     --colorless-0-tp: hsl(0, 0%, 0%, 0.20);
-
     --color-dynamic-muse: linear-gradient(135deg, hsl(270, 88%, 70%) 10%, hsl(245, 82%, 67%) 100%);
     --color-dynamic-water: linear-gradient(135deg, hsl(211, 100%, 67%) 10%, hsl(207, 100%, 51%) 100%);
     --color-dynamic-sand: linear-gradient(135deg, hsl(39, 94%, 63%) 10%, hsl(39, 84%, 51%) 100%);
     --color-dynamic-coral: linear-gradient(135deg, hsl(0, 86%, 69%) 10%, hsl(0, 86%, 61%) 100%);
-
-
-
+    --font-sans-serif: -apple-system, "SF Pro", "SF Pro Display", "Pretendard Variable", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", 'Min Icon VF';
+    --font-monospace: "FiraCode Variable", "Pretendard Variable", monospace;
     --body-color: var(--colorless-0);
-
-    --header-bg-color: hsl(240, 24%, 96%, 0.70);
-
-    --box-color: var(--colorless-100);
-    --box-hover-color: hsl(0, 0%, 97.5%);
-    --box-active-color: hsl(0, 0%, 0%, 0.07);
-
-    --bg-color: hsl(240, 24%, 96%);
-    --bg-hover-color: hsl(0, 0%, 97.5%);
-
+    --border-color: var(--colorless-90);
+    --highlayer-bg-color: var(--colorless-100);
+    --box-color: var(--colorless-95);
+    --box-hover-color: var(--colorless-90);
+    --box-active-color: var(--colorless-85);
+    --bg-color: var(--colorless-100);
+    --bg-hover-color: var(--colorless-95);
     --desktop-search-hover-color: var(--colorless-95);
-
     --dragpill-color: var(--colorless-85);
-
-    --item-hover-color: hsl(0, 0%, 0%, 0.05);
-    --item-active-color: hsl(0, 0%, 0%, 0.07);
-
+    --icon-hover-color: var(--colorless-85);
     --bg-color-transparent: var(--colorless-95-tp);
-
     --general-shadow-color: var(--colorless-0-tp);
-
-    --radius-system: 8px;
+    --radius-system: 12px;
     --radius-activity: 24px;
     --radius-circle: 128px;
-
     --width-general: 420px;
-
-    --horizontal-tab-size: 64px;
-    --vertical-tab-size: 72px;
-
     --icon-padding: 0.5rem;
-    --padding-system: 16px;
-    --padding-activity: 24px;
-
-    --transition-bg: background .2s ease-out, color .2s ease-out, border .2s ease-out;
+    --transition-bg: background .2s ease-out, color .2s ease-out;
 }
 
 .dark {
     --body-color: var(--colorless-100);
-
-    --border-color: hsl(0, 0%, 20%, 0.50);
-    --border2-color: hsl(0, 0%, 20%, 0.50);
-
-    --header-bg-color: hsl(0, 0%, 5%, 0.70);
+    --border-color: var(--colorless-15);
     --highlayer-bg-color: var(--colorless-5);
-
     --box-color: var(--colorless-10);
-    --box-hover-color: hsl(0, 0%, 100%, 0.08);
-    --box-active-color: hsl(0, 0%, 100%, 0.1);
-
-    --bg-color: var(--colorless-5);
+    --box-hover-color: var(--colorless-15);
+    --bg-color: var(--colorless-0);
     --bg-hover-color: var(--colorless-10);
-
+    --box-active-color: var(--colorless-15);
     --desktop-search-hover-color: var(--colorless-10);
-
     --dragpill-color: var(--colorless-15);
-
-    --item-hover-color: hsl(0, 0%, 100%, 0.06);
-    --item-active-color: hsl(0, 0%, 100%, 0.1);
-
+    --icon-hover-color: var(--colorless-20);
     --bg-color-transparent: var(--colorless-5-tp);
-
     --general-shadow-color: transparent;
 }
 
@@ -149,10 +75,14 @@
     display: none;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 html {
-    background: var(--bg-color);
     color: var(--body-color);
-    font-family: var(--font-sans-serif);
     font-size: var(--font-size);
     transition: var(--transition-bg);
     scroll-behavior: smooth;
@@ -162,6 +92,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
+    font-family: var(--font-sans-serif);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -172,49 +109,69 @@ body::-webkit-scrollbar {
 
 .System {
     display: flex;
-    width: 100%;
-    height: auto;
     color: var(--body-color);
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
-.column {
+.System-Title-Icon {
+    font-size: 3rem;
+}
+
+.Align-Items-Center {
+    display: flex;
+    align-items: center;
+}
+
+.Column {
     display: flex;
     flex-direction: column;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+.Row {
+    display: flex;
+    flex-direction: row;
 }
 
-.gap-4 {
+.Gap-4 {
+    display: flex;
     gap: 4px;
 }
 
-.gap-8 {
+.Gap-8 {
+    display: flex;
     gap: 8px;
 }
 
-.gap-12 {
+.Gap-12 {
+    display: flex;
     gap: 12px;
 }
 
-.gap-16 {
+.Gap-16 {
+    display: flex;
     gap: 16px;
 }
 
-.gap-24 {
+.Gap-24 {
+    display: flex;
     gap: 24px;
 }
 
-.space-between {
+.Bold {
+    font-weight: 700 !important;
+}
+
+.Space-Between {
     display: flex;
     justify-content: space-between;
 }
 
 a {
+    width: 100%;
     color: var(--body-color);
     text-decoration: none;
 }
@@ -224,7 +181,43 @@ hr {
     margin: 0;
     border: .4px solid var(--border-color);
     border-radius: var(--radius-circle);
-    transition: border .2s ease-out;
+}
+
+.Drag {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    margin: -24px 0;
+    width: calc(100% - 64px);
+    height: 1rem;
+    z-index: 150;
+}
+
+.DragPill {
+    width: 3rem;
+    height: .5rem;
+    background: var(--dragpill-color);
+    border-radius: var(--radius-circle);
+}
+
+.Desktop, .Active, .General {
+    position: absolute;
+    left: 24px;
+}
+
+.Desktop {
+    top: 24px;
+}
+
+.Active {
+    bottom: 0;
+}
+
+.General {
+    bottom: 0;
+    cursor: grab;
 }
 
 .Icon {
@@ -234,126 +227,121 @@ hr {
 }
 
     .Icon:hover {
-        background: var(--item-hover-color);
+        background: var(--icon-hover-color);
     }
 
-    .Icon:active {
-        background: var(--item-active-color);
-    }
-
-
-
-.SmallGroupCard {
-    border-radius: var(--radius-system);
-}
-
-    .SmallGroupCard a {
-        background: var(--box-color);
-        transition: var(--transition-bg);
+    .IconMargin-Right {
+        margin-right: -8px;
     }
     
-    .SmallGroupCard a:nth-last-child(-n+1):first-child {
+    .IconMargin-Left {
+        margin-left: -8px;
+    }
+
+@media (min-width: 1280px) {
+    .General {
+        display: none;
+    }
+
+    .MainActivity {
+        overflow: scroll;
+    }
+
+    .Active {
+        max-height: calc(100vh - 46px);
+        top: 24px;
+        bottom: 24px;
         border-radius: var(--radius-system);
     }
 
-    .SmallGroupCard a:first-child {
-        border-radius: var(--radius-system) var(--radius-system) 0 0;
-    }
-
-    .SmallGroupCard a:last-child {
-        border-radius: 0 0 var(--radius-system) var(--radius-system);
-    }
-
-    .SmallGroupCard a:hover {
-        background: var(--box-hover-color);
-    }
-
-    .SmallGroupCard a:active {
-        background: var(--box-active-color);
-    }
-
-/*
-@media (min-width: 1280px) {
-    .System {
-        width: 1120px;
-        padding: 56px 0;
+    .Drag {
+        display: none;
     }
 }
-*/
 
-
-
-    .System {
-        width: 100%;
-        padding: var(--padding-activity) var(--padding-activity) calc(var(--horizontal-tab-size) + var(--padding-activity) + env(safe-area-inset-bottom)) var(--padding-activity);
+@media (max-width: 1279.98px) {
+    .Desktop {
+        display: none;
     }
 
-    @media (min-width: 768px) {
-        .System {
-            width: 100%;
-            padding: var(--padding-activity) var(--padding-activity) var(--padding-activity) calc(var(--padding-activity) + var(--vertical-tab-size));
-        }
-
-        .Grid {
-            
-        }
+    .MainActivity { 
+        max-height: 98vh;
     }
 
-    @media (min-width: 1280px) {
-        body {
-            display: flex;
-            justify-content: center;
-        }
-
-        .System {
-            width: 1280px;
-            float: none;
-        }
+    .ActivityDetails {
+        margin-top: 8px;
     }
+}
+
+@media (max-width: 767.98px) {
+    .Active, .General {
+        left: 0;
+        right: 0;
+    }
+
+    .MainActivity {
+        width: 100% !important;
+    }
+
+    .Picture {
+        flex: 0 0 240px !important;
+        height: 320px !important;
+    }
+}
 
 @media (max-width: 387.98px) {
     :root {
-        --font-size: 8.5px;
-    }
-
-    .row {
-        grid-template-columns: repeat(1, 1fr);
+        --font-size: 9px !important;        
     }
 }
 
+/* Others */
 
-.GroupTitle {
+.SearchTop {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-    .Account-GroupTitle {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-.GroupContent {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 16px;
 }
 
-    .SmallGroupContent {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-.Grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(1px, 1fr));
-    grid-template-rows: repeat(1, min-content);
-    gap: 8px;
+.Group-FilterSet {
+    width: 100%;
+    display: flex;
+    gap: 10px 8px;
+    flex-wrap: wrap;
 }
 
-    .Span-2 {
-        grid-column: auto / span 2;
-    }
+.Group-Picture {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 8px;
+    flex: 0 0 auto;
+    overflow-x: hidden;
+    border-radius: var(--radius-system);
+}
+
+
+.Selected .Icon {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.Selected .Title {
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -1pt;
+    line-height: 1.2;
+}
+
+.Selected .Paragraph {
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: -.2pt;
+    line-height: 1;
+}
+
+.Group-FocusParagraph {
+    display: flex;
+    gap: 4px;
+}

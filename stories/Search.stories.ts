@@ -14,8 +14,8 @@ type Story = StoryObj<typeof Search>;
 
 export const Primary: Story = {
   args: {
-    LeftIcon: '',
-    Input: 'Placeholder',
-    RightIcon: '',
+    Icon: '',
+    Placeholder: '검색',
+    IconFilter: '',
   },
 };

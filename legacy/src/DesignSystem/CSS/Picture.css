@@ -1,0 +1,16 @@
+.Group-Picture {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    flex: 0 0 auto;
+    overflow-x: hidden;
+    border-radius: var(--radius-system);
+}
+
+.Picture {
+    flex: 0 0 120px;
+    height: 160px;
+    background: var(--box-color);
+    border-radius: var(--radius-system);
+    cursor: pointer;
+}

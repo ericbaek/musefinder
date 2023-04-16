@@ -1,24 +1,57 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './Search.module.css';
 
 interface SearchProps {
-  LeftIcon: string;
-  Input: string;
-  RightIcon: string;
+  Icon: string;
+  Placeholder: string;
+  IconFilter: string;
   onClick?: () => void;
 }
 
 export const Search = ({
-  LeftIcon, Input, RightIcon, ...props
+  Icon, Placeholder, IconFilter, ...props
 }: SearchProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleIconClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
 
   return (
-    <div className={styles.Search} {...props}>
+    <div className={`${styles.Search} ${isFocused ? 'focus' : ''}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
       <div className={styles.Left}>
-        <div className={styles.LeftIcon}>{LeftIcon}</div>
-        <div className={styles.Input}>{Input}</div>
+        <div className={`Icon ${styles.Icon}`} onClick={handleIconClick}>
+          { Icon }
+        </div>
+        <input ref={inputRef} placeholder={ Placeholder }/>
       </div>
-      <div className={styles.RightIcon}>{RightIcon}</div>
+      <div className={`Icon ${styles.Icon} ${styles.IconFilter}`}>
+        { IconFilter }
+      </div>
+      <style jsx>{`
+          .focus {
+            background: var(--desktop-search-hover-color);
+          }
+
+          @media (max-width: 1279.98px) {
+              .focus {
+                  background: var(--box-hover-color) !important;
+              }
+          }
+      `}
+      </style>
     </div>
   );
 };

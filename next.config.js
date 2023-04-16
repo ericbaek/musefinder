@@ -11,12 +11,7 @@ const removeImports = require('next-remove-imports')({
 module.exports = removeImports(nextConfig)
 
 module.exports = {
-  assetPrefix:
-    process.env.NODE_ENV === 'production'
-      ? 'https://bampudding.github.io/'
-      : '',
-  images: {
-    loader: 'imgix',
-    path: 'https://yoonminseok.github.io/Mlog',
+  env: {
+    DATABASE_URL: "mongodb+srv://ericbaek:9xgLf8bb7HDHpue@musefinder.zdqz4ua.mongodb.net/cluster0retryWrites=true&w=majority",
   },
 };

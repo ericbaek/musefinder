@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Arcade {
+  id          String  @id @default(uuid()) @map("_id")
+  name        String
+  address     String
+  latitude    Float
+  longitude   Float
+  games       Game[]
+}
+
+model Game {
+  id          String  @id @default(uuid()) @map("_id")
+  name        String
+  quantity    Int
+  price       String
+  note        String
+  arcade      Arcade? @relation(fields: [arcadeId], references: [id])
+  arcadeId    String?
+}

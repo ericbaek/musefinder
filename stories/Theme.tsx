@@ -1,40 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import styles from './Header.module.css';
+import React from 'react';
+import styles from './Theme.module.css';
 
-export const Theme = () => {
+interface ThemeProps {
+  Icon: string;
+  onClick?: () => void;
+}
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(darkModeMediaQuery.matches);
-
-    const handleChange = (event: { matches: boolean | ((prevState: boolean) => boolean); }) => {
-      setIsDarkMode(event.matches);
-    };
-    darkModeMediaQuery.addEventListener('change', handleChange);
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-
-  const mode = isDarkMode ? '' : '';
-  useEffect(() => {
-    const html = document.documentElement;
-    if (isDarkMode || isDarkMode === null) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
-  function handleToggle() {
-    setIsDarkMode(prev => !prev);
-  }
+export const Theme = ({
+  Icon, ...props
+}: ThemeProps) => {
   return (
-    <div>
-      <div className={`Icon ${styles.Icon}`} onClick={handleToggle}>{ mode }</div>
+    <div className={styles.Theme} {...props}>
+      <div className={`Icon ${styles.Icon}`}>{ Icon }</div>
     </div>
   );
 };
