@@ -66,23 +66,29 @@ function Main() {
   // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
+  
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-    (position) => 
-    { 
+    const success = (position) => { 
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
-    },
-    (error) =>
-    {
+    };
+  
+    const error = (error) => {
       console.error(error);
-    },
-    {
+    };
+  
+    const options = {
       enableHighAccuracy: true,
       maximumAge: 15,
-      timeout: 100,
-    })
-  })
+      timeout: 10000,
+    };
+  
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  }, []);
 
   function SavedLocation() {
     return (
