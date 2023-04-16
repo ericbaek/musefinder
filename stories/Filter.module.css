@@ -1,0 +1,12 @@
+.Filter {
+    width: max-content;
+    height: min-content;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1;
+    background: var(--box-bg-color);
+    border-radius: var(--radius-activity);
+    transition: var(--transition-bg);
+    cursor: pointer;
+}

@@ -10,37 +10,19 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: 'White',
+      default: 'Light',
       values: [
         {
-          name: 'White',
-          value: 'hsl(0, 0%, 100%)',
+          name: 'Light',
+          value: 'hsl(240, 24%, 96%)',
         },
         {
-          name: 'Black',
-          value: 'hsl(0, 0%, 0%)',
-        },
-        {
-          name: 'Muse',
-          value: 'hsl(270, 88%, 70%)',
-        },
-        {
-          name: 'Water',
-          value: 'hsl(211, 100%, 67%)',
-        },
-        {
-          name: 'Sand',
-          value: 'hsl(39, 94%, 63%)',
-        },
-        {
-          name: 'Coral',
-          value: 'hsl(0, 86%, 69%)',
+          name: 'Dark',
+          value: 'hsl(0, 0%, 5%)',
         },
       ],
     },
   },
 };
-
-
 
 export default preview;
