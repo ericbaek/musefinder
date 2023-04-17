@@ -58,7 +58,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
     if (isLoading) {
       return (
         <>
-            <Alert Href='#' V_LeftIcon LeftIcon='' Title='위치 권한을 부여해 주세요.' V_Paragraph={false} Paragraph=''/>
+            <Alert V_LeftIcon LeftIcon='' Title='위치 권한을 부여해 주세요.' V_Paragraph={false} Paragraph=''/>
         </>
       )
     }
@@ -67,7 +67,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
     if (arcadesWithDistance.length === 0) {
       return (
         <>
-            <Alert Href='#' V_LeftIcon LeftIcon='' Title='해당되는 아케이드가 없습니다.' V_Paragraph={false} Paragraph=''/>
+            <Alert V_LeftIcon LeftIcon='' Title='해당되는 아케이드가 없습니다.' V_Paragraph={false} Paragraph=''/>
         </>
       );
     }
@@ -79,8 +79,8 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
           <div className='SmallGroupCard'>
               {/* 특정 조건에서만 뜨도록 제작 예정
               <div className='SmallGroupTab row'>
-                  <Tab Href='/' Title='전체'/>
-                  <Tab Href='/' Title='라이트닝 기체'/>
+                  <Tab Title='전체'/>
+                  <Tab Title='라이트닝 기체'/>
               </div>
               */}
               {arcadesWithDistance.slice(0, numCards).map((arcade: any, index) => (
@@ -111,7 +111,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
               ))}
           </div>
           {numCards < arcadesWithDistance.length && (
-              <Button Href='' Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} V_Icon={false}/>
+              <Button Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} V_Icon={false}/>
           )}
       </>
   );

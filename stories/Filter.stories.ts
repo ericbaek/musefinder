@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Filter } from './Filter';
 
 const meta: Meta<typeof Filter> = {
@@ -14,7 +13,6 @@ type Story = StoryObj<typeof Filter>;
 
 export const Primary: Story = {
   args: {
-    Href: '/',
     Title: 'Filter',
   },
 };

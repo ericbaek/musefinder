@@ -16,7 +16,7 @@ function Main() {
             <div className='GroupContent'>
 
                 <div className='SmallGroupContent'>  {/* 포털 */}
-                    <ContentTitle Href='/' Title='바로가기' V_Paragraph={false} Paragraph=''/>
+                    <ContentTitle Title='바로가기' V_Paragraph={false} Paragraph=''/>
                     <div className='Grid'>
                         <Card
                             Href="/"
@@ -66,7 +66,7 @@ function Main() {
                 <hr/>
 
                 <div className='SmallGroupContent'>  {/* 가이드 */}
-                    <ContentTitle Href='/' Title='가이드' V_Paragraph Paragraph='더보기'/>
+                    <ContentTitle Title='가이드' V_Paragraph Paragraph='더보기'/>
                     <div className='Grid'>
                         <Card
                             Href="/"

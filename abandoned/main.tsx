@@ -17,7 +17,7 @@ function Main() {
             <div className='GroupTitle'>
                 <div className='Account-GroupTitle'>
                     <LargeTitle Title='뮤즈파인더'/>
-                    <AccountIcon Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                    <AccountIcon Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                 </div>
                 <Search LeftIcon='' Input='리듬게임, 오락실 검색' RightIcon=''/>
             </div>
@@ -25,7 +25,7 @@ function Main() {
             <div className='GroupContent'>
 
                 <div className='SmallGroupContent'>  {/* 저장한 장소 */}
-                    <ContentTitle Href='/' Title='저장' V_Paragraph Paragraph='수정'/>
+                    <ContentTitle Title='저장' V_Paragraph Paragraph='수정'/>
                     <div className='Grid'>
                         <Card
                             Href="/"
@@ -99,27 +99,27 @@ function Main() {
                 <hr/>
 
                 <div className='SmallGroupContent'>  {/* 빠르게 찾기 */}
-                    <ContentTitle Href='/' Title='빠르게 찾기' V_Paragraph={false} Paragraph='Paragraph'/>
+                    <ContentTitle Title='빠르게 찾기' V_Paragraph={false} Paragraph='Paragraph'/>
                     <div className='Grid'>
                         <PictureMenu Href='/company/company' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-                        <PictureMenu Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-                        <PictureMenu Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-                        <PictureMenu Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <PictureMenu Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <PictureMenu Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <PictureMenu Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                     </div>
                 </div>
 
                 <hr/>
 
                 <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                    <ContentTitle Href='/' Title='주변 오락실' V_Paragraph={false} Paragraph='Paragraph'/>
-                    <Alert Href='/' V_LeftIcon={true} LeftIcon='' Title='차라리 일본이 더 가깝겠는데요?' V_Paragraph={false} Paragraph='Paragraph'/>
+                    <ContentTitle Title='주변 오락실' V_Paragraph={false} Paragraph='Paragraph'/>
+                    <Alert V_LeftIcon={true} LeftIcon='' Title='차라리 일본이 더 가깝겠는데요?' V_Paragraph={false} Paragraph='Paragraph'/>
                     <NearData latitude={latitude} longitude={longitude} FilterList={FilterList}/>
                 </div>
 
                 <hr/>
 
                 <div className='SmallGroupContent'>
-                    <Promotion Href='/' Title='뮤즈파인더를 만들게 된 계기' V_Paragraph={false} Paragraph='테크클립 제작' Distribute={'Start'} Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                    <Promotion Title='뮤즈파인더를 만들게 된 계기' V_Paragraph={false} Paragraph='테크클립 제작' Distribute={'Start'} Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                     <Card
                         Href="/"
                         Title="의견 남기기"

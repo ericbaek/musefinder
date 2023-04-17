@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { DragPill } from './DragPill';
 
 const meta: Meta<typeof DragPill> = {

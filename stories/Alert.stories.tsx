@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Alert } from './Alert';
 
 const meta: Meta<typeof Alert> = {
@@ -16,7 +15,6 @@ export const Primary: Story = {
   args: {
     V_LeftIcon: true,
     V_Paragraph: true,
-    Href: '/',
     LeftIcon: '',
     Title: 'Title',
     Paragraph: 'Paragraph',

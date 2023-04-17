@@ -1,20 +1,65 @@
-import React from 'react';
+import React, { useRef, useEffect, useState, SetStateAction } from 'react';
 import styles from '@/stories/DragActivity.module.css';
 import Alert from '@/stories/Alert';
 import Card from '@/stories/Card';
 import ContentTitle from '@/stories/ContentTitle';
 import DragPill from '@/stories/DragPill';
+import Dragging from '@/modules/Drag';
 import Icon from '@/stories/Icon';
 import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
 import Theme from '@/stories/Theme';
+import { useRouter } from 'next/router';
 
 function Active() {
+
+    /*   */
+
+    const [isDragging, setIsDragging] = useState(false);
+    const [startY, setStartY] = useState(0);
+    const [currentY, setCurrentY] = useState(0);
+    const activityRef = useRef(null);
+
+    function handleMouseDown(event: any) {
+        setIsDragging(true);
+        setStartY(event.clientY);
+    }
+
+    function handleMouseUp() {
+        setIsDragging(false);
+    }
+
+    function handleMouseMove(event: any) {
+        if (isDragging) {
+        const deltaY = event.clientY - startY;
+        const ratio = 1 / (window.innerHeight / 100);
+        const activityHeight = activityRef.current.clientHeight;
+        const newCurrentY = currentY + deltaY * ratio;
+        if (newCurrentY > -(activityHeight - window.innerHeight)) {
+            setCurrentY(newCurrentY);
+            setStartY(event.clientY);
+        }
+        }
+    }
+
+    /*   */
+
+    const router = useRouter();
+    const style = {
+        bottom: `${currentY}px`,
+        cursor: isDragging ? 'grabbing' : 'grab',
+    };
+
     return (
         <>
             <Theme/>
-            <div className={styles.DragActivity}>
+            <div className={styles.DragActivity}
+            ref={activityRef}
+            style={{ transform: `translateY(${currentY}vh)` }}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}>
                 <div className={styles.Drag}> {/* 드래그 */}
                     <DragPill/>
                 </div>
@@ -22,9 +67,9 @@ function Active() {
                 <div className={styles.GroupMap}>
         
                     <div className={styles.GroupPicture}>
-                        <Picture Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-                        <Picture Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-                        <Picture Href='/' Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
+                        <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                     </div>
 
                     <div className='GroupContent'>
@@ -32,14 +77,14 @@ function Active() {
                         <div className={styles.GroupActiveTitle}>
                             <LargeTitle Title='펀시티 건대점'/>
                             <div className={styles.SmallGroupActiveTitle_Right}>
-                                <Icon Href='/' Icon=''/>
-                                <Icon Href='/' Icon=''/>
-                                <Icon Href='/' Icon=''/>
+                                {/* <Icon Icon=''/> */}
+                                <Icon Icon=''/>
+                                <Icon Icon=''/>
                             </div>
                         </div>
 
                         <div className='GroupAlert'>
-                            <Alert Href='/' LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
+                            <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
                         </div>
 
                         <div className='SmallGroupContent'> 
@@ -111,15 +156,15 @@ function Active() {
                                     V_BG={false}
                                 />
                                 </div>
-                                <Button Href='' Icon='' Title='예약' V_Icon={false}/>
-                                <Button Href='/map' Icon='' Title='길찾기' V_Icon={false}/>
+                                <Button Icon='' Title='예약' V_Icon={false}/>
+                                <Button Icon='' Title='길찾기' V_Icon={false}/>
                             </div>
                         </div>
 
                         <hr/>
 
                         <div className='SmallGroupContent'>  {/* 기체 정보 */}
-                            <ContentTitle Href='/' Title='게임' V_Paragraph={false} Paragraph='Paragraph'/>
+                            <ContentTitle Title='게임' V_Paragraph={false} Paragraph='Paragraph'/>
                             <div className='SmallGroupCard'>
                                 <Card
                                     Title="IIDX"
@@ -210,8 +255,8 @@ function Active() {
                 </div>
             </div>
             
-            <div className={styles.Back}> {/* 백버튼 */}
-                <Icon Href='/' Icon=''/>
+            <div className={styles.Back} onClick={() => {router.push('/main');} }> {/* 백버튼 */}
+                <Icon Icon=''/>
             </div>
         </>
     );

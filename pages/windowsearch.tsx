@@ -12,7 +12,7 @@ function WindowSearch() {
             <div className='GroupSearchResult'>
 
                 <div className='SmallGroupContent'>  {/* 오락실 위치 */}
-                    <ContentTitle Href='/' Title='오락실' V_Paragraph={false} Paragraph=''/>
+                    <ContentTitle Title='오락실' V_Paragraph={false} Paragraph=''/>
                     <div className=''>
                         <Card
                         Title="Title"
@@ -40,7 +40,7 @@ function WindowSearch() {
                 <hr/>
 
                 <div className='SmallGroupContent'>  {/* 일반 기체 */}
-                    <ContentTitle Href='/' Title='오락실 기체' V_Paragraph={false} Paragraph=''/>
+                    <ContentTitle Title='오락실 기체' V_Paragraph={false} Paragraph=''/>
                     <div className=''>
                     <Card
                         Title="IIDX"
@@ -68,7 +68,7 @@ function WindowSearch() {
                 <hr/>
 
                 <div className='SmallGroupContent'>  {/* 코나스테 */}
-                    <ContentTitle Href='/' Title='코나스테' V_Paragraph={false} Paragraph=''/>
+                    <ContentTitle Title='코나스테' V_Paragraph={false} Paragraph=''/>
                     <Card
                         Title="IIDX"
                         Paragraph="Paragraph"

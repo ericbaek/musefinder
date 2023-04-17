@@ -40,8 +40,8 @@ export default function Near({latitude, longitude, FilterList}: {latitude: numbe
         <>
             <div className=''>
                 <div className='SmallGroupTab row'>
-                    <Tab Href='/' Title='전체'/>
-                    <Tab Href='/' Title='라이트닝 기체'/>
+                    <Tab Title='전체'/>
+                    <Tab Title='라이트닝 기체'/>
                 </div>
                 {arcadesWithDistance.slice(0, numCards).map((arcade, index) => (
                     <React.Fragment key={index}>

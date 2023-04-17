@@ -2,7 +2,7 @@ import React from 'react';
 
 // km단위의 float를 받아서 거리에 따라서 소숫점 round up 과 필요하다면 단위 변환을 해줌.
 
-function ConvertDistance({ km }) {
+function ConvertDistance({km} : {km: number;}) {
     let distance;
     let unit;
     let roundup = 0;

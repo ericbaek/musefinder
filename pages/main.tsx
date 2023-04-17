@@ -34,7 +34,7 @@ function FilterSettings(props: any) {
             'WACCA',
             '비트온'
         ].map(title => (
-            <Filter Href='#' key={title} Title={title} onClick={handleFilterClick}/>
+            <Filter key={title} Title={title} onClick={handleFilterClick}/>
         ))}
         </div>
     );

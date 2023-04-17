@@ -37,7 +37,6 @@ export const Card = ({
   const vaccent = V_Accent? 'True' : 'False';
   return (
 
-    <>
       <div className={`${styles.Card} ${['V_BG_', vbg].join('')}`} {...props}>
         
         <div className={styles.Left}>
@@ -103,7 +102,6 @@ export const Card = ({
         `}</style>
 
       </div>
-    </>
 
   );
 };

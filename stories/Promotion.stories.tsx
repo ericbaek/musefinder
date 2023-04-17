@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Promotion } from './Promotion';
 
 const meta: Meta<typeof Promotion> = {
@@ -15,7 +14,6 @@ type Story = StoryObj<typeof Promotion>;
 export const Primary: Story = {
   args: {
     V_Paragraph: true,
-    Href: 'https://go.develoid.net/gate/bestphoto/BESTPHOTO.html',
     Title: 'Title',
     Paragraph: 'Paragraph',
     Image: 'https://go.develoid.net/gate/bestphoto/BESTPHOTO.png',

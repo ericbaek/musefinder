@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './Promotion.module.css';
-import Link from 'next/link';
 
 interface PictureProps {
-  Href: string;
   Title: string;
   V_Paragraph: boolean;
   Paragraph: string;
@@ -13,16 +11,14 @@ interface PictureProps {
 }
 
 export const Promotion = ({
-  Href, Title, V_Paragraph, Paragraph, Distribute, Image, ...props
+  Title, V_Paragraph, Paragraph, Distribute, Image, ...props
 }: PictureProps) => {
   const vparagraph = V_Paragraph? 'True' : 'False';
   return (
-    <Link href={Href} passHref>
       <div className={`${styles.Promotion} ${['Picture_', Distribute].join('')}`} {...props}>
         <div className={`${styles.Paragraph} ${['V_Paragraph_', vparagraph].join('')}`}>{Paragraph}</div>
         <div className={styles.Title}>{Title}</div>
-      </div>
-      <style jsx>{`
+        <style jsx>{`
         .${styles.Promotion} {
           background-image: url('${Image}');
         }
@@ -43,7 +39,7 @@ export const Promotion = ({
           justify-content: space-between;
         }
       `}</style>
-    </Link>
+      </div>
   );
 };
 

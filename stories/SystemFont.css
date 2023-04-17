@@ -2,10 +2,7 @@
 	font-family: 'Musefinder';
 	font-style: normal;
 	font-display: swap;
-	vertical-align: middle;
 	font-style: normal;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	src: url('./fonts/Musefinder.woff') format('woff');
 }
   
@@ -13,12 +10,7 @@
 	font-family: 'Min Icon VF';
 	font-style: normal;
 	font-display: swap;
-	vertical-align: middle;
 	font-style: normal;
-	font-variation-settings: 'rond' 3, 'edpt' 1;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
-	font-feature-settings: 'ss09' on;
 	src: local('Min Icon VF'), url('./fonts/MinIconVF.woff2') format('woff2-variations');
 }
 

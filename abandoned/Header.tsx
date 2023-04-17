@@ -44,7 +44,7 @@ export const Header = ({
       <div className={`${styles.Header} Header`} {...props}>
         <div className={styles.Container}>
           <div className={styles.HeaderLeft}>
-            <Link href='/'>
+            <Link>
               <div className={`Icon ${styles.ServiceLogo} ${ServiceLogo}`}></div>
             </Link>
           </div>

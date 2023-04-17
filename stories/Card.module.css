@@ -8,6 +8,7 @@
     background: var(--box-bg-color);
     border-radius: var(--radius-box);
     transition: var(--transition-bg);
+    cursor: pointer;
 }
 
     .Card:hover {
@@ -17,7 +18,7 @@
     .Left {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 1.2rem;
     }
 
         .LeftIcon {
@@ -39,13 +40,13 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            gap: 2px;
+            gap: .2rem;
         }
 
             .GroupTitle {
                 display: flex;
                 flex-direction: column;
-                gap: 4px;
+                gap: .3rem;
             }
 
                 .Title {
@@ -55,14 +56,14 @@
                 }
                 
                 .Paragraph {
-                    font-size: 1.1rem;
+                    font-size: 1.15rem;
                     font-weight: 500;
                     line-height: 1.3;
                 }
         
             .Paragraph2 {
-                font-size: .9rem;
-                font-weight: 500;
+                font-size: 1.05rem;
+                font-weight: 400;
                 opacity: .8;
             }
     

@@ -7,8 +7,9 @@
     padding: var(--padding-box);
     background: var(--box-bg-color);
     border-radius: var(--radius-box);
-    gap: 4px;
+    gap: .4rem;
     transition: var(--transition-bg);
+    cursor: pointer;
 }
 
     .Button:hover {

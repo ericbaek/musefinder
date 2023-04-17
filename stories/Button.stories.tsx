@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -15,7 +14,6 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   args: {
     V_Icon: false,
-    Href: '/',
     Icon: '',
     Title: 'Title',
   },
