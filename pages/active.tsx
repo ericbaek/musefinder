@@ -20,28 +20,35 @@ function Active() {
     const [startY, setStartY] = useState(0);
     const [currentY, setCurrentY] = useState(0);
     const activityRef = useRef(null);
-
-    function handleMouseDown(event: any) {
-        setIsDragging(true);
-        setStartY(event.clientY);
-    }
-
-    function handleMouseUp() {
-        setIsDragging(false);
-    }
-
-    function handleMouseMove(event: any) {
+  
+    useEffect(() => {
+      if (!isDragging) return;
+  
+      function handleMouseMove(event: any) {
         if (isDragging) {
-        const deltaY = event.clientY - startY;
-        const ratio = 1 / (window.innerHeight / 100);
-        activityRef.current = null;
-        const activityHeight = activityRef.current.clientHeight;
-        const newCurrentY = currentY + deltaY * ratio;
-        if (newCurrentY > -(activityHeight - window.innerHeight)) {
-            setCurrentY(newCurrentY);
+            const deltaY = event.clientY - startY;
+            const ratio = 1 / (window.innerHeight / 1000); // 액티비티 요소의 높이(100%)와 화면의 높이(800px)에 대한 비율
+            setCurrentY(prevY => prevY - deltaY * ratio);
             setStartY(event.clientY);
         }
-        }
+      }
+  
+      function handleMouseUp() {
+        setIsDragging(false);
+      }
+  
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+  
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      };
+    }, [isDragging, startY]);
+  
+    function handleMouseDown(event: { clientY: SetStateAction<number>; }) {
+      setIsDragging(true);
+      setStartY(event.clientY);
     }
 
     /*   */
@@ -56,11 +63,9 @@ function Active() {
         <>
             <Theme/>
             <div className={styles.DragActivity}
-            ref={activityRef}
-            style={{ transform: `translateY(${currentY}vh)` }}
+            style={style}
             onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}>
+            ref={activityRef}>
                 <div className={styles.Drag}> {/* 드래그 */}
                     <DragPill/>
                 </div>
