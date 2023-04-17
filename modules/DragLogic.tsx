@@ -35,7 +35,6 @@ export default function useBottomSheet() {
 
     const MIN_Y = 60;
     const MAX_Y = window.innerHeight - 80;
-    const BOTTOM_SHEET_HEIGHT = window.innerHeight - MIN_Y;
 
     const canUserMoveBottomSheet = () => {     
       const { touchMove, isContentAreaTouched } = metrics.current;

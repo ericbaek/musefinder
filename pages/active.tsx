@@ -11,14 +11,14 @@ import Button from '@/stories/Button';
 import Theme from '@/stories/Theme';
 import { useRouter } from 'next/router';
 
-import useBottomSheet from '@/modules/DragLogic';
 
 function Active() {
 
     const router = useRouter();
-    const { sheet, content } = useBottomSheet();
 
-    
+    /* 
+    import useBottomSheet from '@/modules/DragLogic';
+    const { sheet, content } = useBottomSheet();
     useEffect(() => { 
         const MIN_Y = 60;
         const BOTTOM_SHEET_HEIGHT = window.innerHeight - MIN_Y;
@@ -26,18 +26,19 @@ function Active() {
         if (dragActivity) {
             dragActivity.style.height = `${BOTTOM_SHEET_HEIGHT}px`;
         }
-    });
+    ref={sheet}  ref={content}
+    }); */
         
     return (
         <>
             <Theme/>
             <div>
-                <div className={styles.DragActivity} ref={sheet}>
+                <div className={styles.DragActivity} >
                     <div className={styles.Drag}> {/* 드래그 */}
                         <DragPill/>
                     </div>
 
-                    <div className={styles.GroupMap} ref={content}>
+                    <div className={styles.GroupMap}>
             
                         <div className={styles.GroupPicture}>
                             <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
