@@ -99,7 +99,7 @@ function Main() {
                 <div className={styles.GroupMap}>
 
                     <div className={`${styles.SmallGroupMapSearch} ${isActive ? 'active' : ''}`}>
-                        <Search LeftIcon='' Placeholder='오락실 검색' RightIcon='' V_RightIcon={true}/>
+                        <Search LeftIcon='' Placeholder='오락실 검색' RightIcon='' V_RightIcon={false}/>
                         {/* 검색창 다시 만들 예정 */}
                         <FilterSettings onFilterClick={handleFilterClick}/>
                     </div>

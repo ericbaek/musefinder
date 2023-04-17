@@ -13,7 +13,6 @@ type Story = StoryObj<typeof Card>;
 
   export const Var1: Story = {
     args: {
-      Href: '/',
       V_LeftIcon: false,
       V_Paragraph: true,
       V_Paragraph2: false,
@@ -36,7 +35,6 @@ type Story = StoryObj<typeof Card>;
 
   export const Var2: Story = {
     args: {
-      Href: '/',
       V_LeftIcon: true,
       V_Paragraph: true,
       V_Paragraph2: false,
@@ -59,7 +57,6 @@ type Story = StoryObj<typeof Card>;
 
   export const Var3: Story = {
     args: {
-      Href: '/',
       V_LeftIcon: true,
       V_Paragraph: false,
       V_Paragraph2: false,

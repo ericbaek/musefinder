@@ -47,7 +47,6 @@ function Active() {
                             <div className='Grid'> {/* 오픈, 신고 */}
                                 <div className='Span-2'>
                                     <Card
-                                        Href="/"
                                         Title="서울시 동작구 만양로14가길 26"
                                         Paragraph="건국대 1번출구에서 162m"
                                         Paragraph2="Paragraph2"
@@ -68,8 +67,8 @@ function Active() {
                                         V_BG={false}
                                     />
                                 </div>
+                                <div>
                                 <Card
-                                    Href="/"
                                     Title="영업중"
                                     Paragraph="07:00 - 05:00"
                                     Paragraph2="Paragraph2"
@@ -89,8 +88,9 @@ function Active() {
                                     V_RightIcon
                                     V_BG={false}
                                 />
+                                </div>
+                                <div>
                                 <Card
-                                    Href="/"
                                     Title="제보하기"
                                     Paragraph="게임 정보, 환경 등"
                                     Paragraph2="Paragraph2"
@@ -110,6 +110,7 @@ function Active() {
                                     V_RightIcon
                                     V_BG={false}
                                 />
+                                </div>
                                 <Button Href='' Icon='' Title='예약' V_Icon={false}/>
                                 <Button Href='/map' Icon='' Title='길찾기' V_Icon={false}/>
                             </div>
@@ -121,7 +122,6 @@ function Active() {
                             <ContentTitle Href='/' Title='게임' V_Paragraph={false} Paragraph='Paragraph'/>
                             <div className='SmallGroupCard'>
                                 <Card
-                                    Href="/"
                                     Title="IIDX"
                                     Paragraph="스탠다드 1000원"
                                     Paragraph2="3번 기체"
@@ -143,7 +143,6 @@ function Active() {
                                 />
                                 <hr/>
                                 <Card
-                                    Href="/"
                                     Title="IIDX"
                                     Paragraph="스탠다드 1000원"
                                     Paragraph2="3번 기체"
@@ -165,7 +164,6 @@ function Active() {
                                 />
                                 <hr/>
                                 <Card
-                                    Href="/"
                                     Title="IIDX"
                                     Paragraph="스탠다드 1000원"
                                     Paragraph2="3번 기체"
@@ -187,73 +185,6 @@ function Active() {
                                 />
                                 <hr/>
                                 <Card
-                                    Href="/"
-                                    Title="IIDX"
-                                    Paragraph="스탠다드 1000원"
-                                    Paragraph2="3번 기체"
-                                    LeftIcon=""
-                                    LeftIconBG="var(--box-icon-color)"
-                                    LeftIconImage=""
-                                    AccentText="2대"
-                                    AccentBG="var(--color-dynamic-muse)"
-                                    RightIcon=""
-                                    BG="var(--bg-color)"
-                                    onClick={() => { } }
-                                    V_LeftIcon={false}
-                                    V_LeftIconBG
-                                    V_Paragraph
-                                    V_Paragraph2
-                                    V_Accent
-                                    V_RightIcon={false}
-                                    V_BG={false}
-                                />
-                                <hr/>
-                                <Card
-                                    Href="/"
-                                    Title="IIDX"
-                                    Paragraph="스탠다드 1000원"
-                                    Paragraph2="3번 기체"
-                                    LeftIcon=""
-                                    LeftIconBG="var(--box-icon-color)"
-                                    LeftIconImage=""
-                                    AccentText="2대"
-                                    AccentBG="var(--color-dynamic-muse)"
-                                    RightIcon=""
-                                    BG="var(--bg-color)"
-                                    onClick={() => { } }
-                                    V_LeftIcon={false}
-                                    V_LeftIconBG
-                                    V_Paragraph
-                                    V_Paragraph2
-                                    V_Accent
-                                    V_RightIcon={false}
-                                    V_BG={false}
-                                />
-                                <hr/>
-                                <Card
-                                    Href="/"
-                                    Title="IIDX"
-                                    Paragraph="스탠다드 1000원"
-                                    Paragraph2="3번 기체"
-                                    LeftIcon=""
-                                    LeftIconBG="var(--box-icon-color)"
-                                    LeftIconImage=""
-                                    AccentText="2대"
-                                    AccentBG="var(--color-dynamic-muse)"
-                                    RightIcon=""
-                                    BG="var(--bg-color)"
-                                    onClick={() => { } }
-                                    V_LeftIcon={false}
-                                    V_LeftIconBG
-                                    V_Paragraph
-                                    V_Paragraph2
-                                    V_Accent
-                                    V_RightIcon={false}
-                                    V_BG={false}
-                                />
-                                <hr/>
-                                <Card
-                                    Href="/"
                                     Title="IIDX"
                                     Paragraph="스탠다드 1000원"
                                     Paragraph2="3번 기체"

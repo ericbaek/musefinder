@@ -24,7 +24,6 @@
     .Paragraph {
         font-size: 1.3rem;
         font-weight: 500;
-        line-height: 1;
         color: var(--colorless-100);
         opacity: .8;
     }

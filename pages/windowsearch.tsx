@@ -15,7 +15,6 @@ function WindowSearch() {
                     <ContentTitle Href='/' Title='오락실' V_Paragraph={false} Paragraph=''/>
                     <div className=''>
                         <Card
-                        Href="/"
                         Title="Title"
                         Paragraph="Paragraph"
                         Paragraph2="Paragraph2"
@@ -44,7 +43,6 @@ function WindowSearch() {
                     <ContentTitle Href='/' Title='오락실 기체' V_Paragraph={false} Paragraph=''/>
                     <div className=''>
                     <Card
-                        Href="/"
                         Title="IIDX"
                         Paragraph="Paragraph"
                         Paragraph2="Paragraph2"
@@ -72,7 +70,6 @@ function WindowSearch() {
                 <div className='SmallGroupContent'>  {/* 코나스테 */}
                     <ContentTitle Href='/' Title='코나스테' V_Paragraph={false} Paragraph=''/>
                     <Card
-                        Href="/"
                         Title="IIDX"
                         Paragraph="Paragraph"
                         Paragraph2="Paragraph2"

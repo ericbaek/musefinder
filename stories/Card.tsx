@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './Card.module.css';
-import Link from 'next/link';
 
 interface CardProps {
-  Href: string;
   V_LeftIcon: boolean;
   LeftIcon: string;
   LeftIconBG: string;
@@ -25,7 +23,7 @@ interface CardProps {
 }
 
 export const Card = ({
-  Href, V_LeftIcon, LeftIcon, LeftIconBG, V_LeftIconBG, LeftIconImage, Title, V_Paragraph, Paragraph,
+  V_LeftIcon, LeftIcon, LeftIconBG, V_LeftIconBG, LeftIconImage, Title, V_Paragraph, Paragraph,
   V_Paragraph2, Paragraph2, V_RightIcon, RightIcon, V_Accent, AccentBG, AccentText, V_BG, BG,
   ...props
 }: CardProps) => {
@@ -39,7 +37,7 @@ export const Card = ({
   const vaccent = V_Accent? 'True' : 'False';
   return (
 
-    <Link href={ Href } passHref>
+    <>
       <div className={`${styles.Card} ${['V_BG_', vbg].join('')}`} {...props}>
         
         <div className={styles.Left}>
@@ -86,10 +84,26 @@ export const Card = ({
           .LeftIconImage {
             background-image: url('${LeftIconImage}');
           }
+
+          .SmallGroupCard .${Card} {
+              border-radius: 0;
+          }
+
+          .SmallGroupCard .${Card}:nth-last-child(-n+1):first-child {
+            border-radius: var(--radius-system);
+          }
+      
+          .SmallGroupCard .${Card}:first-of-type {
+              border-radius: var(--radius-box) var(--radius-box) 0 0;
+          }
+      
+          .SmallGroupCard .${Card}:last-of-type {
+              border-radius: 0 0 var(--radius-box) var(--radius-box);
+          }
         `}</style>
 
       </div>
-    </Link>
+    </>
 
   );
 };

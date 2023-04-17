@@ -3,6 +3,8 @@ import axios from 'axios';
 import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ConvertDistance from "./ConvertDistance";
+import Alert from "@/stories/Alert";
+import { useRouter } from 'next/router';
 /* import Tab from "@/stories/Tab"; */
 
 export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
@@ -54,14 +56,24 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
 
     // API에서 딜레이가 생길때, 유저의 GPS가 0,0 일때 해당 메세지가 표시됩니다.
     if (isLoading) {
-      return <div>Loading... (or maybe GPS Permission denied)</div>;
+      return (
+        <>
+            <Alert Href='#' V_LeftIcon LeftIcon='' Title='위치 권한을 부여해 주세요.' V_Paragraph={false} Paragraph=''/>
+        </>
+      )
     }
   
     // 서버에서 찾아온 아케이드가 없을때 해당 메세지를 표시합니다.
     if (arcadesWithDistance.length === 0) {
-      return <div>No arcades found</div>;
+      return (
+        <>
+            <Alert Href='#' V_LeftIcon LeftIcon='' Title='해당되는 아케이드가 없습니다.' V_Paragraph={false} Paragraph=''/>
+        </>
+      );
     }
     
+    const router = useRouter();
+
     return (
       <>
           <div className='SmallGroupCard'>
@@ -74,7 +86,6 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
               {arcadesWithDistance.slice(0, numCards).map((arcade: any, index) => (
                   <React.Fragment key={index}>
                       <Card
-                          Href="/active"
                           Title={arcade.name}
                           Paragraph={arcade.address}
                           Paragraph2="Paragraph2"
@@ -85,7 +96,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
                           AccentBG={getAccentBG(arcade.distance)}
                           RightIcon=""
                           BG="var(--bg-color)"
-                          onClick={() => { } }
+                          onClick={() => {router.push('/active');}}
                           V_LeftIcon={false}
                           V_LeftIconBG
                           V_Paragraph

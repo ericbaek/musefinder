@@ -67,12 +67,12 @@
             }
     
     .Accent {
-        width: 5.4rem;
+        width: 5.6rem;
         height: 3.2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: var(--radius-box);
+        border-radius: var(--radius-box) !important;
         font-size: 1.4rem;
         font-weight: 600;
         color: var(--colorless-100);

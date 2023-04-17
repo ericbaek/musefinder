@@ -24,19 +24,17 @@
             font-family: var(--font-icon);
             font-size: 2rem;
             font-weight: 600;
-            line-height: 1;
             font-feature-settings: 'ss09' on !important;
         }
 
         .Title {
             font-size: 1.8rem;
             font-weight: 600;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         .Paragraph {
             font-size: 1.2rem;
             font-weight: 500;
-            line-height: 1;
             opacity: .6;
         }

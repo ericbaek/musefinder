@@ -9,13 +9,11 @@
     .Title {
         font-weight: 700;
         font-size: 2.2rem;
-        line-height: 1;
     }
 
     .Paragraph {
         font-weight: 600;
         font-size: 1.6rem;
-        line-height: 1;
         cursor: pointer;
         color: hsl(213, 100%, 56%);
     }

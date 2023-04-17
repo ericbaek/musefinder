@@ -44,7 +44,12 @@ export const Theme = () => {
             background: var(--box-bg-color);
             padding: calc(var(--padding-activity) / 3);
             cursor: pointer;
+            transition: var(--transition-bg);
         }
+
+          .Theme:hover {
+            background: var(--box-hover-color);
+          }
     `}</style>
     </div>
     
