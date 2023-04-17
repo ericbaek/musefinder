@@ -64,7 +64,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
     
     return (
       <>
-          <div className=''>
+          <div className='SmallGroupCard'>
               {/* 특정 조건에서만 뜨도록 제작 예정
               <div className='SmallGroupTab row'>
                   <Tab Href='/' Title='전체'/>

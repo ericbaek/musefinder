@@ -20,7 +20,7 @@ export const Filter = ({
     <div className={`${styles.Filter} ${isActive ? 'Filter_Active' : ''}`} {...props} onClick={handleClick}>{Title}
     <style jsx>{`
       .Filter_Active {
-        background: var(--active-box-bg-color);
+        background: var(--box-active-color);
       }
     `}</style></div>
     

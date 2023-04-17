@@ -8,7 +8,12 @@
     background: var(--box-bg-color);
     border-radius: var(--radius-box);
     gap: 4px;
+    transition: var(--transition-bg);
 }
+
+    .Button:hover {
+        background: var(--box-hover-color);
+    }
 
     .Icon {
         font-family: var(--font-icon);

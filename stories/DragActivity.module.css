@@ -1,5 +1,5 @@
 .DragActivity {
-    background: var(--colorless-90);
+    background: var(--bg-color);
     left: 0;
     right: 0;
     bottom: 0;
@@ -11,6 +11,7 @@
     padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) 0 var(--padding-activity);
     /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
     border-radius: var(--radius-activity) var(--radius-activity) 0 0;
+    border-top: 1px solid var(--border-color);
 }
 
     .Drag {
@@ -31,9 +32,9 @@
     }
 
         .Back > a {
-            background: var(--colorless-90);
+            background: var(--box-bg-color);
             padding: .8rem;
-            border-radius: var(--radius-system);
+            border-radius: var(--radius-box);
         }
 
     .GroupMap {
@@ -94,6 +95,8 @@
         width: 424px;
         padding: 0 var(--padding-activity);
         border-radius: 0;
+        border-right: 1px solid var(--border-color);
+        border-top: 0;
     }
 
         .Drag {

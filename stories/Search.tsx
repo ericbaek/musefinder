@@ -48,13 +48,7 @@ export const Search = ({
           }
 
           .Search_Focus {
-            background: var(--desktop-search-hover-color);
-          }
-
-          @media (max-width: 1279.98px) {
-              .Search_Focus {
-                  background: var(--box-hover-color) !important;
-              }
+            background: var(--box-hover-color);
           }
       `}
       </style>

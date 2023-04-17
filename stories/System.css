@@ -1,54 +1,18 @@
 /* Small Mobile < 600 < General Mobile < 768 < Tablet < 1280px: Desktop */
 
 :root {
-
-    --radius-box: 8px;
-    --padding-box: 1.6rem;
-    --box-bg-color: var(--colorless-100);
-    --box-icon-color: hsl(240, 6%, 79%);
-
-    --border-color: hsl(0, 0%, 20%, 0.50);
-    --border2-color: hsl(0, 0%, 20%, 0.50);
-
-
-    /*
-    --border-color: #0000001A;
-    --Elevated-Primary: var(--white);
-    --Elevated-Secondary: 
-    --Elevated-Quaternary: #bcbcc3;
-    --Elevated-Quinary: #acacb4;
-    --Elevated-Secondary-NotTransparent: #e9e9ed;
-    --Label-Secondary: #3C3C4399;
-    --Tertiary: #7676801F;
-    --Tertiary2: #00000017;
-    --Tertiary-NotTransparent: #f8f8f8;
-    --Seperated-Transparent: #FFFFFFBF;
-    --body-bg: #F2F2F7;
-    --body-bg-80: #F2F2F7CC;
-    --body-bg-60: #F2F2F799;
-
-    .Card {
-        padding: --padding-box
-        background: --box-bg-color
-        border-radius: --radius-box
-    }
-
-    .Icon {
-        background: --box-icon-color
-        border-radius: --radius-box
-        font-family: --font-icon
-    }
-    */
-
+    /* Font */
     --font-size: 9.5px;
     --font-icon: 'Musefinder', 'Min Icon VF';
     --font-monospace: 'FiraCode Variable', 'Pretendard Variable', monospace;
     --font-sans-serif: -apple-system, 'SF Pro', 'SF Pro Display', 'Pretendard Variable', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
+
+    /* Colorless */
     --colorless-100: hsl(0, 0%, 100%);
-    --colorless-100-tp: hsl(0, 0%, 100%, 0.20);
+    --colorless-100-tp: hsla(0, 0%, 100%, 0.20);
     --colorless-95: hsl(0, 0%, 95%);
-    --colorless-95-tp: hsl(0, 0%, 95%, 0.90);
+    --colorless-95-tp: hsla(0, 0%, 95%, 0.90);
     --colorless-90: hsl(0, 0%, 90%);
     --colorless-85: hsl(0, 0%, 85%);
     --colorless-80: hsl(0, 0%, 80%);
@@ -60,82 +24,73 @@
     --colorless-20: hsl(0, 0%, 20%);
     --colorless-15: hsl(0, 0%, 15%);
     --colorless-10: hsl(0, 0%, 10%);
-    --colorless-5-tp: hsl(0, 0%, 5%, 0.90);
+    --colorless-5-tp: hsla(0, 0%, 5%, 0.90);
     --colorless-5: hsl(0, 0%, 5%);
     --colorless-0: hsl(0, 0%, 0%);
-    --colorless-0-tp: hsl(0, 0%, 0%, 0.20);
+    --colorless-0-tp: hsla(0, 0%, 0%, 0.20);
 
+
+    /* Brand Color */
     --color-dynamic-muse: linear-gradient(135deg, hsl(270, 88%, 70%) 10%, hsl(245, 82%, 67%) 100%);
     --color-dynamic-water: linear-gradient(135deg, hsl(211, 100%, 67%) 10%, hsl(207, 100%, 51%) 100%);
     --color-dynamic-sand: linear-gradient(135deg, hsl(39, 94%, 63%) 10%, hsl(39, 84%, 51%) 100%);
     --color-dynamic-coral: linear-gradient(135deg, hsl(0, 86%, 69%) 10%, hsl(0, 86%, 61%) 100%);
 
 
+    /* System Color */
+    --body-color: var(--colorless-0); /* Body */
+    --bg-color: hsl(240, 24%, 96%); /* BG */
 
-    --body-color: var(--colorless-0);
+    --header-bg-color: hsla(240, 24%, 96%, 0.70); /* Header */
 
-    --header-bg-color: hsl(240, 24%, 96%, 0.70);
+    --box-bg-color: var(--colorless-100); /* Content */
+    --box-icon-color: hsl(240, 6%, 79%);
+    --box-hover-color: hsl(0, 0%, 97%);
+    --box-active-color: hsla(0, 0%, 0%, 0.09);
 
-    --box-color: var(--colorless-100);
-    --box-hover-color: hsl(0, 0%, 97.5%);
-    --box-active-color: hsl(0, 0%, 0%, 0.07);
+    --dragpill-color: var(--colorless-85); /* Pill */
 
-    --bg-color: hsl(240, 24%, 96%);
-    --bg-hover-color: hsl(0, 0%, 97.5%);
+    --border-color: hsla(0, 0%, 0%, 0.1); /* Border */
+    --border2-color: hsla(0, 0%, 0%, 0.05);
 
-    --desktop-search-hover-color: var(--colorless-95);
 
-    --dragpill-color: var(--colorless-85);
-
-    --item-hover-color: hsl(0, 0%, 0%, 0.05);
-    --item-active-color: hsl(0, 0%, 0%, 0.07);
-
-    --bg-color-transparent: var(--colorless-95-tp);
-
-    --general-shadow-color: var(--colorless-0-tp);
-
-    --radius-system: 8px;
-    --radius-activity: 24px;
-    --radius-circle: 128px;
-
-    --width-general: 420px;
-
+    /* Size */
     --horizontal-tab-size: 64px;
     --vertical-tab-size: 72px;
 
-    --icon-padding: 0.5rem;
-    --padding-system: 16px;
-    --padding-activity: 24px;
 
+    /* Padding */
+    --padding-activity: 24px;
+    --padding-box: 1.6rem;
+    --padding-system: 16px;
+
+
+    /* Radius */
+    --radius-activity: 24px;
+    --radius-box: 8px;
+    --radius-circle: 128px;
+    --radius-system: 8px;
+
+
+    /* Transition */
     --transition-bg: background .2s ease-out, color .2s ease-out, border .2s ease-out;
 }
 
 .dark {
-    --body-color: var(--colorless-100);
+    --body-color: var(--colorless-100); /* Body */
+    --bg-color: hsl(0, 0%, 0%); /* BG */
 
-    --border-color: hsl(0, 0%, 20%, 0.50);
-    --border2-color: hsl(0, 0%, 20%, 0.50);
+    --header-bg-color: hsla(0, 0%, 0%, 0.70); /* Header */
 
-    --header-bg-color: hsl(0, 0%, 5%, 0.70);
-    --highlayer-bg-color: var(--colorless-5);
+    --box-bg-color: hsl(240, 3%, 11%); /* Content */
+    --box-icon-color: hsl(240, 3%, 11%);
+    --box-hover-color: hsl(0, 0%, 14%);
+    --box-active-color: hsla(0, 0%, 100%, 0.239);
 
-    --box-color: var(--colorless-10);
-    --box-hover-color: hsl(0, 0%, 100%, 0.08);
-    --box-active-color: hsl(0, 0%, 100%, 0.1);
+    --dragpill-color: var(--colorless-10); /* Pill */
 
-    --bg-color: var(--colorless-5);
-    --bg-hover-color: var(--colorless-10);
-
-    --desktop-search-hover-color: var(--colorless-10);
-
-    --dragpill-color: var(--colorless-15);
-
-    --item-hover-color: hsl(0, 0%, 100%, 0.06);
-    --item-active-color: hsl(0, 0%, 100%, 0.1);
-
-    --bg-color-transparent: var(--colorless-5-tp);
-
-    --general-shadow-color: transparent;
+    --border-color: hsla(0, 0%, 100%, 0.15); /* Border */
+    --border2-color: hsla(0, 0%, 100%, 0.05);
 }
 
 *,
@@ -177,6 +132,7 @@ body::-webkit-scrollbar {
     color: var(--body-color);
     flex-direction: column;
     gap: 24px;
+    padding: var(--padding-activity) var(--padding-activity) calc(var(--horizontal-tab-size) + var(--padding-activity) + env(safe-area-inset-bottom)) var(--padding-activity);
 }
 
 .column {
@@ -227,28 +183,13 @@ hr {
     transition: border .2s ease-out;
 }
 
-.Icon {
-    padding: var(--icon-padding);
-    border-radius: var(--radius-circle);
-    transition: var(--transition-bg);
-}
-
-    .Icon:hover {
-        background: var(--item-hover-color);
-    }
-
-    .Icon:active {
-        background: var(--item-active-color);
-    }
-
-
 
 .SmallGroupCard {
     border-radius: var(--radius-system);
 }
 
     .SmallGroupCard a {
-        background: var(--box-color);
+        background: var(--box-bg-color);
         transition: var(--transition-bg);
     }
     
@@ -272,21 +213,14 @@ hr {
         background: var(--box-active-color);
     }
 
-/*
-@media (min-width: 1280px) {
-    .System {
-        width: 1120px;
-        padding: 56px 0;
+    /*
+    @media (min-width: 1280px) {
+        .System {
+            width: 1120px;
+            padding: 56px 0;
+        }
     }
-}
-*/
-
-
-
-    .System {
-        width: 100%;
-        padding: var(--padding-activity) var(--padding-activity) calc(var(--horizontal-tab-size) + var(--padding-activity) + env(safe-area-inset-bottom)) var(--padding-activity);
-    }
+    */
 
     @media (min-width: 768px) {
         .System {
@@ -294,9 +228,11 @@ hr {
             padding: var(--padding-activity) var(--padding-activity) var(--padding-activity) calc(var(--padding-activity) + var(--vertical-tab-size));
         }
 
+        /* Grid
         .Grid {
             
         }
+         */
     }
 
     @media (min-width: 1280px) {

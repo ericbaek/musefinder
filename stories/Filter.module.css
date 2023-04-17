@@ -2,7 +2,7 @@
     width: max-content;
     height: min-content;
     padding: 8px 12px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.2rem;
     line-height: 1;
     background: var(--box-bg-color);
@@ -10,3 +10,7 @@
     transition: var(--transition-bg);
     cursor: pointer;
 }
+
+    .Filter:hover {
+        background: var(--box-hover-color);
+    }

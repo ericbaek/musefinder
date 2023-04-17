@@ -41,8 +41,8 @@ export const Theme = () => {
             top: var(--padding-activity);
             right: var(--padding-activity);
             border-radius: var(--radius-box);
-            background: var(--box-color);
-            padding: calc(var(--padding-activity) / 2);
+            background: var(--box-bg-color);
+            padding: calc(var(--padding-activity) / 3);
             cursor: pointer;
         }
     `}</style>
