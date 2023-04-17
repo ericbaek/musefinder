@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "stories/FilterSet.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "stories/FilterSet.jsx", "modules/Constants.jsx"],
   "exclude": ["node_modules"]
 }
