@@ -38,17 +38,19 @@ export const Theme = () => {
     <style jsx>{`
         .Theme {
             position: fixed;
-            top: var(--padding-activity);
+            bottom: var(--padding-activity);
             right: var(--padding-activity);
             border-radius: var(--radius-box);
-            background: var(--box-bg-color);
-            padding: calc(var(--padding-activity) / 3);
+            background: var(--bg-color);
+            padding: calc(var(--padding-activity) / 2);
             cursor: pointer;
             transition: var(--transition-bg);
+            z-index: 3000;
+            border: .5px solid var(--border-color);
         }
 
           .Theme:hover {
-            background: var(--box-hover-color);
+            background: var(--bg-hover-color);
           }
     `}</style>
     </div>

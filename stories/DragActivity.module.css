@@ -3,7 +3,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    max-height: 95vh;
+    max-height: calc(100vh - 2.2rem - 24px - var(--padding-activity) * 2);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -26,20 +26,22 @@
     }
 
     .Back {
+        width: calc(2.2rem + 24px);
+        height: calc(2.2rem + 24px);
         display: flex;
         align-items: center;
+        justify-content: center;
         position: absolute;
         top: var(--padding-activity);
-        left: calc(var(--padding-activity) + 424px);
-        background: var(--box-bg-color);
-        padding: .8rem;
+        left: calc(var(--padding-activity) * 2 + 424px);
+        background: var(--bg-color);
         border-radius: var(--radius-box);
         cursor: pointer;
         transition: var(--transition-bg);
     }
 
         .Back:hover {
-            background: var(--box-hover-color);
+            background: var(--bg-hover-color);
         }
 
     .GroupMap {
@@ -93,16 +95,12 @@
 
 @media (min-width: 768px) {
     .DragActivity {
-        top: 0;
-        left: 0;
+        position: relative;
         /* 사이드바 left: var(--vertical-tab-size); */
-        height: 100%;
-        max-height: 100%;
-        right: initial;
         width: 424px;
-        padding: 0 var(--padding-activity);
-        border-radius: 0;
-        border-right: 1px solid var(--border-color);
+        max-height: calc(100vh - 2.2rem - 24px - var(--padding-activity) * 3);
+        padding: var(--padding-activity);
+        border-radius: var(--radius-box);
         border-top: 0;
     }
 
@@ -111,7 +109,7 @@
         }
         
         .GroupMap {
-            padding-top: var(--padding-activity);
+            padding: 0;
         }
 }
         
