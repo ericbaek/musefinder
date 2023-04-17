@@ -34,6 +34,7 @@ function Active() {
         if (isDragging) {
         const deltaY = event.clientY - startY;
         const ratio = 1 / (window.innerHeight / 100);
+        activityRef.current = null;
         const activityHeight = activityRef.current.clientHeight;
         const newCurrentY = currentY + deltaY * ratio;
         if (newCurrentY > -(activityHeight - window.innerHeight)) {
