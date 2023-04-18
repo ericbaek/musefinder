@@ -3,45 +3,40 @@
     left: 0;
     right: 0;
     width: 100%;
-    max-height: calc(100vh - 2.2rem - 24px - var(--padding-activity) * 2);
+    max-height: 90%;
     display: flex;
     flex-direction: column;
     position: fixed;
-    padding: 0 var(--padding-activity) 0 var(--padding-activity);
+    padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
     /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
     border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     border-top: 1px solid var(--border-color);
-    transition: transform 650ms ease-out;
-    z-index: 15;
 }
 
     .Drag {
+        width: 100%;
+        padding-bottom: calc(.5rem + var(--padding-activity));
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: calc(var(--padding-activity) * 2);
-        border-radius: var(--radius-activity) var(--radius-activity) 0 0;
-        position: relative;
-        padding: var(--padding-activity);
+        position: sticky;
+        z-index: 10;
     }
 
     .Back {
-        width: calc(2.2rem + 24px);
-        height: calc(2.2rem + 24px);
         display: flex;
         align-items: center;
-        justify-content: center;
         position: absolute;
         top: var(--padding-activity);
-        left: calc(var(--padding-activity) * 2 + 424px);
-        background: var(--bg-color);
+        left: calc(var(--padding-activity) + 424px);
+        background: var(--box-bg-color);
+        padding: .8rem;
         border-radius: var(--radius-box);
         cursor: pointer;
         transition: var(--transition-bg);
     }
 
         .Back:hover {
-            background: var(--bg-hover-color);
+            background: var(--box-hover-color);
         }
 
     .GroupMap {
@@ -49,8 +44,7 @@
         flex-direction: column;
         gap: 2.4rem;
         padding-bottom: var(--padding-activity);
-        overflow: auto;                            
-        -webkit-overflow-scrolling: touch;
+        overflow: scroll;
     }
 
         .SmallGroupMapSearch {
@@ -95,12 +89,15 @@
 
 @media (min-width: 768px) {
     .DragActivity {
-        position: relative;
+        top: 0;
+        left: 0;
         /* 사이드바 left: var(--vertical-tab-size); */
+        max-height: 100%;
+        right: initial;
         width: 424px;
-        max-height: calc(100vh - 2.2rem - 24px - var(--padding-activity) * 3);
-        padding: var(--padding-activity);
-        border-radius: var(--radius-box);
+        padding: 0 var(--padding-activity);
+        border-radius: 0;
+        border-right: 1px solid var(--border-color);
         border-top: 0;
     }
 
@@ -109,7 +106,7 @@
         }
         
         .GroupMap {
-            padding: 0;
+            padding-top: var(--padding-activity);
         }
 }
         
@@ -119,6 +116,15 @@
     }
 
     .DragActivity {
+        cursor: grab;
         bottom: 0;
     }
+
+        .DragActivity:active {
+            cursor: grabbing;
+        }
+
+        .DragActivity.is-dragging {
+            cursor: grabbing;
+        }
 }
