@@ -45,18 +45,15 @@ function Main() {
     const [FilterList, setFilterList] = useState([]);
     
     function handleFilterClick(title: never) {
+        // 만약 이미 리스트에 해당 필터가 있다면
         if (FilterList.includes(title)) {
-        setFilterList(FilterList.filter((t) => t !== title));
+            // 새로운 Array에 해당 필터를 제외한 이름만 넣고 업데이트
+            setFilterList(FilterList.filter((t) => t !== title));
         } else {
-        setFilterList([...FilterList, title]);
+            // 만약 없다면, 새로운 Array에 그 이름을 포함하여 추가
+            setFilterList([...FilterList, title]);
         }
     }
-    
-    /*
-    useEffect(() => {
-    console.log(FilterList);
-    }, [FilterList]);
-    */
 
     // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
     const [latitude, setLatitude] = useState(0);
