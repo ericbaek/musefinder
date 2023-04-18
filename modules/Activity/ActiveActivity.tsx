@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from '@/stories/DragActivity.module.css';
 import Alert from '@/stories/Alert';
 import Card from '@/stories/Card';
@@ -12,22 +12,9 @@ import Theme from '@/stories/Theme';
 import { useRouter } from 'next/router';
 
 
-function Active() {
+export default function ActiveActivity(props: any) {
 
     const router = useRouter();
-
-    /* 
-    import useBottomSheet from '@/modules/DragLogic';
-    const { sheet, content } = useBottomSheet();
-    useEffect(() => { 
-        const MIN_Y = 60;
-        const BOTTOM_SHEET_HEIGHT = window.innerHeight - MIN_Y;
-        const dragActivity = document.querySelector(`.${styles.DragActivity}`) as HTMLElement;
-        if (dragActivity) {
-            dragActivity.style.height = `${BOTTOM_SHEET_HEIGHT}px`;
-        }
-    ref={sheet}  ref={content}
-    }); */
         
     return (
         <>
@@ -166,11 +153,9 @@ function Active() {
                     </div>
                 </div>
             </div>
-            <div className={styles.Back} onClick={() => {router.push('/main');} }> {/* 백버튼 */}
+            <div className={styles.Back} onClick={() => {props.onClose} }> {/* 백버튼 */}
                 <Icon Icon=''/>
             </div>
         </>
     );
 }
-
-export default Active;
