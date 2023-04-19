@@ -14,7 +14,6 @@ export default function ServerNear({props, latitude, longitude, FilterList}: {pr
     본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.
     받아온 json파일은 ID, 아케이드의 lati & Longi, 도로명 주소, 유저로부터 거리를 포함하고 있습니다
     */
-
     const fetchData = async (latitude: number, longitude: number, FilterList: any[]) => {
       console.log(latitude, longitude,FilterList);
       if (latitude !== 0 && longitude !== 0){
