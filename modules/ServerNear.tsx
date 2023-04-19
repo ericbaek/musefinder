@@ -4,7 +4,6 @@ import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ConvertDistance from "./ConvertDistance";
 import Alert from "@/stories/Alert";
-import { useRouter } from 'next/router';
 /* import Tab from "@/stories/Tab"; */
 
 export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
@@ -70,8 +69,6 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
         </>
       );
     }
-    
-    const router = useRouter();
 
     return (
       <>
@@ -95,7 +92,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
                           AccentBG={getAccentBG(arcade.distance)}
                           RightIcon=""
                           BG="var(--bg-color)"
-                          onClick={() => {router.push('/active');}}
+                          onClick={() => {}}
                           V_LeftIcon={false}
                           V_LeftIconBG
                           V_Paragraph
