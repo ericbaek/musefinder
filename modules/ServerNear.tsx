@@ -6,7 +6,7 @@ import ConvertDistance from "./ConvertDistance";
 import Alert from "@/stories/Alert";
 /* import Tab from "@/stories/Tab"; */
 
-export default function ServerNear({props, latitude, longitude, FilterList}: {props: any; latitude: number; longitude: number; FilterList: any;}) {
+export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -92,7 +92,7 @@ export default function ServerNear({props, latitude, longitude, FilterList}: {pr
                           AccentBG={getAccentBG(arcade.distance)}
                           RightIcon=""
                           BG="var(--bg-color)"
-                          onClick={() => {props.onClick}}
+                          onClick={() => {}}
                           V_LeftIcon={false}
                           V_LeftIconBG
                           V_Paragraph

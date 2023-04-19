@@ -9,12 +9,9 @@ import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
 import Theme from '@/stories/Theme';
-import { useRouter } from 'next/router';
 
 
-export default function ActiveActivity(props: any) {
-
-    const router = useRouter();
+export default function ActiveActivity() {
         
     return (
         <>
@@ -153,7 +150,7 @@ export default function ActiveActivity(props: any) {
                     </div>
                 </div>
             </div>
-            <div className={styles.Back} onClick={() => {props.onClose} }> {/* 백버튼 */}
+            <div className={styles.Back} onClick={() => {} }> {/* 백버튼 */}
                 <Icon Icon=''/>
             </div>
         </>

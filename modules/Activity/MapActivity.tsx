@@ -94,7 +94,7 @@ export default function MapActivity() {
     return (
         <>
         {showActive ? (
-            <ActiveActivity onClose={() => setShowActive(false)} />
+            <ActiveActivity/>
           ) : (
 
         <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
