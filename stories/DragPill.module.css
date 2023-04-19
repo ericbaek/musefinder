@@ -10,5 +10,4 @@
         height: .5rem;
         border-radius: var(--radius-circle);
         background: var(--dragpill-color);
-        margin: auto;
     }

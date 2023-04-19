@@ -2,7 +2,7 @@
 
 :root {
     /* Font */
-    --font-size: 10px;
+    --font-size: 12px;
     --font-icon: 'Musefinder', 'Min Icon VF';
     --font-monospace: 'FiraCode Variable', 'Pretendard Variable', monospace;
     --font-sans-serif: -apple-system, 'SF Pro', 'SF Pro Display', 'Pretendard Variable', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -38,17 +38,16 @@
 
 
     /* System Color */
-    --default-bg-color: #c9c9c9;
+    --default-bg-color: var(--colorless-100);
 
     --body-color: var(--colorless-0); /* Body */
     --bg-color: hsl(240, 24%, 96%); /* BG */
-    --bg-hover-color: hsl(240, 6%, 79%);
 
     --header-bg-color: hsla(240, 24%, 96%, 0.70); /* Header */
 
     --box-bg-color: var(--colorless-100); /* Content */
     --box-icon-color: hsl(240, 6%, 79%);
-    --box-hover-color: hsl(0, 0%, 98%);
+    --box-hover-color: hsl(0, 0%, 97%);
     --box-active-color: hsl(0, 0%, 88%);
 
     --dragpill-color: var(--colorless-85); /* Pill */
@@ -79,18 +78,17 @@
 }
 
 .dark {
-    --default-bg-color: var(--colorless-10);
+    --default-bg-color: var(--colorless-5);
     
     --body-color: var(--colorless-100); /* Body */
     --bg-color: hsl(0, 0%, 0%); /* BG */
-    --bg-hover-color: hsl(0, 0%, 5%);
-    
+
     --header-bg-color: hsla(0, 0%, 0%, 0.70); /* Header */
 
     --box-bg-color: hsl(240, 3%, 11%); /* Content */
     --box-icon-color: hsl(240, 3%, 11%);
-    --box-hover-color: hsl(0, 0%, 13%);
-    --box-active-color: hsl(0, 0%, 17%);
+    --box-hover-color: hsl(0, 0%, 16%);
+    --box-active-color: hsl(0, 0%, 22%);
 
     --dragpill-color: var(--colorless-10); /* Pill */
 
@@ -139,7 +137,7 @@ body::-webkit-scrollbar {
     color: var(--body-color);
     flex-direction: column;
     gap: 24px;
-    padding: var(--padding-activity);
+    padding: var(--padding-activity) var(--padding-activity) calc(var(--horizontal-tab-size) + var(--padding-activity) + env(safe-area-inset-bottom)) var(--padding-activity);
 }
 
 .column {
@@ -197,9 +195,19 @@ hr {
             padding: 56px 0;
         }
     }
+    */
 
     @media (min-width: 768px) {
+        .System {
+            width: 100%;
+            padding: var(--padding-activity) var(--padding-activity) var(--padding-activity) calc(var(--padding-activity) + var(--vertical-tab-size));
+        }
 
+        /* Grid
+        .Grid {
+            
+        }
+         */
     }
 
     @media (min-width: 1280px) {
@@ -213,7 +221,6 @@ hr {
             float: none;
         }
     }
-    */
 
 @media (max-width: 387.98px) {
     :root {

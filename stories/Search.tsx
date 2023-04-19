@@ -48,7 +48,7 @@ export const Search = ({
           }
 
           .Search_Focus {
-            background: var(--bg-hover-color);
+            background: var(--box-hover-color);
           }
       `}
       </style>

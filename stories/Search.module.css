@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-color);
+    background: var(--box-bg-color);
     border-radius: var(--radius-system);
     transition: var(--transition-bg);
 }
@@ -56,9 +56,3 @@
             cursor: pointer;
             opacity: .6;
         }
-
-@media (min-width: 768px) {
-    .Search {
-        width: 424px;
-    }
-}
