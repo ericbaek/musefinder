@@ -5,7 +5,8 @@ import arcades from '@/Arcades.json';
 사용자의 위치를 받고 거리별로 가까운 아케이드를 안내하는 API입니다.
 <예정> 필터가 활성화되었다면 필터를 고려하여 가까운 아케이드를 안내합니다.
 */
-export default async (req: any, res: any) => {
+
+async function handleArcadeRequest(req: any, res: any) {
   // Get user's location from query parameters
   const userLatitude = parseFloat(req.query.latitude);
   const userLongitude = parseFloat(req.query.longitude);
@@ -39,6 +40,8 @@ export default async (req: any, res: any) => {
   // 정리된 리스트를 json 형태로 보내줍니다.
   res.json(filteredArcades);
 }
+
+export default handleArcadeRequest;
 
 // 2개의 위치를 기준으로 거리를 계산해주는 수식
 function getDistance(lat1: any, lon1: any, lat2: any, lon2: any) {
