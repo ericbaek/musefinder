@@ -38,13 +38,14 @@ export const Theme = () => {
     <style jsx>{`
         .Theme {
             position: fixed;
-            top: var(--padding-activity);
+            bottom: var(--padding-activity);
             right: var(--padding-activity);
             border-radius: var(--radius-box);
             background: var(--box-bg-color);
             padding: calc(var(--padding-activity) / 3);
             cursor: pointer;
             transition: var(--transition-bg);
+            border: 1px solid var(--border-color);
         }
 
           .Theme:hover {

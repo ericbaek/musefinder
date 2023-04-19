@@ -15,7 +15,7 @@ export const Primary: Story = {
   args: {
     V_RightIcon: false,
     LeftIcon: '',
-    Placeholder: '검색',
+    Placeholder: 'Placeholder',
     RightIcon: '',
   },
 };

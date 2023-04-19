@@ -124,6 +124,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
+    height: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -134,8 +135,7 @@ body::-webkit-scrollbar {
 
 .System {
     display: flex;
-    width: 100%;
-    height: auto;
+    height: 100%;
     color: var(--body-color);
     flex-direction: column;
     gap: 24px;

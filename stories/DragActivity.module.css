@@ -89,15 +89,12 @@
 
 @media (min-width: 768px) {
     .DragActivity {
-        top: 0;
-        left: 0;
+        position: relative;
         /* 사이드바 left: var(--vertical-tab-size); */
         max-height: 100%;
-        right: initial;
         width: 424px;
         padding: 0 var(--padding-activity);
-        border-radius: 0;
-        border-right: 1px solid var(--border-color);
+        border-radius: var(--radius-box);
         border-top: 0;
     }
 
