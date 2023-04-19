@@ -30,8 +30,9 @@
             background: transparent;
             color: var(--body-color);
             font-family: var(--font-family);
-            font-weight: 500;
-            font-size: 1.8rem;
+            font-weight: 400;
+            font-size: 1.7rem;
+            line-height: 1;
             letter-spacing: -.2pt;
             padding: 0;
         }

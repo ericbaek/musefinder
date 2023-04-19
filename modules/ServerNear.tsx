@@ -71,9 +71,10 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
       );
     }
 
+    
     return (
       <>
-          <ContentTitle Title='오락실' V_Paragraph Paragraph='모두 보기' onClick={() => setNumCards(numCards + 3)}/>
+          <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={() => setNumCards(numCards + 3)}/>
           <div className='SmallGroupCard'>
               {/* 특정 조건에서만 뜨도록 제작 예정
               <div className='SmallGroupTab row'>
