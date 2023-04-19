@@ -4,6 +4,7 @@ import ServerNear from '@/modules/ServerNear';
 import styles from '@/stories/DragActivity.module.css'
 import ActiveActivity from './ActiveActivity';
 import ContentTitle from '@/stories/ContentTitle';
+import AllGameActivity from './AllGameActivity';
 
 
 function FilterSettings(props: any) {
@@ -17,21 +18,21 @@ function FilterSettings(props: any) {
             'IIDX',
             'SDVX 발키리',
             'SDVX',
-            '펌프 잇 업',
             'maimai DX',
             'maimai Finale',
             '츄니즘',
-            '팝픈뮤직',
-            'DDR',
             '태고의 달인',
+            '댄스러시',
+            'DDR',
+            '펌프 잇 업',
+            '비트온',
             '노스탤지어',
             '유비트',
+            '팝픈뮤직',
             '기타프릭스',
             '드럼매니아',
-            '댄스러시',
-            '리플렉 비트',
             'WACCA',
-            '비트온'
+            '리플렉 비트'
         ].map(title => (
             <Filter key={title} Title={title} onClick={handleFilterClick}/>
         ))}
@@ -87,13 +88,42 @@ export default function MapActivity() {
 
     // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
     const isActive = useState(false);
+    const [showAllGameActivity, setAllGameActivity] = useState(false);
+    const [showAllMapActivity, setAllMapActivity] = useState(true);
+    
+    function openClick() {
+        setAllGameActivity(true);
+        setAllMapActivity(false);
+    }
+    
+    function backClick() {
+        setAllGameActivity(false);
+        setAllMapActivity(true);
+    }
+      
     return (
         <>
             <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
-                <FilterSettings onFilterClick={handleFilterClick}/>
-                <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                    <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
-                </div>
+
+                    
+                    <FilterSettings onFilterClick={handleFilterClick}/>
+                    {showAllMapActivity &&
+                    <>
+                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                            <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={openClick}/>
+                            <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                         </div>
+                    </>
+                    }
+                    
+                    {showAllGameActivity &&
+                    <>
+                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                            <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={backClick}/>
+                            <AllGameActivity latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                        </div>
+                    </>
+                }
             </div>
         </>
     );

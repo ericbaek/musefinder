@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Card from '@/stories/Card';
-import ConvertDistance from "./ConvertDistance";
+import ConvertDistance from "@/modules/ConvertDistance";
 import Alert from "@/stories/Alert";
 /* import Tab from "@/stories/Tab"; */
 
-export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
+export default function AllGameActivity({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +49,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
         }
     };
 
-    const [numCards] = useState(3); // 카드는 3개 노출부터 시작.
+    const [numCards] = useState(0); // 카드는 3개 노출부터 시작.
 
     // API에서 딜레이가 생길때, 유저의 GPS가 0,0 일때 해당 메세지가 표시됩니다.
     if (isLoading) {
@@ -68,18 +68,11 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
         </>
       );
     }
-
-
+    
     return (
       <>
           <div className='SmallGroupCard'>
-              {/* 특정 조건에서만 뜨도록 제작 예정
-              <div className='SmallGroupTab row'>
-                  <Tab Title='전체'/>
-                  <Tab Title='라이트닝 기체'/>
-              </div>
-              */}
-              {arcadesWithDistance.slice(0, numCards).map((arcade: any, index) => (
+              {arcadesWithDistance.map((arcade: any, index) => (
                   <React.Fragment key={index}>
                       <Card
                           Title={arcade.name}

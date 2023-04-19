@@ -90,7 +90,7 @@
     --box-bg-color: hsl(240, 3%, 11%); /* Content */
     --box-icon-color: hsl(240, 3%, 11%);
     --box-hover-color: hsl(0, 0%, 13%);
-    --box-active-color: hsl(0, 0%, 17%);
+    --box-active-color: hsl(0, 0%, 21%);
 
     --dragpill-color: var(--colorless-10); /* Pill */
 
@@ -118,6 +118,11 @@ html {
     letter-spacing: -.2pt;
 	font-variation-settings: 'rond' 3, 'edpt' 1;
     vertical-align: top;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 body {
