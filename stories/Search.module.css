@@ -26,7 +26,7 @@
         .Left input {
             border: 0;
             width: 100%;
-            height: calc(2.2rem + 24px);
+            height: 4.6rem;
             background: transparent;
             color: var(--body-color);
             font-family: var(--font-family);

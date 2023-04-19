@@ -3,6 +3,7 @@ import Filter from '@/stories/Filter';
 import ServerNear from '@/modules/ServerNear';
 import styles from '@/stories/DragActivity.module.css'
 import ActiveActivity from './ActiveActivity';
+import ContentTitle from '@/stories/ContentTitle';
 
 
 function FilterSettings(props: any) {
@@ -39,11 +40,6 @@ function FilterSettings(props: any) {
 }
 
 export default function MapActivity() {
-    const [showActive, setShowActive] = useState(false);
-
-    function handleCard1Click() {
-        setShowActive(true);
-    }
 
     // 필터 캡슐이 눌릴때 FilterList에 추가할지 제거할지 결정합니다.
     const [FilterList, setFilterList] = useState([]);
@@ -93,18 +89,12 @@ export default function MapActivity() {
     const isActive = useState(false);
     return (
         <>
-        {showActive ? (
-            <ActiveActivity/>
-          ) : (
-
-        <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
-            <FilterSettings onFilterClick={handleFilterClick}/>
-            <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+            <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
+                <FilterSettings onFilterClick={handleFilterClick}/>
+                <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                    <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                </div>
             </div>
-        </div>
-
-        )}
         </>
     );
 };

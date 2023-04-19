@@ -89,11 +89,12 @@
 
 @media (min-width: 768px) {
     .DragActivity {
-        position: relative;
         /* 사이드바 left: var(--vertical-tab-size); */
-        max-height: 100%;
+        position: relative;
+        top: var(--padding-activity);
         width: 424px;
-        padding: 0 var(--padding-activity);
+        max-height: calc(100vh - 4.6rem - var(--padding-activity) * 3);
+        padding: var(--padding-activity);
         border-radius: var(--radius-box);
         border-top: 0;
     }
@@ -103,7 +104,7 @@
         }
         
         .GroupMap {
-            padding-top: var(--padding-activity);
+            padding: 0;
         }
 }
         

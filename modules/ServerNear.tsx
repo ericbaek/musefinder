@@ -4,6 +4,7 @@ import Button from '@/stories/Button';
 import Card from '@/stories/Card';
 import ConvertDistance from "./ConvertDistance";
 import Alert from "@/stories/Alert";
+import ContentTitle from "@/stories/ContentTitle";
 /* import Tab from "@/stories/Tab"; */
 
 export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
@@ -72,6 +73,7 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
 
     return (
       <>
+          <ContentTitle Title='오락실' V_Paragraph Paragraph='모두 보기' onClick={() => setNumCards(numCards + 3)}/>
           <div className='SmallGroupCard'>
               {/* 특정 조건에서만 뜨도록 제작 예정
               <div className='SmallGroupTab row'>
@@ -106,9 +108,6 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
                   </React.Fragment>
               ))}
           </div>
-          {numCards < arcadesWithDistance.length && (
-              <Button Icon="" Title="더보기" onClick={() => setNumCards(numCards + 3)} V_Icon={false}/>
-          )}
       </>
   );
     }
