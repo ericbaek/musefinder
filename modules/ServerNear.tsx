@@ -69,7 +69,6 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
       );
     }
 
-
     return (
       <>
           <div className='SmallGroupCard'>
@@ -108,4 +107,4 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
           </div>
       </>
   );
-    }
+}

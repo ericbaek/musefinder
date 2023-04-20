@@ -2,7 +2,6 @@ import React from 'react';
 import '@/stories/Import.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Search } from '@/stories/Search';
 import Theme from '@/stories/Theme';
 /* import TabBar from '@/stories/TabBar'; */
 
@@ -29,7 +28,6 @@ export default function App({ Component, pageProps }: AppProps) {
           */}
           <Theme/>
           <div className='System'>
-            <Search V_RightIcon={false} LeftIcon='' Placeholder='Placeholder' RightIcon='' />
             <Component {...pageProps} />
           </div>
       </div>

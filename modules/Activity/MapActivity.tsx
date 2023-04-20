@@ -6,7 +6,6 @@ import ActiveActivity from './ActiveActivity';
 import ContentTitle from '@/stories/ContentTitle';
 import AllGameActivity from './AllGameActivity';
 
-
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {
       props.onFilterClick(title);
@@ -40,11 +39,11 @@ function FilterSettings(props: any) {
     );
 }
 
-export default function MapActivity() {
+function MapActivity() {
 
     // 필터 캡슐이 눌릴때 FilterList에 추가할지 제거할지 결정합니다.
     const [FilterList, setFilterList] = useState([]);
-    
+
     function handleFilterClick(title: never) {
         if (FilterList.includes(title)) {
         setFilterList(FilterList.filter((t) => t !== title));
@@ -90,41 +89,54 @@ export default function MapActivity() {
     const isActive = useState(false);
     const [showAllGameActivity, setAllGameActivity] = useState(false);
     const [showAllMapActivity, setAllMapActivity] = useState(true);
-    
-    function openClick() {
+
+
+    function AllGameopenClick() {
         setAllGameActivity(true);
         setAllMapActivity(false);
     }
     
-    function backClick() {
+    function AllGamebackClick() {
         setAllGameActivity(false);
         setAllMapActivity(true);
     }
-      
+    
+    const [showActiveActivity, setActiveActivity] = useState(true);
+    const [showMainActivity, setMainActivity] = useState(false);
+    
     return (
         <>
-            <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
+            {showMainActivity && 
+                <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
 
-                    
-                    <FilterSettings onFilterClick={handleFilterClick}/>
-                    {showAllMapActivity &&
-                    <>
-                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                            <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={openClick}/>
-                            <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
-                         </div>
-                    </>
+                        <FilterSettings onFilterClick={handleFilterClick}/>
+                        {showAllMapActivity &&
+                        <>
+                            <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                                <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={AllGameopenClick}/>
+                                <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                            </div>
+                        </>
+                        }
+                        
+                        {showAllGameActivity &&
+                        <>
+                            <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+                                <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={AllGamebackClick}/>
+                                <AllGameActivity latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                            </div>
+                        </>
+
                     }
-                    
-                    {showAllGameActivity &&
-                    <>
-                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                            <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={backClick}/>
-                            <AllGameActivity latitude={latitude} longitude={longitude} FilterList={FilterList}/>
-                        </div>
-                    </>
-                }
-            </div>
+                </div>
+            }
+            {showActiveActivity && 
+                <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
+                    <ActiveActivity/>
+                </div>
+            }
         </>
     );
 };
+
+export default MapActivity;
