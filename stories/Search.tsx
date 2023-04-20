@@ -53,7 +53,7 @@ export const Search = ({
         <input type="text" value={inputValue} onChange={handleInputChange} ref={inputRef} placeholder={Placeholder} />
         
       </div>
-      {rightIcon && <div className={styles.RightIcon} onClick={handleRightIconClick}></div>}
+      {rightIcon && <div className={styles.RightIcon} onClick={handleRightIconClick}></div>}
       <style jsx>{`
           .Search_Focus {
             background: var(--box-hover-color);

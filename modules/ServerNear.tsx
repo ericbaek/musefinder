@@ -91,7 +91,6 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
                           AccentBG={getAccentBG(arcade.distance)}
                           RightIcon=""
                           BG="var(--bg-color)"
-                          onClick={() => {}}
                           V_LeftIcon={false}
                           V_LeftIconBG
                           V_Paragraph

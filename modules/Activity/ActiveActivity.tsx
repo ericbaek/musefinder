@@ -7,6 +7,7 @@ import Icon from '@/stories/Icon';
 import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
+import Back from '@/stories/Back';
 
 
 export default function ActiveActivity() {
@@ -108,11 +109,12 @@ export default function ActiveActivity() {
 
                 <div className='GroupAlert'>
                     <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
+                    <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
                 </div>
 
                 <hr/>
 
-                <div className='SmallGroupContent'>  {/* 기체 정보 */}
+                <div className='SmallGroupContent'> {/* 기체 정보 */}
                     <ContentTitle Title='게임' V_Paragraph={false} Paragraph='Paragraph'/>
                     <div className='SmallGroupCard'>
                         <Card
@@ -126,7 +128,7 @@ export default function ActiveActivity() {
                             AccentBG="var(--color-dynamic-muse)"
                             RightIcon=""
                             BG="var(--bg-color)"
-                            onClick={() => { } }
+                            onClick={() => {}}
                             V_LeftIcon={false}
                             V_LeftIconBG
                             V_Paragraph
@@ -138,9 +140,7 @@ export default function ActiveActivity() {
                     </div>
                 </div>
             </div>
-            <div className={styles.Back} onClick={() => {} }> {/* 백버튼 */}
-                <Icon Icon=''/>
-            </div>
+            <Back/>
         </>
     );
 }

@@ -7,7 +7,7 @@ function WindowSearch() {
 
     return (
         <>
-            <Search LeftIcon='' Placeholder='오락실 검색' RightIcon='' V_RightIcon={true}/>
+            <Search LeftIcon='' Placeholder='오락실 검색'/>
 
             <div className='GroupSearchResult'>
 

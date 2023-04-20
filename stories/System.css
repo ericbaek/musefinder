@@ -49,6 +49,7 @@
     --box-bg-color: var(--colorless-100); /* Content */
     --box-icon-color: hsl(240, 6%, 79%);
     --box-hover-color: hsl(0, 0%, 98%);
+    --box-hover-sub-color: hsl(0, 0%, 94%);
     --box-active-color: hsl(0, 0%, 88%);
 
     --dragpill-color: var(--colorless-85); /* Pill */
@@ -90,6 +91,7 @@
     --box-bg-color: hsl(240, 3%, 11%); /* Content */
     --box-icon-color: hsl(240, 3%, 11%);
     --box-hover-color: hsl(0, 0%, 13%);
+    --box-hover-sub-color: hsl(0, 0%, 16%);
     --box-active-color: hsl(0, 0%, 21%);
 
     --dragpill-color: var(--colorless-10); /* Pill */
@@ -188,7 +190,7 @@ hr {
     margin: 0;
     border: .2px solid var(--border-color);
     border-radius: var(--radius-circle);
-    transition: border .2s ease-out;
+    transition: var(--transition-bg);
 }
 
     /*
