@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import Card from '@/stories/Card';
 import ConvertDistance from "@/modules/ConvertDistance";
 import Alert from "@/stories/Alert";
@@ -8,25 +7,64 @@ import Alert from "@/stories/Alert";
 // Firebase 관련 import
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
+import { GeoPoint } from "@google-cloud/firestore";
+import CalculateDistance from "./CalculateDistance";
 
-export default function AllGameActivity({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
-
+export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
+    console.log(latitude,longitude);
     /* 
-    본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.
-    받아온 json파일은 ID, 아케이드의 lati & Longi, 도로명 주소, 유저로부터 거리를 포함하고 있습니다
+    본인의 위치를 보내고 DB에서 아케이드 리스트를 받아옵니다.
     */
-    const [documents, setDocuments] = useState([]);
+    interface Arcade {
+      name: string;
+      address: string;
+      location: {
+        latitude: number;
+        longitude: number;
+      };
+      games: {
+        Gname: string;
+        quantity: number;
+        price: string;
+      }[];
+    }
+
+    const [documents, setDocuments] = useState<Arcade[]>([]);
+
+    interface UserLocation {
+      latitude: number;
+      longitude: number;
+    };
+    const [userLocation, setUserLocation] = useState<UserLocation>({
+      latitude: latitude,
+      longitude: longitude,
+    });
     
     useEffect(() => {
       const getDocuments = async () => {
-        const colRef = collection(db, 'arcades');
+        // Retry when latitude and longitude are 0
+        if (userLocation.latitude === 0 && userLocation.longitude === 0) {
+          setTimeout(() => {
+            setUserLocation({
+              latitude: latitude,
+              longitude: longitude,
+            });
+          }, 1000);
+          return;
+        }
+        
+        const colRef = collection(db, "arcades");
         const snapshot = await getDocs(colRef);
-        const documents = snapshot.docs.map(doc => doc.data());
+        const documents = snapshot.docs.map((doc) => {
+          const data = doc.data() as Arcade;
+          const distance = CalculateDistance(data.location, userLocation);
+          return { ...data, distance };
+        });
         console.log(documents);
+        setDocuments(documents);
       };
       getDocuments();
-    }, []);
-    
+    }, [userLocation]);
 
     // 거리에 따른 Accent 컬러를 바꿉니다.
     const getAccentBG = (distance: number) => {
@@ -43,9 +81,34 @@ export default function AllGameActivity({latitude, longitude, FilterList}: {lati
     
     return (
       <>
-          <div className='SmallGroupCard'>
-            일단 여기에 뭔가 넣어야함/
-          </div>
+        <div>
+          {documents.map((arcade: any, index) => (
+                  <React.Fragment key={index}>
+                      <Card
+                          Title={arcade.name}
+                          Paragraph={arcade.address}
+                          Paragraph2="Paragraph2"
+                          LeftIcon=""
+                          LeftIconBG="var(--box-icon-color)"
+                          LeftIconImage=""
+                          AccentText={<ConvertDistance km={arcade.distance}/>}
+                          AccentBG={getAccentBG(arcade.distance)}
+                          RightIcon=""
+                          BG="var(--bg-color)"
+                          onClick={() => {}}
+                          V_LeftIcon={false}
+                          V_LeftIconBG
+                          V_Paragraph
+                          V_Paragraph2={false}
+                          V_Accent
+                          V_RightIcon={false}
+                          V_BG={false}
+                      />
+                      {index !== documents.length - 1 && index !== numCards - 1 && <hr />}
+                      {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
+                  </React.Fragment>
+            ))}
+        </div>
       </>
-  );
-    }
+    );
+  }
