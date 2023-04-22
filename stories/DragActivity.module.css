@@ -3,14 +3,15 @@
     left: 0;
     right: 0;
     width: 100%;
-    max-height: 90%;
+    max-height: calc(100vh - 4.6rem - var(--padding-activity) * 2);
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
     /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
     border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     border-top: 1px solid var(--border-color);
+    transition: var(--transition-bg);
 }
 
     .Drag {
@@ -21,23 +22,6 @@
         position: sticky;
         z-index: 10;
     }
-
-    .Back {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: var(--padding-activity);
-        left: calc(var(--padding-activity) + 424px);
-        background: var(--box-bg-color);
-        padding: .8rem;
-        border-radius: var(--radius-box);
-        cursor: pointer;
-        transition: var(--transition-bg);
-    }
-
-        .Back:hover {
-            background: var(--box-hover-color);
-        }
 
     .GroupMap {
         display: flex;
@@ -89,11 +73,12 @@
 
 @media (min-width: 768px) {
     .DragActivity {
-        position: relative;
         /* 사이드바 left: var(--vertical-tab-size); */
-        max-height: 100%;
+        position: relative;
+        top: calc(4.6rem + var(--padding-activity));
         width: 424px;
-        padding: 0 var(--padding-activity);
+        max-height: calc(100vh - 4.6rem - var(--padding-activity) * 3);
+        padding: var(--padding-activity);
         border-radius: var(--radius-box);
         border-top: 0;
     }
@@ -103,25 +88,12 @@
         }
         
         .GroupMap {
-            padding-top: var(--padding-activity);
+            padding: 0;
         }
 }
         
 @media (max-width: 767.98px) {
-    .Back {
-        display: none;
-    }
-
     .DragActivity {
-        cursor: grab;
         bottom: 0;
     }
-
-        .DragActivity:active {
-            cursor: grabbing;
-        }
-
-        .DragActivity.is-dragging {
-            cursor: grabbing;
-        }
 }

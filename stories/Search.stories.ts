@@ -13,9 +13,7 @@ type Story = StoryObj<typeof Search>;
 
 export const Primary: Story = {
   args: {
-    V_RightIcon: false,
     LeftIcon: '',
     Placeholder: 'Placeholder',
-    RightIcon: '',
   },
 };

@@ -2,22 +2,38 @@ import React, { useRef, useState } from 'react';
 import styles from './Search.module.css';
 
 interface SearchProps {
-  V_RightIcon: boolean;
   LeftIcon: string;
   Placeholder: string;
-  RightIcon: string;
   onClick?: () => void;
 }
 
 export const Search = ({
-  V_RightIcon, LeftIcon, Placeholder, RightIcon, ...props
+  LeftIcon, Placeholder, ...props
 }: SearchProps) => {
+
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleIconClick = () => {
+  const handleLeftIconClick = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
+  };
+
+  const [inputValue, setInputValue] = useState("");
+  const [rightIcon, setRightIcon] = useState(false);
+
+  const handleInputChange = (event: any) => {
+    const value = event.target.value;
+    setInputValue(value);
+    setRightIcon(value.length > 0);
+  };
+
+  const handleRightIconClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+    setInputValue("");
+    setRightIcon(false);
   };
 
   const [isFocused, setIsFocused] = useState(false);
@@ -29,24 +45,16 @@ export const Search = ({
   const handleBlur = () => {
     setIsFocused(false);
   };
-
-  const vrighticon = V_RightIcon? 'True' : 'False';
+  
   return (
-    <div className={`${styles.Search} ${isFocused ? 'Search_Focus' : ''} ${['V_RightIcon2_', vrighticon].join('')}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
+    <div className={`${styles.Search} ${isFocused ? 'Search_Focus' : ''}`} onFocus={handleFocus} onBlur={handleBlur} {...props}>
       <div className={styles.Left}>
-        <div className={styles.LeftIcon} onClick={handleIconClick}>{LeftIcon}</div>
-        <input ref={inputRef} placeholder={Placeholder}/>
+        <div className={styles.LeftIcon} onClick={handleLeftIconClick}>{LeftIcon}</div>
+        <input type="text" value={inputValue} onChange={handleInputChange} ref={inputRef} placeholder={Placeholder} />
+        
       </div>
-      <div className={`${styles.RightIcon} ${['V_RightIcon_', vrighticon].join('')}`}>{RightIcon}</div>
+      {rightIcon && <div className={styles.RightIcon} onClick={handleRightIconClick}></div>}
       <style jsx>{`
-          .V_RightIcon_False {
-            display: none;
-          }
-
-          .V_RightIcon2_False {
-            padding-right: calc(var(--padding-activity) / 2)
-          }
-
           .Search_Focus {
             background: var(--box-hover-color);
           }
