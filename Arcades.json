@@ -5,7 +5,7 @@
         "address_absolute":"서울 강남구 영동대로 513 B2층 ", 
         "latitude":37.511337,
         "longitude":127.061184,
-        "games": [
+        "games": [ 
             { "Gname": "태고의 달인", "quantity": 1, "price": "1000원"},
             { "Gname": "펌프 잇 업", "quantity": 1, "price": "NA"}
         ]
