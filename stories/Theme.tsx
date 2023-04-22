@@ -46,6 +46,7 @@ export const Theme = () => {
             cursor: pointer;
             transition: var(--transition-bg);
             border: 1px solid var(--border-color);
+            z-index: 1000;
         }
 
           .Theme:hover {

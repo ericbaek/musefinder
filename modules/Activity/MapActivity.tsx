@@ -102,6 +102,7 @@ function MapActivity() {
 
     return (
         <>
+
             <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
 
                     <FilterSettings onFilterClick={handleFilterClick}/>

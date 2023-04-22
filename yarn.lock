@@ -1076,10 +1076,10 @@
   resolved "https://registry.npmjs.org/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.0.0.tgz"
   integrity sha512-1eEgUGmkaljiBnRMTdksDV1W4kUnmwgp7X9G8B++9GYwl1lUdqSndSriIrTJ0N7LQaoauY9JJ2yhiOYK5+NI4A==
 
-"@esbuild/darwin-arm64@0.17.15":
+"@esbuild/win32-x64@0.17.15":
   version "0.17.15"
-  resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.17.15.tgz"
-  integrity sha512-7siLjBc88Z4+6qkMDxPT2juf2e8SJxmsbNVKFY2ifWCDT72v5YJz9arlvBw5oB4W/e61H1+HDB/jnu8nNg0rLA==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.17.15.tgz"
+  integrity sha512-DjDa9ywLUUmjhV2Y9wUTIF+1XsmuFGvZoCmOWkli1XcNAh5t25cc7fgsCx4Zi/Uurep3TTLyDiKATgGEg61pkA==
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -1770,10 +1770,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/swc-darwin-arm64@13.3.0":
+"@next/swc-win32-x64-msvc@13.3.0":
   version "13.3.0"
-  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.3.0.tgz"
-  integrity sha512-DmIQCNq6JtccLPPBzf0dgh2vzMWt5wjxbP71pCi5EWpWYE3MsP6FcRXi4MlAmFNDQOfcFXR2r7kBeG1LpZUh1w==
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.3.0.tgz"
+  integrity sha512-Reer6rkLLcoOvB0dd66+Y7WrWVFH7sEEkF/4bJCIfsSKnTStTYaHtwIJAwbqnt9I392Tqvku0KkoqZOryWV9LQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -3076,6 +3076,11 @@
   resolved "https://registry.npmjs.org/@types/find-cache-dir/-/find-cache-dir-3.2.1.tgz"
   integrity sha512-frsJrz2t/CeGifcu/6uRo4b+SzAwT4NYCVPu1GN8IB9XTzrpPkGuV0tmh9mN+/L0PklAlsC3u5Fxt0ju00LXIw==
 
+"@types/geojson@*":
+  version "7946.0.10"
+  resolved "https://registry.npmjs.org/@types/geojson/-/geojson-7946.0.10.tgz"
+  integrity sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==
+
 "@types/glob@*", "@types/glob@^8.0.0":
   version "8.1.0"
   resolved "https://registry.npmjs.org/@types/glob/-/glob-8.1.0.tgz"
@@ -3179,6 +3184,13 @@
   version "5.1.2"
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-5.1.2.tgz"
   integrity sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==
+
+"@types/navermaps@^3.6.4":
+  version "3.6.4"
+  resolved "https://registry.npmjs.org/@types/navermaps/-/navermaps-3.6.4.tgz"
+  integrity sha512-fnRipyjd/kRyyRGK9MjLjTRkWUtz7tuBfvBVV+59tjXHt9ULOHbqEKaZm84T3dfQiKhNM+1rmvv5M6LnvEVj1w==
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/node-fetch@^2.5.7":
   version "2.6.3"
@@ -5644,7 +5656,7 @@ firebase-functions@^4.3.1:
     node-fetch "^2.6.7"
     protobufjs "^7.2.2"
 
-"firebase@>= 9.0.0":
+firebase@^9.20.0, "firebase@>= 9.0.0":
   version "9.20.0"
   resolved "https://registry.npmjs.org/firebase/-/firebase-9.20.0.tgz"
   integrity sha512-qkSfdotdgZuMNCi4ddMLT+Pr18m021SkzImgplpihZOSx0utWdO39TgHivMfurlgp0fp4eQ2U4YEDPfP+Iq4bw==
@@ -5799,11 +5811,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@^2.3.2, fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -8123,25 +8130,7 @@ protobufjs@^6.11.3:
     "@types/node" ">=13.7.0"
     long "^4.0.0"
 
-protobufjs@^7.0.0, protobufjs@7.2.3:
-  version "7.2.3"
-  resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-7.2.3.tgz"
-  integrity sha512-TtpvOqwB5Gdz/PQmOjgsrGH1nHjAQVCN7JG4A6r1sXRWESL5rNMAiRcBQlCAdKxZcAbstExQePYG8xof/JVRgg==
-  dependencies:
-    "@protobufjs/aspromise" "^1.1.2"
-    "@protobufjs/base64" "^1.1.2"
-    "@protobufjs/codegen" "^2.0.4"
-    "@protobufjs/eventemitter" "^1.1.0"
-    "@protobufjs/fetch" "^1.1.0"
-    "@protobufjs/float" "^1.0.2"
-    "@protobufjs/inquire" "^1.1.0"
-    "@protobufjs/path" "^1.1.2"
-    "@protobufjs/pool" "^1.1.0"
-    "@protobufjs/utf8" "^1.1.0"
-    "@types/node" ">=13.7.0"
-    long "^5.0.0"
-
-protobufjs@^7.2.2:
+protobufjs@^7.0.0, protobufjs@^7.2.2, protobufjs@^7.2.3, protobufjs@7.2.3:
   version "7.2.3"
   resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-7.2.3.tgz"
   integrity sha512-TtpvOqwB5Gdz/PQmOjgsrGH1nHjAQVCN7JG4A6r1sXRWESL5rNMAiRcBQlCAdKxZcAbstExQePYG8xof/JVRgg==
