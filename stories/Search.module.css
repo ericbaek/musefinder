@@ -14,6 +14,7 @@
         background: var(--bg-color);
         border-radius: var(--radius-system);
         transition: var(--transition-bg);
+        box-shadow: var(--shadow-color);
     }
 
         .Left {
@@ -71,7 +72,7 @@
         border-radius: 0 0 var(--radius-system) var(--radius-system);
         padding: .8rem;
         transition: var(--transition-bg);
-
+        box-shadow: var(--shadow-color);
     }
 
         .Result {
@@ -99,8 +100,15 @@
                 background: var(--box-hover-sub-color);
             }
 
+
+@media (min-width: 1280px) {
+    .GroupSearch {
+        width: var(--mode3-dragactivity-size) !important;
+    }
+}
+        
 @media (min-width: 768px) {
     .GroupSearch {
-        width: 424px !important;
+        width: var(--mode1-dragactivity-size);
     }    
 }

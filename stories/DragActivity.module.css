@@ -1,111 +1,117 @@
-.DragActivity {
-    background: var(--bg-color);
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-height: calc(100vh - 4.6rem - var(--padding-activity) * 2);
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
-    /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
-    border-radius: var(--radius-activity) var(--radius-activity) 0 0;
-    border-top: 1px solid var(--border-color);
-    transition: var(--transition-bg);
-    z-index: 1000;
-}
-
-    .Drag {
+    .DragActivity {
+        background: var(--bg-color);
+        left: 0;
+        right: 0;
         width: 100%;
-        padding-bottom: calc(.5rem + var(--padding-activity));
-        display: flex;
-        justify-content: center;
-        position: sticky;
-        z-index: 10;
-    }
-
-    .GroupMap {
+        max-height: calc(100vh - 4.6rem - var(--padding-activity) * 2);
         display: flex;
         flex-direction: column;
-        gap: 2.4rem;
-        padding-bottom: var(--padding-activity);
-        overflow: scroll;
-    }
-
-        .SmallGroupMapSearch {
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-        }
-
-        .GroupFilter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .8rem;
-        }
-
-        .GroupPicture {
-            max-height: 260px;
-            display: flex;
-            flex-direction: column;
-            align-content: flex-start;
-            flex-wrap: wrap;
-            gap: .8rem;
-        }
-
-        .GroupActiveTitle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-            .SmallGroupActiveTitle_Right {
-                display: flex;
-                flex-direction: row;
-                gap: 1.2rem;
-            }
-
-        .GroupAlert {
-            display: flex;
-            flex-direction: column;
-            gap: .8rem;
-        }
-
-.Map {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-
-@media (min-width: 768px) {
-    .DragActivity {
-        /* 사이드바 left: var(--vertical-tab-size); */
-        position: relative;
-        top: calc(4.6rem + var(--padding-activity));
-        width: 424px;
-        max-height: calc(100vh - 4.6rem - var(--padding-activity) * 3);
-        padding: var(--padding-activity);
-        border-radius: var(--radius-box);
-        border-top: 0;
+        position: absolute;
+        padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
+        /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
+        border-radius: var(--radius-activity) var(--radius-activity) 0 0;
+        border-top: 1px solid var(--border-color);
+        transition: var(--transition-bg);
+        z-index: 1000;
+        box-shadow: var(--shadow-color);
     }
 
         .Drag {
-            display: none;
+            width: 100%;
+            padding-bottom: calc(.5rem + var(--padding-activity));
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            z-index: 10;
         }
-        
+
         .GroupMap {
-            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            padding-bottom: var(--padding-activity);
+            overflow: scroll;
         }
-}
-        
-@media (max-width: 767.98px) {
-    .DragActivity {
+
+            .SmallGroupMapSearch {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+            }
+
+            .GroupFilter {
+                display: flex;
+                flex-wrap: wrap;
+                gap: .8rem;
+            }
+
+            .GroupPicture {
+                max-height: 260px;
+                display: flex;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-wrap: wrap;
+                gap: .8rem;
+            }
+
+            .GroupActiveTitle {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .SmallGroupActiveTitle_Right {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1.2rem;
+                }
+
+            .GroupAlert {
+                display: flex;
+                flex-direction: column;
+                gap: .8rem;
+            }
+
+    .Map {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
         bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
     }
-}
+
+    @media (min-width: 1280px) {
+        .DragActivity {
+            width: var(--mode3-dragactivity-size) !important;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .DragActivity {
+            /* 사이드바 left: var(--vertical-tab-size); */
+            position: relative;
+            top: calc(4.6rem + var(--padding-activity) / 2);
+            width: var(--mode1-dragactivity-size);
+            max-height: calc(100vh - 4.6rem - var(--padding-activity) * 3);
+            padding: var(--padding-activity);
+            border-radius: var(--radius-box);
+            border-top: 0;
+        }
+
+            .Drag {
+                display: none;
+            }
+            
+            .GroupMap {
+                padding: 0;
+            }
+    }
+            
+    @media (max-width: 767.98px) {
+        .DragActivity {
+            bottom: 0;
+        }
+    }

@@ -45,8 +45,8 @@ export const Theme = () => {
             padding: calc(var(--padding-activity) / 3);
             cursor: pointer;
             transition: var(--transition-bg);
-            border: 1px solid var(--border-color);
             z-index: 1000;
+            box-shadow: var(--shadow-color);
         }
 
           .Theme:hover {

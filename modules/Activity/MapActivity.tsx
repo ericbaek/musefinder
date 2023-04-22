@@ -4,6 +4,7 @@ import ServerNear from '@/modules/ServerNear';
 import styles from '@/stories/DragActivity.module.css'
 import ContentTitle from '@/stories/ContentTitle';
 import AllGameActivity from './AllGameActivity';
+import HideActivity from '@/stories/HideActivity';
 
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {

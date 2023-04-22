@@ -55,11 +55,15 @@
     --dragpill-color: var(--colorless-85); /* Pill */
 
     --border-color: hsla(0, 0%, 0%, 0.1); /* Border */
+    --shadow-color: 0 0px 8px 1px hsla(0, 0%, 0%, 0.17);
 
 
     /* Size */
     --horizontal-tab-size: 64px;
     --vertical-tab-size: 72px;
+    --mode1-dragactivity-size: 384px;
+    --mode2-dragactivity-size: 404px;
+    --mode3-dragactivity-size: 468px;
 
 
     /* Padding */
@@ -140,9 +144,12 @@ body::-webkit-scrollbar {
 /* Base */
 
 .System {
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     color: var(--body-color);
     padding: var(--padding-activity);
+    touch-action: none;
+    position: fixed;
 }
 
 .column {

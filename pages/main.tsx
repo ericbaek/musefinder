@@ -2,22 +2,11 @@ import { useState, useRef, useEffect } from 'react';
 import MapActivity from '@/modules/Activity/MapActivity';
 import styles from '@/stories/DragActivity.module.css'
 import DragPill from '@/stories/DragPill';
-import ActiveActivity from '@/modules/Activity/ActiveActivity';
-import SearchActivity from '@/modules/SearchActivity';
-import ThirdScripts from '@/modules/ThirdScripts';
+import SearchActivity from '@/modules/Activity/SearchActivity';
+import Script from 'next/script';
 
 
 export default function Main() {
-    const [showActive, setShowActive] = useState(true);
-
-    function handleCardClick() {
-      setShowActive(true);
-    }
-
-    function handleBackClick() {
-        setShowActive(false);
-      }
-
       
     // Naver Map
     const mapElement = useRef(null);
@@ -53,9 +42,8 @@ export default function Main() {
                 </div>
                 <MapActivity/>
             </div>
-            
+            <Script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jvaprt0m2p" />
             <div className={styles.Map} ref={mapElement}/>
-            <ThirdScripts/>
         </>
     );
 }

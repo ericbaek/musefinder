@@ -7,9 +7,9 @@ export default function SearchActivity() {
     return (
         <div className={styles.GroupSearch}>
             <Search LeftIcon='' Placeholder='오락실, 지역 등'/>
-            <div className={styles.GroupSearchResult}>
+            {/* <div className={styles.GroupSearchResult}>
                 <SearchResult Icon='' Title='아니씨발'/>
-            </div>
+            </div> */}
         </div>
     );
 }
