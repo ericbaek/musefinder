@@ -49,8 +49,14 @@ export const Theme = () => {
             box-shadow: var(--shadow-color);
         }
 
-          .Theme:hover {
-            background: var(--box-hover-color);
+            .Theme:hover {
+                background: var(--box-hover-color);
+            }
+
+          @media (max-width: 767.98px) {
+              .Theme {
+                  display: none;
+              }
           }
     `}</style>
     </div>

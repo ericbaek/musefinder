@@ -5,7 +5,7 @@ import styles from '@/stories/DragActivity.module.css'
 import ContentTitle from '@/stories/ContentTitle';
 import AllGameActivity from './AllGameActivity';
 import HideActivity from '@/stories/HideActivity';
-import NaverScript from '../NaverScript';
+import NaverScript from '@/modules/scripts/NaverScript';
 
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {

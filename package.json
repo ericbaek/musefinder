@@ -13,6 +13,7 @@
     "deploy": "next build && next export"
   },
   "dependencies": {
+    "@google-cloud/firestore": "^6.5.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
@@ -40,6 +41,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@storybook/theming": "^7.0.1",
     "@types/navermaps": "^3.6.4",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-storybook": "^0.6.11",
