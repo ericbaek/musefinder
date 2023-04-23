@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import { MIN_Y, MAX_Y } from './Constant';
 
 interface BottomSheetMetrics {
   touchStart: {  
@@ -36,7 +35,7 @@ export default function useBottomSheet() {
 
     const canUserMoveBottomSheet = () => {     
       const { touchMove, isContentAreaTouched } = metrics.current;
-
+      const MIN_Y = 60;
 
       if (!isContentAreaTouched) {
         return true;
@@ -62,6 +61,8 @@ export default function useBottomSheet() {
 
 
     const handleTouchMove = (e: TouchEvent) => {
+      const MIN_Y = 60;
+      const MAX_Y = window.innerHeight - 160;
 
       const { touchStart, touchMove } = metrics.current;                      
       const currentTouch = e.touches[0];
@@ -108,6 +109,8 @@ export default function useBottomSheet() {
 
 
     const handleTouchEnd = (e: TouchEvent) => {
+      const MIN_Y = 60;
+      const MAX_Y = window.innerHeight - 160;
       document.body.style.overflowY = 'auto';
       const { touchMove } = metrics.current;           
 
