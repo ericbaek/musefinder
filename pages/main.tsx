@@ -4,7 +4,8 @@ import styles from '@/stories/DragActivity.module.css'
 import DragPill from '@/stories/DragPill';
 import SearchActivity from '@/modules/Activity/SearchActivity';
 import Script from 'next/script';
-
+import Drag from '@/modules/Drag';
+import { BOTTOM_SHEET_HEIGHT } from '@/modules/Constant';
 
 export default function Main() {
       
@@ -33,17 +34,26 @@ export default function Main() {
     });
     }, []);
     
+    const { sheet, content } = Drag();
+
     return (
         <>
             <SearchActivity/>
-            <div className={styles.DragActivity}>
+            <div className={styles.DragActivity} ref={sheet}>
                 <div className={styles.Drag}> {/* 드래그 */}
                     <DragPill/>
                 </div>
-                <MapActivity/>
+                <div ref={content}>
+                    <MapActivity/>
+                </div>
             </div>
             <Script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jvaprt0m2p" />
             <div className={styles.Map} ref={mapElement}/>
+            <style jsx>{`
+                .${styles.DragActivity} {
+                    height: ${BOTTOM_SHEET_HEIGHT}px;
+                }
+            `}</style>
         </>
     );
 }
