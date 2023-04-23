@@ -5,6 +5,7 @@ import styles from '@/stories/DragActivity.module.css'
 import ContentTitle from '@/stories/ContentTitle';
 import AllGameActivity from './AllGameActivity';
 import HideActivity from '@/stories/HideActivity';
+import NaverScript from '../NaverScript';
 
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {
@@ -123,8 +124,9 @@ function MapActivity() {
                             <AllGameActivity latitude={latitude} longitude={longitude} FilterList={FilterList}/>
                         </div>
                     </>
-
-                }
+                    }
+                    
+                    <NaverScript/>
             </div>
         </>
     );
