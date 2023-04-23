@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <div>
           {/*
           <TabBar Href={default_tabbarlink} Icon={default_tabbaricon} Title={default_tabbartitle}/>
-          */}
           <Theme/>
+          */}
           <div className='System'>
             <Component {...pageProps} />
           </div>

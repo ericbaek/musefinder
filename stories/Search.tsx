@@ -12,13 +12,6 @@ export const Search = ({
 }: SearchProps) => {
 
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const handleLeftIconClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
-
   const [inputValue, setInputValue] = useState("");
   const [rightIcon, setRightIcon] = useState(false);
 
@@ -26,6 +19,12 @@ export const Search = ({
     const value = event.target.value;
     setInputValue(value);
     setRightIcon(value.length > 0);
+  };
+  
+  const handleLeftIconClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   const handleRightIconClick = () => {
