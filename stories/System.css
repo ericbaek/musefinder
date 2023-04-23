@@ -55,7 +55,7 @@
     --dragpill-color: var(--colorless-85); /* Pill */
 
     --border-color: hsla(0, 0%, 0%, 0.1); /* Border */
-    --shadow-color: 0 0px 8px 1px hsla(0, 0%, 0%, 0.17);
+    --shadow-color: 0 0px 8px 1px hsla(0, 0%, 0%, 0.17); /* Shadow */
 
 
     /* Size */
@@ -101,6 +101,7 @@
     --dragpill-color: var(--colorless-10); /* Pill */
 
     --border-color: hsla(0, 0%, 100%, 0.15); /* Border */
+    --shadow-color: none; /* Shadow */
 }
 
 *,
