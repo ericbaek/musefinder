@@ -102,6 +102,8 @@ function MapActivity() {
         setAllMapActivity(true);
     }
 
+    console.log("MAPACTIVITY RAN!");
+
     return (
         <>
 

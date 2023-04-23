@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import Card from '@/stories/Card';
 import ConvertDistance from "@/modules/ConvertDistance";
 import Alert from "@/stories/Alert";
+import { getUserLocation } from './scripts/GetUserLocation';
 /* import Tab from "@/stories/Tab"; */
 
 // Firebase 관련 import
-import { collection, getDocs } from 'firebase/firestore';
+import { GeoPoint, getDocs, collection, query, where, orderBy } from "firebase/firestore";
 import { db } from '../firebase';
-import { GeoPoint } from "@google-cloud/firestore";
-import CalculateDistance from "./CalculateDistance";
+import CalculateDistance from "./scripts/CalculateDistance";
 
 export default function ServerNear({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
-    console.log(latitude,longitude);
     /* 
     본인의 위치를 보내고 DB에서 아케이드 리스트를 받아옵니다.
     */
@@ -30,41 +29,26 @@ export default function ServerNear({latitude, longitude, FilterList}: {latitude:
     }
 
     const [documents, setDocuments] = useState<Arcade[]>([]);
-
-    interface UserLocation {
-      latitude: number;
-      longitude: number;
-    };
-    const [userLocation, setUserLocation] = useState<UserLocation>({
-      latitude: latitude,
-      longitude: longitude,
-    });
-    
+    const colRef = collection(db, "arcades");
     useEffect(() => {
-      const getDocuments = async () => {
-        // Retry when latitude and longitude are 0
-        if (userLocation.latitude === 0 && userLocation.longitude === 0) {
-          setTimeout(() => {
-            setUserLocation({
-              latitude: latitude,
-              longitude: longitude,
+      getUserLocation()
+        .then((userLocation) => {
+          const getDocuments = async () => {
+            const snapshot = await getDocs(colRef);
+            const documents = snapshot.docs.map((doc) => {
+              const data = doc.data() as Arcade;
+              const distance = CalculateDistance(data.location, userLocation);
+              return { ...data, distance };
             });
-          }, 1000);
-          return;
-        }
-        
-        const colRef = collection(db, "arcades");
-        const snapshot = await getDocs(colRef);
-        const documents = snapshot.docs.map((doc) => {
-          const data = doc.data() as Arcade;
-          const distance = CalculateDistance(data.location, userLocation);
-          return { ...data, distance };
+            console.log(documents);
+            setDocuments(documents);
+          };
+          getDocuments();
+        })
+        .catch((error) => {
+          console.error(error);
         });
-        console.log(documents);
-        setDocuments(documents);
-      };
-      getDocuments();
-    }, [userLocation]);
+    }, []);
 
     // 거리에 따른 Accent 컬러를 바꿉니다.
     const getAccentBG = (distance: number) => {
