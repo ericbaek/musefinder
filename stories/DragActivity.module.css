@@ -4,7 +4,7 @@
         left: 0;
         right: 0;
         width: 100%;
-        max-height: calc(100vh - 4.6rem - var(--padding-activity) * 2);
+        height: calc(100vh - 4.6rem - var(--padding-activity) * 2);
         display: flex;
         flex-direction: column;
         padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
