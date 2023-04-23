@@ -2,7 +2,7 @@ import React from 'react';
 import '@/stories/Import.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Theme from '@/stories/Theme';
+/* import Theme from '@/stories/Theme'; */
 /* import TabBar from '@/stories/TabBar'; */
 
 export default function App({ Component, pageProps }: AppProps) {

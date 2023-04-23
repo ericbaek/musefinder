@@ -21,7 +21,7 @@ export default function Main() {
         baseTileOpacity: 0,
         center: location,
         zoom: 17,
-        minZoom: 12, //지도의 최소 줌 레벨
+        minZoom: 11, //지도의 최소 줌 레벨
         zoomControl: false,
         logoControl: false,
         scaleControl: false,
