@@ -109,6 +109,7 @@
         
 @media (min-width: 768px) {
     .GroupSearch {
+        position: relative;
         width: var(--mode1-dragactivity-size);
     }    
 }

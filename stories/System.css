@@ -145,12 +145,15 @@ body::-webkit-scrollbar {
 /* Base */
 
 .System {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    position: fixed;
     color: var(--body-color);
     padding: var(--padding-activity);
     touch-action: none;
-    position: fixed;
+    gap: calc(var(--padding-activity) / 2);
 }
 
 .column {

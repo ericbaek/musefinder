@@ -1,17 +1,20 @@
 import React from 'react';
 
-interface BackProps {
+interface LocationIconProps {
   onClick?: () => void;
 }
 
-export const Back = ({
+export const LocationIcon = ({
   ...props
-}: BackProps) => {
+}: LocationIconProps) => {
   return (
-      <div className='Back' {...props}> {/* 백버튼 */}
-          <div className='Icon'></div>
+      <div className='LocationIcon' {...props}> {/* 백버튼 */}
+          <div className='Icon'></div>
           <style jsx>{`
-            .Back {
+            .LocationIcon {
+                position: fixed;
+                right: var(--padding-activity);
+                top: var(--padding-activity);
                 width: 3.6rem;
                 height: 3.6rem;
                 display: flex;
@@ -25,8 +28,8 @@ export const Back = ({
                 z-index: 1000;
             }
 
-                .Back:hover {
-                    background: var(--box-hover-color);
+                .LocationIcon:hover {
+                  background: var(--box-hover-color);
                 }
 
                 .Icon {
@@ -37,7 +40,7 @@ export const Back = ({
               }
 
             @media (max-width: 767.98px) {
-                .Back {
+                .LocationIcon {
                     display: none;
                 }
             }
@@ -46,4 +49,4 @@ export const Back = ({
   );
 };
 
-export default Back;
+export default LocationIcon;

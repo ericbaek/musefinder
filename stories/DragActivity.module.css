@@ -14,6 +14,7 @@
         transition: var(--transition-bg);
         z-index: 1000;
         box-shadow: var(--shadow-color);
+        z-index: 1000;
     }
 
         .Drag {
@@ -72,17 +73,6 @@
                 gap: .8rem;
             }
 
-    .Map {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 110%;
-        height: 110%;
-        z-index: 1;
-    }
-
     @media (min-width: 1280px) {
         .DragActivity {
             width: var(--mode3-dragactivity-size) !important;
@@ -93,9 +83,9 @@
         .DragActivity {
             /* 사이드바 left: var(--vertical-tab-size); */
             position: relative;
-            top: calc(4.6rem + var(--padding-activity) / 2);
+            /* top: calc(4.6rem + var(--padding-activity) / 2); */
             width: var(--mode1-dragactivity-size);
-            max-height: calc(100vh - 4.6rem - var(--padding-activity) * 3);
+            max-height: calc(100% - 4.6rem - var(--padding-activity) - 3.6rem);
             padding: var(--padding-activity);
             border-radius: var(--radius-box);
             border-top: 0;

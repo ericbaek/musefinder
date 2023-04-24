@@ -4,8 +4,6 @@ import ServerNear from '@/modules/ServerNear';
 import styles from '@/stories/DragActivity.module.css'
 import ContentTitle from '@/stories/ContentTitle';
 import AllGameActivity from './AllGameActivity';
-import HideActivity from '@/stories/HideActivity';
-import NaverScript from '@/modules/scripts/NaverScript';
 
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {
@@ -40,7 +38,7 @@ function FilterSettings(props: any) {
     );
 }
 
-function MapActivity() {
+export default function MapActivity() {
 
     // 필터 캡슐이 눌릴때 FilterList에 추가할지 제거할지 결정합니다.
     const [FilterList, setFilterList] = useState([]);
@@ -128,10 +126,8 @@ function MapActivity() {
                     </>
                     }
                     
-                    <NaverScript/>
             </div>
+
         </>
     );
 };
-
-export default MapActivity;
