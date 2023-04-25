@@ -5,9 +5,11 @@ import ConvertDistance from "@/modules/ConvertDistance";
 import Alert from "@/stories/Alert";
 /* import Tab from "@/stories/Tab"; */
 
-export default function AllGameActivity({latitude, longitude, FilterList}: {latitude: number; longitude: number; FilterList: any;}) {
+export default function AllGameActivity({FilterList}: {FilterList: any;}) {
     const [arcadesWithDistance, setArcades] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const latitude = 1;
+    const longitude = 1;
 
     /* 
     본인의 위치를 보내고 서버에게서 거리순으로 정렬된 아케이드 리스트를 받아옵니다.

@@ -58,31 +58,31 @@ export default function MapActivity() {
     */
 
     // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    // const [latitude, setLatitude] = useState(0);
+    // const [longitude, setLongitude] = useState(0);
     
-    useEffect(() => {
-        const success = (position: any) => { 
-        setLatitude(position.coords.latitude);
-        setLongitude(position.coords.longitude);
-        };
+    // useEffect(() => {
+    //     const success = (position: any) => { 
+    //     setLatitude(position.coords.latitude);
+    //     setLongitude(position.coords.longitude);
+    //     };
     
-        const error = (error: any) => {
-        console.error(error);
-        };
+    //     const error = (error: any) => {
+    //     console.error(error);
+    //     };
     
-        const options = {
-        enableHighAccuracy: true,
-        maximumAge: 15,
-        timeout: 10000,
-        };
+    //     const options = {
+    //     enableHighAccuracy: true,
+    //     maximumAge: 15,
+    //     timeout: 10000,
+    //     };
     
-        if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success, error, options);
-        } else {
-        console.error("Geolocation is not supported by this browser.");
-        }
-    }, []);
+    //     if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(success, error, options);
+    //     } else {
+    //     console.error("Geolocation is not supported by this browser.");
+    //     }
+    // }, []);
 
     // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
     const isActive = useState(false);
@@ -112,7 +112,7 @@ export default function MapActivity() {
                     <>
                         <div className='SmallGroupContent'>  {/* 근처 오락실 */}
                             <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={AllGameopenClick}/>
-                            <ServerNear latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                            <ServerNear FilterList={FilterList}/>
                         </div>
                     </>
                     }
@@ -121,7 +121,7 @@ export default function MapActivity() {
                     <>
                         <div className='SmallGroupContent'>  {/* 근처 오락실 */}
                             <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={AllGamebackClick}/>
-                            <AllGameActivity latitude={latitude} longitude={longitude} FilterList={FilterList}/>
+                            <AllGameActivity FilterList={FilterList}/>
                         </div>
                     </>
                     }

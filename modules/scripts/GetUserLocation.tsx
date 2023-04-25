@@ -10,6 +10,7 @@ export const getUserLocation = () => {
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude,
               };
+              console.log(userLocation);
               resolve(userLocation);
             },
             (error) => {
