@@ -57,33 +57,6 @@ export default function MapActivity() {
     }, [FilterList]);
     */
 
-    // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
-    // const [latitude, setLatitude] = useState(0);
-    // const [longitude, setLongitude] = useState(0);
-    
-    // useEffect(() => {
-    //     const success = (position: any) => { 
-    //     setLatitude(position.coords.latitude);
-    //     setLongitude(position.coords.longitude);
-    //     };
-    
-    //     const error = (error: any) => {
-    //     console.error(error);
-    //     };
-    
-    //     const options = {
-    //     enableHighAccuracy: true,
-    //     maximumAge: 15,
-    //     timeout: 10000,
-    //     };
-    
-    //     if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(success, error, options);
-    //     } else {
-    //     console.error("Geolocation is not supported by this browser.");
-    //     }
-    // }, []);
-
     // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
     const isActive = useState(false);
     const [showAllGameActivity, setAllGameActivity] = useState(false);

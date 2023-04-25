@@ -34,10 +34,9 @@ export default function ServerNear({FilterList}: {FilterList: any;}) {
     // Firestore에서 DB 정보 받아옴
     const [documents, setDocuments] = useState<Arcade[]>([]);
     useEffect(() => {
-      console.log("this line 37");
       getUserLocation()
         .then((userLocation) => {
-          console.log("This line 40");
+          console.log(userLocation);
           const getDocuments = async () => {
             const snapshot = await getDocs(collection(db, "arcades"));
             const documents = snapshot.docs.map((doc) => {
