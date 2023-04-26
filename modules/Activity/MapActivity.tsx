@@ -56,6 +56,32 @@ export default function MapActivity() {
     console.log(FilterList);
     }, [FilterList]);
     */
+    // 사용자의 GPS 위치를 가져다가 latitude & longitude로 저장함
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
+
+    useEffect(() => {
+        const success = (position: any) => { 
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+        };
+    
+        const error = (error: any) => {
+        console.error(error);
+        };
+    
+        const options = {
+        enableHighAccuracy: true,
+        maximumAge: 15,
+        timeout: 10000,
+        };
+    
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error, options);
+        } else {
+        console.error("Geolocation is not supported by this browser.");
+        }
+    }, []);
 
     // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
     const isActive = useState(false);
@@ -73,8 +99,6 @@ export default function MapActivity() {
         setAllMapActivity(true);
     }
 
-    console.log("MAPACTIVITY RAN!");
-
     return (
         <>
 
@@ -85,7 +109,7 @@ export default function MapActivity() {
                     <>
                         <div className='SmallGroupContent'>  {/* 근처 오락실 */}
                             <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={AllGameopenClick}/>
-                            <ServerNear FilterList={FilterList}/>
+                            <ServerNear lati={latitude} longi={longitude} FilterList={FilterList} viewmore={false} />
                         </div>
                     </>
                     }
@@ -94,7 +118,7 @@ export default function MapActivity() {
                     <>
                         <div className='SmallGroupContent'>  {/* 근처 오락실 */}
                             <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={AllGamebackClick}/>
-                            <AllGameActivity FilterList={FilterList}/>
+                            <ServerNear lati={latitude} longi={longitude} FilterList={FilterList} viewmore={true} />
                         </div>
                     </>
                     }

@@ -10,7 +10,7 @@ import { GeoPoint, getDocs, collection, query, where, orderBy } from "firebase/f
 import { db } from '../firebase';
 import CalculateDistance from "./scripts/CalculateDistance";
 
-export default function ServerNear({FilterList}: {FilterList: any;}) {
+export default function ServerNear({lati, longi, FilterList, viewmore}: {lati: number, longi: number, FilterList: any, viewmore: any;}) {
     console.log("serverNear RAN");
     /* 
     본인의 위치를 보내고 DB에서 아케이드 리스트를 받아옵니다.
@@ -30,13 +30,12 @@ export default function ServerNear({FilterList}: {FilterList: any;}) {
       distance : number;
     }
     
-    
     // Firestore에서 DB 정보 받아옴
     const [documents, setDocuments] = useState<Arcade[]>([]);
     useEffect(() => {
       getUserLocation()
         .then((userLocation) => {
-          console.log(userLocation);
+          console.log("UserLocation" , userLocation);
           const getDocuments = async () => {
             const snapshot = await getDocs(collection(db, "arcades"));
             const documents = snapshot.docs.map((doc) => {
@@ -44,7 +43,6 @@ export default function ServerNear({FilterList}: {FilterList: any;}) {
               const distance = CalculateDistance(data.location, userLocation);
               return { ...data, distance };
             });
-            console.log(documents);
             setDocuments(documents);
           };
           getDocuments();
@@ -53,9 +51,16 @@ export default function ServerNear({FilterList}: {FilterList: any;}) {
           console.error(error);
         });
     }, []);
+    
+    const filteredArcades = documents.filter((arcade) => {
+      // check if all games in filterlist exist in arcade.games
+      return FilterList.every((game: any) =>
+        Object.keys(arcade.games).includes(game)
+      );
+    });
 
-    const sortedDocuments = documents.sort((a, b) => a.distance - b.distance);
-
+    const sortedDocuments = filteredArcades.sort((a, b) => a.distance - b.distance);
+    console.log(sortedDocuments);
 
     // 거리에 따른 Accent 컬러를 바꿉니다.
     const getAccentBG = (distance: number) => {
@@ -69,12 +74,12 @@ export default function ServerNear({FilterList}: {FilterList: any;}) {
     };
 
 
-    const [numCards, SetnumCards] = useState(3);
+    const numCards = viewmore ? sortedDocuments.length : 3;
     
     return (
       <>
         <div>
-          {sortedDocuments.map((arcade: any, index) => (
+          {sortedDocuments.slice(0, numCards).map((arcade: any, index) => (
               <React.Fragment key={index}>
                   <Card
                       Title={arcade.name}

@@ -1,11 +1,14 @@
-// geolocation.js
-console.log("GetUserLocation ran");
+console.log("GETTING USER LOCATION");
 
-export const getUserLocation = () => {
+export const getUserLocation = (timeout = 10000) => {
       return new Promise((resolve, reject) => {
+        const timerId = setTimeout(() => {
+          reject(new Error('Timeout expired'));
+        }, timeout);
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             (position) => {
+              clearTimeout(timerId);
               const userLocation = {
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude,
@@ -13,11 +16,13 @@ export const getUserLocation = () => {
               resolve(userLocation);
             },
             (error) => {
+              clearTimeout(timerId);
               reject(error);
             }
           );
         } else {
-          reject(new Error("Geolocation is not supported by this browser."));
+          clearTimeout(timerId);
+          reject(new Error('Geolocation is not supported by this browser.'));
         }
       });
     };
