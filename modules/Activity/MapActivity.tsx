@@ -85,46 +85,12 @@ export default function MapActivity() {
 
     // 필터 캡슐이 눌렸을때 색상 변경을 위한 변수값
     const isActive = useState(false);
-    const [showAllGameActivity, setAllGameActivity] = useState(false);
-    const [showAllMapActivity, setAllMapActivity] = useState(true);
-
-
-    function AllGameopenClick() {
-        setAllGameActivity(true);
-        setAllMapActivity(false);
-    }
-    
-    function AllGamebackClick() {
-        setAllGameActivity(false);
-        setAllMapActivity(true);
-    }
-
     return (
         <>
-
             <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
-
-                    <FilterSettings onFilterClick={handleFilterClick}/>
-                    {showAllMapActivity &&
-                    <>
-                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                            <ContentTitle Title='주변 오락실' V_Paragraph Paragraph='모두 보기' onClick={AllGameopenClick}/>
-                            <ServerNear lati={latitude} longi={longitude} FilterList={FilterList} viewmore={false} />
-                        </div>
-                    </>
-                    }
-                    
-                    {showAllGameActivity &&
-                    <>
-                        <div className='SmallGroupContent'>  {/* 근처 오락실 */}
-                            <ContentTitle Title='모든 오락실' V_Paragraph Paragraph='돌아가기' onClick={AllGamebackClick}/>
-                            <ServerNear lati={latitude} longi={longitude} FilterList={FilterList} viewmore={true} />
-                        </div>
-                    </>
-                    }
-                    
+                <FilterSettings onFilterClick={handleFilterClick}/>
+                <ServerNear lati={latitude} longi={longitude} FilterList={FilterList}/>
             </div>
-
         </>
     );
 };

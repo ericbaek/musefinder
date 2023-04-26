@@ -9,8 +9,9 @@ import { getUserLocation } from './scripts/GetUserLocation';
 import { GeoPoint, getDocs, collection, query, where, orderBy } from "firebase/firestore";
 import { db } from '../firebase';
 import CalculateDistance from "./scripts/CalculateDistance";
+import ContentTitle from "@/stories/ContentTitle";
 
-export default function ServerNear({lati, longi, FilterList, viewmore}: {lati: number, longi: number, FilterList: any, viewmore: any;}) {
+export default function ServerNear({lati, longi, FilterList}: {lati: number, longi: number, FilterList: any;}) {
     console.log("serverNear RAN");
     /* 
     본인의 위치를 보내고 DB에서 아케이드 리스트를 받아옵니다.
@@ -73,39 +74,55 @@ export default function ServerNear({lati, longi, FilterList, viewmore}: {lati: n
         }
     };
 
-
-    const numCards = viewmore ? sortedDocuments.length : 3;
+    const [title, setTitle] = useState('주변 오락실');
+    const [prevTitle, setPrevTitle] = useState('');
+    const [viewMore, setViewMore] = useState(false);
+    const numCards = viewMore ? sortedDocuments.length : 3;
+  
+    const handleClick = () => {
+      if (title === '주변 오락실') {
+        setTitle('모든 오락실');
+        setPrevTitle('주변 오락실');
+        setViewMore(true);
+      } else {
+        setTitle(prevTitle);
+        setPrevTitle('');
+        setViewMore(false);
+      }
+    };
+  
     
     return (
-      <>
+      <div className='SmallGroupContent'>  {/* 근처 오락실 */}
+        <ContentTitle Title={title} V_Paragraph Paragraph={prevTitle ? '돌아가기' : '모두 보기'} onClick={handleClick}/>
         <div>
-          {sortedDocuments.slice(0, numCards).map((arcade: any, index) => (
-              <React.Fragment key={index}>
-                  <Card
-                      Title={arcade.name}
-                      Paragraph={arcade.address}
-                      Paragraph2="Paragraph2"
-                      LeftIcon=""
-                      LeftIconBG="var(--box-icon-color)"
-                      LeftIconImage=""
-                      AccentText={<ConvertDistance km={arcade.distance}/>}
-                      AccentBG={getAccentBG(arcade.distance)}
-                      RightIcon=""
-                      BG="var(--bg-color)"
-                      onClick={() => {}}
-                      V_LeftIcon={false}
-                      V_LeftIconBG
-                      V_Paragraph
-                      V_Paragraph2={false}
-                      V_Accent
-                      V_RightIcon={false}
-                      V_BG={false}
-                  />
-                  {index !== sortedDocuments.length - 1 && index !== numCards - 1 && <hr />}
-                  {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
-              </React.Fragment>
-          ))}
+        {sortedDocuments.slice(0, numCards).map((arcade: any, index) => (
+            <React.Fragment key={index}>
+                <Card
+                    Title={arcade.name}
+                    Paragraph={arcade.address}
+                    Paragraph2="Paragraph2"
+                    LeftIcon=""
+                    LeftIconBG="var(--box-icon-color)"
+                    LeftIconImage=""
+                    AccentText={<ConvertDistance km={arcade.distance}/>}
+                    AccentBG={getAccentBG(arcade.distance)}
+                    RightIcon=""
+                    BG="var(--bg-color)"
+                    onClick={() => {}}
+                    V_LeftIcon={false}
+                    V_LeftIconBG
+                    V_Paragraph
+                    V_Paragraph2={false}
+                    V_Accent
+                    V_RightIcon={false}
+                    V_BG={false}
+                />
+                {index !== sortedDocuments.length - 1 && index !== numCards - 1 && <hr />}
+                {/* 마지막 카드를 제외d하고 <hr>를 넣음 */}
+            </React.Fragment>
+        ))}
         </div>
-      </>
+      </div>
     );
   }
