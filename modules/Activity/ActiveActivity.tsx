@@ -9,9 +9,7 @@ import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
 import Back from '@/stories/Back';
 
-
 export default function ActiveActivity() {
-        
     return (
         <>
             <div className={styles.GroupPicture}>

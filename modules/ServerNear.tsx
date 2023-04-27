@@ -11,7 +11,11 @@ import { db } from '../firebase';
 import CalculateDistance from "./scripts/CalculateDistance";
 import ContentTitle from "@/stories/ContentTitle";
 
+// Dynamic Route를 위한 import
+import { useRouter } from 'next/router';
+
 export default function ServerNear({lati, longi, FilterList}: {lati: number, longi: number, FilterList: any;}) {
+    const router = useRouter();
     console.log("serverNear RAN");
     /* 
     본인의 위치를 보내고 DB에서 아케이드 리스트를 받아옵니다.
@@ -42,7 +46,7 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
             const documents = snapshot.docs.map((doc) => {
               const data = doc.data() as Arcade;
               const distance = CalculateDistance(data.location, userLocation);
-              return { ...data, distance };
+              return { ...data, distance, arcadeID: doc.id };
             });
             setDocuments(documents);
           };
@@ -109,7 +113,7 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
                     AccentBG={getAccentBG(arcade.distance)}
                     RightIcon=""
                     BG="var(--bg-color)"
-                    onClick={() => {}}
+                    onClick={() => router.push(`/${arcade.arcadeID}`, undefined, {shallow: true})}
                     V_LeftIcon={false}
                     V_LeftIconBG
                     V_Paragraph

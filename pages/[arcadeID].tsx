@@ -51,7 +51,7 @@ export default function Main() {
                 <div className={styles.Drag}> {/* 드래그 */}
                     <DragPill/>
                 </div>
-                <MapActivity/>
+                <Active/>
             </div>
             <Back/>
             <NaverScript/>
