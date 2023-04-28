@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Script from 'next/script';
-import LocationIcon from '@/stories/LocationIcon';
+import InterfaceIcon from '@/stories/InterfaceIcon';
 
 export default function NaverScript() {
 
@@ -20,7 +20,7 @@ export default function NaverScript() {
         logoControl: false,
         scaleControl: false,
         disableKineticPan: false,
-        tileTransition: false,
+        tileTransition: true,
         zoomControlOptions: {
         position: naver.maps.Position.TOP_RIGHT,
         },
@@ -39,19 +39,28 @@ export default function NaverScript() {
     return (
         <>
             <div className='Map' ref={mapElement}/>
-            <LocationIcon/>
+            <div className='LocationIcon'>
+                <InterfaceIcon Icon=''/>
+            </div>
             <Script id="navermap" strategy="beforeInteractive" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jvaprt0m2p" />
             <style jsx>{`
-                        .Map {
-                            position: fixed !important;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            width: 100%;
-                            height: 100%;
-                            z-index: 1;
-                        }
+                .LocationIcon {
+                    position: fixed;
+                    right: var(--padding-activity);
+                    top: var(--padding-activity);
+                    z-index: 1000;
+                }
+
+                .Map {
+                    position: fixed !important;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                }
             `}</style>
         </>
     )

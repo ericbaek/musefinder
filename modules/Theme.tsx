@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from '@/stories/UIIcon.module.css';
+import InterfaceIcon from '@/stories/InterfaceIcon';
 
 export const Theme = () => {
 
@@ -34,30 +34,13 @@ export const Theme = () => {
   }
   return (
     <div className='Theme' onClick={handleToggle}>
-        <div className={styles.Icon}>{mode}</div>
+        <InterfaceIcon Icon={mode}/>
         <style jsx>{`
             .Theme {
                 position: fixed;
                 bottom: var(--padding-activity);
                 right: var(--padding-activity);
-                border-radius: var(--radius-box);
-                background: var(--box-bg-color);
-                padding: calc(var(--padding-activity) / 3);
-                cursor: pointer;
-                transition: var(--transition-bg);
                 z-index: 1000;
-                box-shadow: var(--shadow-color);
-            }
-
-                .Theme:hover {
-                    background: var(--box-hover-color);
-                }
-
-              @media (max-width: 767.98px) {
-                  .Theme {
-                      display: none;
-                  }
-              }
         `}</style>
     </div>
     

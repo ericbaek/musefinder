@@ -7,7 +7,6 @@ import Icon from '@/stories/Icon';
 import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
-import Back from '@/stories/Back';
 
 export default function ActiveActivity() {
     return (
@@ -105,7 +104,7 @@ export default function ActiveActivity() {
 
                 <hr/>
 
-                <div className='GroupAlert'>
+                <div className={styles.GroupAlert}>
                     <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
                     <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
                 </div>
@@ -138,7 +137,6 @@ export default function ActiveActivity() {
                     </div>
                 </div>
             </div>
-            <Back/>
         </>
     );
 }

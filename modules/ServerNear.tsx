@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from '@/stories/Card';
 import ConvertDistance from "@/modules/ConvertDistance";
-import Alert from "@/stories/Alert";
 import { getUserLocation } from './scripts/GetUserLocation';
 /* import Tab from "@/stories/Tab"; */
 
@@ -123,7 +122,7 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
                     V_BG={false}
                 />
                 {index !== sortedDocuments.length - 1 && index !== numCards - 1 && <hr />}
-                {/* 마지막 카드를 제외d하고 <hr>를 넣음 */}
+                {/* 마지막 카드를 제외하고 <hr>를 넣음 */}
             </React.Fragment>
         ))}
         </div>

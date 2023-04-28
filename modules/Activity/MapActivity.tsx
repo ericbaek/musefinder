@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Filter from '@/stories/Filter';
 import ServerNear from '@/modules/ServerNear';
-import styles from '@/stories/DragActivity.module.css'
-import ContentTitle from '@/stories/ContentTitle';
-import AllGameActivity from './AllGameActivity';
+import styles from '@/stories/DragActivity.module.css';
 
 function FilterSettings(props: any) {
     function handleFilterClick(title: any) {
@@ -87,10 +85,10 @@ export default function MapActivity() {
     const isActive = useState(false);
     return (
         <>
-            <div className={`${styles.GroupMap} ${isActive ? 'active' : ''}`}>
+            <div className={isActive ? 'active' : ''}>
                 <FilterSettings onFilterClick={handleFilterClick}/>
-                <ServerNear lati={latitude} longi={longitude} FilterList={FilterList}/>
             </div>
+            <ServerNear lati={latitude} longi={longitude} FilterList={FilterList}/>
         </>
     );
 };
