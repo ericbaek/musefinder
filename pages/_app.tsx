@@ -2,6 +2,12 @@ import React from 'react';
 import '@/stories/Import.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import SearchActivity from '@/modules/Activity/SearchActivity';
+import NaverScript from '@/modules/scripts/NaverScript';
+import DragPill from '@/stories/DragPill';
+import InterfaceIcon from '@/stories/InterfaceIcon';
+import styles from '@/stories/DragActivity.module.css'
+import Link from 'next/link';
 /* import Theme from '@/stories/Theme'; */
 /* import TabBar from '@/stories/TabBar'; */
 
@@ -22,14 +28,31 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg"/>
         <link rel="apple-touch-icon" href="/favicon_512.png"/>
       </Head>
-      <div>
-          {/*
-          <TabBar Href={default_tabbarlink} Icon={default_tabbaricon} Title={default_tabbartitle}/>
-          <Theme/>
-          */}
-          <div className='System'>
+      {/*
+      <TabBar Href={default_tabbarlink} Icon={default_tabbaricon} Title={default_tabbartitle}/>
+      <Theme/>
+      */}
+      <div className='System'>
+        
+        <SearchActivity/>
+    
+        <div className={styles.DragActivity}>
+          <div className={styles.Drag}> {/* 드래그 */}
+            <DragPill/>
+          </div>
+          <div className={styles.GroupMap}>
             <Component {...pageProps} />
           </div>
+        </div>
+
+        <NaverScript/>
+
+        <style jsx>{`
+          .Back {
+            width: min-content;
+            z-index: 10000;
+          }
+        `}</style>
       </div>
     </>
   )
