@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '@/stories/DragActivity.module.css';
 import Alert from '@/stories/Alert';
 import Card from '@/stories/Card';
@@ -8,7 +8,55 @@ import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
 
-export default function ActiveActivity() {
+// Firebase 관련 import
+import {getFirestore, doc, getDoc} from 'firebase/firestore';
+import { db } from '../../firebase';
+
+interface Props {
+arcadeID: string
+}
+
+interface ArcadeData {
+    name: string;
+    address: string;
+    games: Record<string, { Gname: string; quantity: number; price: string }>;
+}
+
+export default function ActiveActivity({ arcadeID }: Props) {
+    const [arcadeData, setArcadeData] = useState<ArcadeData | null>(null);
+
+    useEffect(() => {
+      const getArcadeData = async () => {
+        try {
+          const docRef = doc(db, 'arcades', arcadeID);
+          const docSnap = await getDoc(docRef);
+  
+          if (docSnap.exists()) {
+            const data = docSnap.data() as ArcadeData;
+            setArcadeData(data);
+          } else {
+            console.log('No such document!');
+          }
+        } catch (e) {
+          console.log('Error getting arcade data:', e);
+        }
+      };
+  
+      if (arcadeID) {
+        getArcadeData();
+      }
+    }, [arcadeID]);
+  
+    if (!arcadeID) {
+      return <div>Invalid arcade ID</div>;
+    }
+  
+    if (!arcadeData) {
+      return <div>Loading arcade data...</div>;
+    }
+
+    console.log(arcadeData);
+
     return (
         <>
             <div className={styles.GroupPicture}>
@@ -20,7 +68,7 @@ export default function ActiveActivity() {
             <div className='GroupContent'>
 
                 <div className={styles.GroupActiveTitle}>
-                    <LargeTitle Title='펀시티 건대점'/>
+                    <LargeTitle Title={arcadeData.name}/>
                     <div className={styles.SmallGroupActiveTitle_Right}>
                         {/* <Icon Icon=''/> */}
                         <Icon Icon=''/>
@@ -33,7 +81,7 @@ export default function ActiveActivity() {
                     <div className='Grid'> {/* 오픈, 신고 */}
                         <div className='Span-2'>
                             <Card
-                                Title="서울시 동작구 만양로14가길 26"
+                                Title={arcadeData.address}
                                 Paragraph="건국대 1번출구에서 162m"
                                 Paragraph2="Paragraph2"
                                 LeftIcon=""
@@ -114,14 +162,17 @@ export default function ActiveActivity() {
                 <div className='SmallGroupContent'> {/* 기체 정보 */}
                     <ContentTitle Title='게임' V_Paragraph={false} Paragraph='Paragraph'/>
                     <div className='SmallGroupCard'>
+                    {Object.entries(arcadeData.games)
+                        .sort(([key1, game1], [key2, game2]) => game1.Gname.localeCompare(game2.Gname))
+                        .map(([key, game]) => (
                         <Card
-                            Title="IIDX"
-                            Paragraph="스탠다드 1000원"
-                            Paragraph2="3번 기체"
+                            Title={game.Gname}
+                            Paragraph={`${game.price}`}
+                            Paragraph2=""
                             LeftIcon=""
                             LeftIconBG="var(--box-icon-color)"
                             LeftIconImage=""
-                            AccentText="2대"
+                            AccentText={`${game.quantity}`+" 대"}
                             AccentBG="var(--color-dynamic-muse)"
                             RightIcon=""
                             BG="var(--bg-color)"
@@ -134,6 +185,7 @@ export default function ActiveActivity() {
                             V_RightIcon={false}
                             V_BG={false}
                         />
+                        ))}
                     </div>
                 </div>
             </div>

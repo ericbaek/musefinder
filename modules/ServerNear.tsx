@@ -112,7 +112,7 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
                     AccentBG={getAccentBG(arcade.distance)}
                     RightIcon=""
                     BG="var(--bg-color)"
-                    onClick={() => router.push(`/${arcade.arcadeID}`, undefined, {shallow: true})}
+                    onClick={() => router.push(`/arcade/${arcade.arcadeID}`, undefined, {shallow: true})}
                     V_LeftIcon={false}
                     V_LeftIconBG
                     V_Paragraph
