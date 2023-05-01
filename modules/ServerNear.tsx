@@ -26,6 +26,8 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
         latitude: number;
         longitude: number;
       };
+      latitude: number;
+      longitude: number;
       games: {
         Gname: string;
         quantity: number;
@@ -38,13 +40,13 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
     const [documents, setDocuments] = useState<Arcade[]>([]);
     useEffect(() => {
       getUserLocation()
-        .then((userLocation) => {
+        .then((userLocation: any) => {
           console.log("UserLocation" , userLocation);
           const getDocuments = async () => {
             const snapshot = await getDocs(collection(db, "arcades"));
             const documents = snapshot.docs.map((doc) => {
               const data = doc.data() as Arcade;
-              const distance = CalculateDistance(data.location, userLocation);
+              const distance = CalculateDistance(data.latitude, data.longitude , userLocation.latitude, userLocation.longitude);
               return { ...data, distance, arcadeID: doc.id };
             });
             setDocuments(documents);
