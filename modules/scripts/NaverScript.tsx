@@ -7,30 +7,26 @@ export default function NaverScript() {
     const mapElement = useRef(null);
 
     useEffect(() => {
-    const { naver } = window;
-    if (!mapElement.current || !naver) return;
+        const { naver } = window;
+        if (!mapElement.current || !naver) return;
 
-    const location = new naver.maps.LatLng(37.5656, 126.9769);
-    const mapOptions: naver.maps.MapOptions = {
-        background: '#FFF',
-        center: location,
-        zoom: 17,
-        minZoom: 8,
-        zoomControl: false,
-        logoControl: false,
-        scaleControl: false,
-        disableKineticPan: false,
-        tileTransition: true,
-        zoomControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT,
-        },
-    };
+        const location = new naver.maps.LatLng(37.5656, 126.9769);
+        const mapOptions: naver.maps.MapOptions = {
+            background: '#FFF',
+            center: location,
+            zoom: 17,
+            minZoom: 8,
+            zoomControl: false,
+            logoControl: false,
+            scaleControl: false,
+            disableKineticPan: false,
+            tileTransition: true,
+            zoomControlOptions: {
+            position: naver.maps.Position.TOP_RIGHT,
+            },
+        };
 
-    const map = new naver.maps.Map(mapElement.current, mapOptions);
-    new naver.maps.Marker({
-        position: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
-        map,
-    });
+        const map = new naver.maps.Map(mapElement.current, mapOptions);
     }, []);
 
     console.log("MAIN RAN");

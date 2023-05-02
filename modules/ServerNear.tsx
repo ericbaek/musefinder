@@ -95,8 +95,7 @@ export default function ServerNear({lati, longi, FilterList}: {lati: number, lon
         setViewMore(false);
       }
     };
-  
-    
+   
     return (
       <div className='SmallGroupContent'>  {/* 근처 오락실 */}
         <ContentTitle Title={title} V_Paragraph Paragraph={prevTitle ? '돌아가기' : '모두 보기'} onClick={handleClick}/>

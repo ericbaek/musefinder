@@ -47,12 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <NaverScript/>
 
-        <style jsx>{`
-          .Back {
-            width: min-content;
-            z-index: 10000;
-          }
-        `}</style>
+
       </div>
     </>
   )
