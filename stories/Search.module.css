@@ -3,7 +3,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    z-index: 5000;
+    z-index: 1000;
 }
 
     .Search {

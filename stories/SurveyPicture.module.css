@@ -1,34 +1,30 @@
 .SurveyPicture {
-    width: 100%;
-    min-height: 200px;
-    padding-top: 100%;
+    position: relative;
+    left: calc(-1 * var(--padding-activity));
+    top: calc(-1 * var(--padding-activity));
+    right: var(--padding-activity);
+    width: calc(100% + var(--padding-activity) * 2);
+    min-height: 400px;
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     background: var(--box-color);
-    border-radius: var(--radius-system);
-    padding: var(--padding-box);
+    padding: var(--padding-activity);
     cursor: pointer;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    gap: .8rem;
+    color: white;
 }
 
-.ContentTitle {
-    width: 100%;
-    height: min-content;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.Paragraph {
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
-    .Title {
-        font-weight: 700;
-        font-size: 2.2rem;
+@media (min-width: 1280px) {
+    .SurveyPicture {
+        border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     }
-
-    .Paragraph {
-        font-weight: 600;
-        font-size: 1.6rem;
-        cursor: pointer;
-        color: hsl(213, 100%, 56%);
-    }
+}

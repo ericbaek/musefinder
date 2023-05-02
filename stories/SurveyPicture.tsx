@@ -1,4 +1,5 @@
 import React from 'react';
+import LargeTitle from './LargeTitle';
 import styles from './SurveyPicture.module.css';
 
 interface PictureProps {
@@ -15,7 +16,7 @@ export const SurveyPicture = ({
   const vparagraph = V_Paragraph? 'True' : 'False';
   return (
       <div className={styles.SurveyPicture} {...props}>
-        <div className={styles.Title}>{Title}</div>
+        <LargeTitle Title={Title}/>
         <div className={`${styles.Paragraph} ${['V_Paragraph_', vparagraph].join('')}`}>{Paragraph}</div>
         <style jsx>{`
           .${styles.SurveyPicture} {

@@ -44,7 +44,7 @@ export default function NaverScript() {
                     position: fixed;
                     right: var(--padding-activity);
                     top: var(--padding-activity);
-                    z-index: 1000;
+                    z-index: 500;
                 }
 
                 .Map {
