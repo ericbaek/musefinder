@@ -15,7 +15,7 @@ export const ContentTitle = ({
   return (
     <div className={styles.ContentTitle} {...props}>
       <div className={styles.Title}>{Title}</div>
-        <div className={`${styles.Paragraph} ${['V_Paragraph_', vparagraph].join('')}`}>{Paragraph}</div>
+      <div className={`${styles.Paragraph} ${['V_Paragraph_', vparagraph].join('')}`}>{Paragraph}</div>
       <style jsx>{`
           .V_Paragraph_False {
             display: none;

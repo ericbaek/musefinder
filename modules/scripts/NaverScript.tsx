@@ -17,7 +17,7 @@ export default function NaverScript() {
             zoom: 17,
             minZoom: 8,
             zoomControl: false,
-            logoControl: false,
+            logoControl: true,
             scaleControl: false,
             disableKineticPan: false,
             tileTransition: true,
@@ -56,6 +56,10 @@ export default function NaverScript() {
                     width: 100%;
                     height: 100%;
                     z-index: 1;
+                }
+
+                .map_copyright {
+                    font-family: var(--font-sans-serif);
                 }
             `}</style>
         </>

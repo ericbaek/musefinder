@@ -118,7 +118,7 @@
 html {
     background: var(--default-bg-color);
     color: var(--body-color);
-    font-family: var(--font-sans-serif);
+    font-family: var(--font-sans-serif) !important;
     font-size: var(--font-size);
     transition: var(--transition-bg);
     scroll-behavior: smooth;

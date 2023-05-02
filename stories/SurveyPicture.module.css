@@ -1,0 +1,34 @@
+.SurveyPicture {
+    width: 100%;
+    min-height: 200px;
+    padding-top: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--box-color);
+    border-radius: var(--radius-system);
+    padding: var(--padding-box);
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ContentTitle {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .Title {
+        font-weight: 700;
+        font-size: 2.2rem;
+    }
+
+    .Paragraph {
+        font-weight: 600;
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: hsl(213, 100%, 56%);
+    }
