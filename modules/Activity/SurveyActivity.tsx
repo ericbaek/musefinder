@@ -32,7 +32,8 @@ export default function Survey({onClick}:{onClick:any}) {
 
                     <hr/>
 
-                    <div className='SmallGroupContent'>  {/* 정렬 */}
+                {/*
+                    <div className='SmallGroupContent'>
                         <ContentTitle Title='유형' V_Paragraph={false} Paragraph=''/>
                         <div className=''>
                             <Sort Value={sort_value} Title={sort_title}/>
@@ -40,6 +41,7 @@ export default function Survey({onClick}:{onClick:any}) {
                     </div>
 
                     <hr/>
+                */}
 
                     <div className='SmallGroupContent'>  {/* 의견 작성 */}
                         <ContentTitle Title='내용' V_Paragraph Paragraph='사진 올리기'/>
