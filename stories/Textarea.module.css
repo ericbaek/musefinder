@@ -1,6 +1,7 @@
-.Sort select {
+.Textarea textarea {
     border: 0;
     width: 100%;
+    height: 14rem;
     background: var(--box-bg-color);
     color: var(--body-color);
     font-family: var(--font-family);
@@ -10,8 +11,9 @@
     letter-spacing: -.2pt;
     border-radius: var(--radius-box);
     padding: var(--padding-box);
+    resize: none;
 }
 
-    .Sort select:focus {
+    .Textarea textarea:focus {
         outline: none;
     }
