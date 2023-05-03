@@ -1,3 +1,9 @@
+.Sort {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .Sort select {
     border: 0;
     width: 100%;
@@ -10,8 +16,26 @@
     letter-spacing: -.2pt;
     border-radius: var(--radius-box);
     padding: var(--padding-box);
+    appearance: none;
+    -webkit-appearance: none;
 }
+
+    
+    .Sort select::-ms-expand {
+        display : none ;
+    }
 
     .Sort select:focus {
         outline: none;
+    }
+
+    .Arrow {
+        position: absolute;
+        margin-right: var(--padding-box);
+        pointer-events: none;
+        border-style: solid;
+        border-width: .8rem .5rem 0 .5rem;
+        border-radius: .2rem;
+        border-color: var(--box-icon-color) transparent transparent transparent;
+        z-index: 1000;
     }

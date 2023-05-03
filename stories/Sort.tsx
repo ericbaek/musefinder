@@ -17,6 +17,7 @@ export const Sort: React.FC<SortProps> = ({
           <option key={index} value={Value}>{Title[index]}</option>
           ))}
         </select>
+        <div className={styles.Arrow}/>
       </div>
   );
 };

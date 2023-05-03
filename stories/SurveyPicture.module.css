@@ -24,7 +24,7 @@
     opacity: .8;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
     .SurveyPicture {
         border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     }

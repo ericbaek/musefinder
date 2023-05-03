@@ -58,6 +58,7 @@ export default function Survey({onClick}:{onClick:any}) {
                         flex-direction: column;
                         background: var(--bg-color);
                         width: 40%;
+                        min-width: 728px;
                         max-width: 960px;
                         height: max-content;
                         max-height: 90%;
@@ -84,7 +85,7 @@ export default function Survey({onClick}:{onClick:any}) {
                             font-feature-settings: "ss09" on;
                         }
 
-                    @media (max-width: 1279.98px) {
+                    @media (max-width: 767.98px) {
                         .Survey {
                             width: 100%;
                             max-width: 100%;
