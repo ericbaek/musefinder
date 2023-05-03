@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        padding: calc(var(--padding-activity)) var(--padding-activity) 0 var(--padding-activity);
+        padding: var(--padding-activity);
         /* 탭바 padding: calc(var(--padding-activity) * 3 / 4) var(--padding-activity) calc(var(--horizontal-tab-size) + env(safe-area-inset-bottom)) var(--padding-activity); */
         border-radius: var(--radius-activity) var(--radius-activity) 0 0;
         border-top: 1px solid var(--border-color);
@@ -28,10 +28,9 @@
 
         .GroupMap {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: var(--default-gap);
-            padding-bottom: var(--padding-activity);
-            overflow: scroll;
+            overflow-y: scroll;
         }
 
             .SmallGroupMapSearch {
@@ -47,12 +46,15 @@
             }
 
             .GroupPicture {
+                width: 100%;
                 max-height: 260px;
                 display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
                 flex-direction: column;
-                align-content: flex-start;
                 flex-wrap: wrap;
                 gap: .8rem;
+                overflow-x: scroll;
             }
 
             .GroupActiveTitle {

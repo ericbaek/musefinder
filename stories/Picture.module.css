@@ -1,5 +1,5 @@
 .Picture {
-    width: 100%;
+    width: max-content;
     max-height: 260px;
     background: var(--box-color);
     border-radius: var(--radius-system);

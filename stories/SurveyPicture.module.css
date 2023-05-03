@@ -5,7 +5,7 @@
     margin: calc(-1.5 * var(--padding-activity) - .5px) 0 0 calc(-1.5 * var(--padding-activity) - .4px);
     width: calc(100% + var(--padding-activity) * 3 + 1px);
     height: 40vh;
-    max-height: 420px;
+    max-height: 320px;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
