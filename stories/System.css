@@ -243,7 +243,7 @@ hr {
 .GroupTitle {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 2.4rem;
 }
 
     .Account-GroupTitle {
@@ -256,13 +256,13 @@ hr {
 .GroupContent {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 2.4rem;
 }
 
     .SmallGroupContent {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 1.6rem;
     }
 
 .Grid {
