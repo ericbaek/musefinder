@@ -29,7 +29,7 @@
         .GroupMap {
             display: flex;
             flex-direction: column;
-            gap: 2.4rem;
+            gap: var(--default-gap);
             padding-bottom: var(--padding-activity);
             overflow: scroll;
         }

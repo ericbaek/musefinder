@@ -13,6 +13,7 @@ import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import { db } from '../../firebase';
 import SurveyActivity from './SurveyActivity';
 import TimeActivity from './TimeActivity';
+import SystemNotification from '@/stories/SystemNotification';
 
 interface Props {
 arcadeID: string
@@ -29,6 +30,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
     const [showSurvey, setShowSurvey] = useState(false);
     const [showTimeModal, setShowTimeModal] = useState(false);
 
+    
     function OpenSurvey() {
         setShowSurvey(true);
     }
@@ -77,6 +79,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
 
     console.log(arcadeData);
 
+
     return (
         <>
 
@@ -95,7 +98,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                     <LargeTitle Title={arcadeData.name}/>
                     <div className={styles.SmallGroupActiveTitle_Right}>
                         {/* <Icon Icon=''/> */}
-                        <Icon Icon=''/>
+                        <Icon Icon='' onClick={()=>{ }}/>
                     </div>
                 </div>
 

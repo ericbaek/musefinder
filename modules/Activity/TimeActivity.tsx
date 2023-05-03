@@ -5,13 +5,20 @@ import styles from '@/stories/DefaultModal.module.css'
 import Exit from '@/stories/Exit';
 import Alert from '@/stories/Alert';
 import Button from '@/stories/Button';
+import { motion } from 'framer-motion';
 
 export default function TimeActivity({onClick}:{onClick:any}) {
 
     return (
         <>
 
-            <div className={styles.Modal}>
+            <motion.div className={styles.Modal}
+                        initial={{ scale: 0.7 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: [0, 0.71, 0.2, 1.01]}}>
                 <div className='SmallGroupContent'>
                     <ContentTitle Title='영업 시간' V_Paragraph={false} Paragraph='Paragraph'/>
                     <div className='GroupAlert'>
@@ -38,7 +45,7 @@ export default function TimeActivity({onClick}:{onClick:any}) {
                     }
                 `}</style>
 
-            </div>
+            </motion.div>
 
             <Dimmed/>
 

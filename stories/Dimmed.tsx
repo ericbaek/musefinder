@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './Dimmed.module.css'
+import { motion } from 'framer-motion';
 
 interface PictureProps {
   onClick?: () => void;
@@ -8,21 +10,13 @@ export const Dimmed = ({
   ...props
 }: PictureProps) => {
   return (
-    <>
-      <div className='Dimmed' {...props}/>
-      <style jsx>{`
-        .Dimmed {
-          top: 0;
-          left: 0;
-          position: fixed;
-          width: 100%;
-          height: 100%;
-          backdrop-filter: blur(4px);
-          background: var(--colorless-5-tp);
-          z-index: 1500;
-        }
-      `}</style>
-    </>
+    <motion.div className={styles.Dimmed}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0, 0.71, 0.2, 1.01] 
+                }} {...props}/>
   );
 };
 

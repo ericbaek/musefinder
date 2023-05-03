@@ -1,0 +1,34 @@
+.SystemNotification {
+    position: fixed;
+    left: var(--padding-activity);
+    bottom: var(--padding-activity);
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-box);
+    background: var(--box-bg-color);
+    border-radius: var(--radius-box);
+    transition: var(--transition-bg);
+    z-index: 99999;
+}
+
+    .Left {
+        display: flex;
+        align-items: center;
+        gap: calc(var(--padding-box) / 1.5);
+    }
+
+        .LeftIcon {
+            font-family: var(--font-icon);
+            font-size: 2rem;
+            font-weight: 600;
+            font-feature-settings: 'ss09' on !important;
+        }
+
+        .Title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }

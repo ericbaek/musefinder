@@ -54,7 +54,7 @@
 
     --dragpill-color: var(--colorless-85); /* Pill */
 
-    --border-color: hsla(0, 0%, 0%, 0.06); /* Border */
+    --border-color: hsla(0, 0%, 0%, 0.04); /* Border */
     --shadow-color: 0 0px 8px 1px hsla(0, 0%, 0%, 0.17); /* Shadow */
 
 
@@ -70,6 +70,10 @@
     --padding-activity: 24px;
     --padding-box: 1.6rem;
     --padding-system: 16px;
+
+
+    /* Gap */
+    --default-gap: 1.6rem;
 
 
     /* Radius */
@@ -243,7 +247,7 @@ hr {
 .GroupTitle {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: var(--default-gap);
 }
 
     .Account-GroupTitle {
@@ -256,13 +260,13 @@ hr {
 .GroupContent {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: var(--default-gap);
 }
 
     .SmallGroupContent {
         display: flex;
         flex-direction: column;
-        gap: 1.6rem;
+        gap: var(--default-gap);
     }
 
 .Grid {

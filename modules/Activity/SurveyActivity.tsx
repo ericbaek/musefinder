@@ -7,15 +7,24 @@ import Sort from '@/stories/Sort';
 import Textarea from '@/stories/Textarea';
 import Dimmed from '@/stories/Dimmed';
 import Exit from '@/stories/Exit';
+import {  motion } from "framer-motion";
+import styles from '@/stories/SurveyActivity.module.css'
 
 export default function SurveyActivity({onClick}:{onClick:any}) {
 
     const sort_value = ['', 'arcade_report', 'system_report', 'others'];
     const sort_title = ['유형을 선택하세요', '오락실 제보', '시스템 버그', '기타'];
 
-    return (
-        <>
-            <div className='Survey'>
+    return ( 
+        <>    
+
+            <motion.div className={styles.Survey}
+                initial={{ scale: 0.7 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                    duration: 0.8,
+                    ease: [0, 0.71, 0.2, 1.01]}}>
 
                 <div className='SurveyPicture'>
                     <SurveyPicture Image='https://wallpaperaccess.com/full/1586538.jpg' Title='제보하기' V_Paragraph Paragraph='오락실 관련 정정사항이 있다면 제보 부탁드립니다.'/>
@@ -58,50 +67,11 @@ export default function SurveyActivity({onClick}:{onClick:any}) {
                     <Button V_Icon={false} Icon='' Title='보내기'/>
 
                 </div>
-                
-                <style jsx>{`
-                    .Survey {
-                        display: flex;
-                        flex-direction: column;
-                        background: var(--bg-color);
-                        width: 40%;
-                        min-width: 728px;
-                        max-width: 960px;
-                        height: max-content;
-                        max-height: 90%;
-                        border-radius: var(--radius-activity);
-                        position: fixed;
-                        padding: calc(var(--padding-activity) * 1.5);
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%);
-                        z-index: 9000;
-                        gap: calc(var(--padding-activity) * 1.2);
-                    }
 
-                    @media (max-width: 767.98px) {
-                        .Survey {
-                            width: 100%;
-                            min-width: 100%;
-                            max-width: 100%;
-                            height: 100%;
-                            max-height: 100%;
-                            border-radius: 0;
-                            left: 0;
-                            top: 0;
-                            transform: translate(0%, 0%);
-                            padding: var(--padding-activity);
-                        }
-                    }
-
-                    .GroupContent {
-                        overflow: scroll;
-                    }
-                `}</style>
-
-            </div>
+            </motion.div>
 
             <Dimmed/>
+            
         </>
     );
 }
