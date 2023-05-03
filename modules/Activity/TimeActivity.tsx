@@ -4,6 +4,7 @@ import Dimmed from '@/stories/Dimmed';
 import styles from '@/stories/DefaultModal.module.css'
 import Exit from '@/stories/Exit';
 import Alert from '@/stories/Alert';
+import Button from '@/stories/Button';
 
 export default function TimeActivity({onClick}:{onClick:any}) {
 
@@ -13,7 +14,6 @@ export default function TimeActivity({onClick}:{onClick:any}) {
             <div className={styles.Modal}>
                 <div className='SmallGroupContent'>
                     <ContentTitle Title='영업 시간' V_Paragraph={false} Paragraph='Paragraph'/>
-                    <Exit onClick={onClick}/>
                     <div className='GroupAlert'>
                         <Alert Title='일요일' Paragraph='07:00 - 05:00' V_LeftIcon={false} LeftIcon='' V_Paragraph/>
                         <hr/>
@@ -30,6 +30,7 @@ export default function TimeActivity({onClick}:{onClick:any}) {
                         <Alert Title='토요일' Paragraph='휴무' V_LeftIcon={false} LeftIcon='' V_Paragraph/>
                     </div>
                 </div>
+                <Button V_Icon={false} Icon='' Title='닫기' onClick={onClick}/>
                 <style jsx>{`
                     .GroupAlert {
                         display: flex;
