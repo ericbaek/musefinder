@@ -10,10 +10,6 @@
     transition: var(--transition-bg);
 }
 
-    .Alert:hover {
-        background: var(--box-hover-color);
-    }
-
     .Left {
         display: flex;
         align-items: center;
