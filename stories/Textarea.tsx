@@ -11,7 +11,7 @@ export const Textarea = ({
 }: TextareaProps) => {
   return (
       <div className={styles.Textarea} {...props}>
-        <textarea/>
+        <textarea placeholder={Placeholder}/>
       </div>
   );
 };

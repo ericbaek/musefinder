@@ -1,13 +1,13 @@
 .Textarea textarea {
     border: 0;
     width: 100%;
-    height: 14rem;
+    height: 14.8rem;
     background: var(--box-bg-color);
     color: var(--body-color);
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 1.7rem;
-    line-height: 1;
+    line-height: 1.4;
     letter-spacing: -.2pt;
     border-radius: var(--radius-box);
     padding: var(--padding-box);

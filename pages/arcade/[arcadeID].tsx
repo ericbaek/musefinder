@@ -25,7 +25,7 @@ export default function Arcade() {
             left: var(--padding-activity);
             bottom: var(--padding-activity);
             width: min-content;
-            z-index: 10000;
+            z-index: 1000;
           }
       `}</style>
     </>

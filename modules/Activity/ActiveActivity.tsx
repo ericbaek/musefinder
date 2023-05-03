@@ -11,6 +11,7 @@ import Button from '@/stories/Button';
 // Firebase 관련 import
 import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import { db } from '../../firebase';
+import SurveyActivity from './SurveyActivity';
 
 interface Props {
 arcadeID: string
@@ -24,6 +25,15 @@ interface ArcadeData {
 
 export default function ActiveActivity({ arcadeID }: Props) {
     const [arcadeData, setArcadeData] = useState<ArcadeData | null>(null);
+    const [showComponent, setShowComponent] = useState(false);
+
+    function OpenClick() {
+        setShowComponent(true);
+    }
+
+    function CloseClick() {
+        setShowComponent(false);
+    }
 
     useEffect(() => {
       const getArcadeData = async () => {
@@ -59,6 +69,9 @@ export default function ActiveActivity({ arcadeID }: Props) {
 
     return (
         <>
+
+            {showComponent && <SurveyActivity onClick={CloseClick} />}
+
             <div className={styles.GroupPicture}>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
@@ -71,7 +84,6 @@ export default function ActiveActivity({ arcadeID }: Props) {
                     <LargeTitle Title={arcadeData.name}/>
                     <div className={styles.SmallGroupActiveTitle_Right}>
                         {/* <Icon Icon=''/> */}
-                        <Icon Icon=''/>
                         <Icon Icon=''/>
                     </div>
                 </div>
@@ -91,7 +103,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 AccentBG="var(--color-dynamic-muse)"
                                 RightIcon=""
                                 BG="var(--bg-color)"
-                                onClick={() => { } }
+                                onClick={() => { }}
                                 V_LeftIcon={false}
                                 V_LeftIconBG
                                 V_Paragraph
@@ -113,7 +125,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 AccentBG="var(--color-dynamic-muse)"
                                 RightIcon=""
                                 BG="var(--bg-color)"
-                                onClick={() => { } }
+                                onClick={() => { }}
                                 V_LeftIcon={false}
                                 V_LeftIconBG
                                 V_Paragraph
@@ -135,7 +147,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 AccentBG="var(--color-dynamic-muse)"
                                 RightIcon=""
                                 BG="var(--bg-color)"
-                                onClick={() => { } }
+                                onClick={OpenClick}
                                 V_LeftIcon={false}
                                 V_LeftIconBG
                                 V_Paragraph
@@ -185,7 +197,9 @@ export default function ActiveActivity({ arcadeID }: Props) {
                             V_RightIcon={false}
                             V_BG={false}
                         />
+                    
                         ))}
+                        
                     </div>
                 </div>
             </div>

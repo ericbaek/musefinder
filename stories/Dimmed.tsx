@@ -17,8 +17,9 @@ export const Dimmed = ({
           position: fixed;
           width: 100%;
           height: 100%;
+          backdrop-filter: blur(4px);
           background: var(--colorless-5-tp);
-          z-index: 1;
+          z-index: 1500;
         }
       `}</style>
     </>

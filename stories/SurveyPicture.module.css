@@ -1,29 +1,31 @@
 .SurveyPicture {
     position: relative;
-    left: calc(-1 * var(--padding-activity));
-    top: calc(-1 * var(--padding-activity));
-    right: var(--padding-activity);
-    width: calc(100% + var(--padding-activity) * 2);
-    height: 30vh;
+    left: 0;
+    top: 0;
+    margin: calc(-1.5 * var(--padding-activity) - .5px) 0 0 calc(-1.5 * var(--padding-activity) - .4px);
+    width: calc(100% + var(--padding-activity) * 3 + 1px);
+    height: 40vh;
+    max-height: 420px;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     background: var(--box-color);
-    padding: var(--padding-activity);
+    padding: calc(var(--padding-activity) * 1.2) calc(var(--padding-activity) * 1.5);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     gap: .8rem;
-    color: white;
+    color: var(--colorless-100);
 }
 
 .Paragraph {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.6rem;
+    opacity: .8;
 }
 
 @media (min-width: 1280px) {
     .SurveyPicture {
-        border-radius: var(--radius-system) var(--radius-system) 0 0;
+        border-radius: var(--radius-activity) var(--radius-activity) 0 0;
     }
 }
