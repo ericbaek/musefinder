@@ -6,8 +6,9 @@ import SurveyPicture from '@/stories/SurveyPicture';
 import Sort from '@/stories/Sort';
 import Textarea from '@/stories/Textarea';
 import Dimmed from '@/stories/Dimmed';
+import Exit from '@/stories/Exit';
 
-export default function Survey({onClick}:{onClick:any}) {
+export default function SurveyActivity({onClick}:{onClick:any}) {
 
     const sort_value = ['', 'arcade_report', 'system_report', 'others'];
     const sort_title = ['유형을 선택하세요', '오락실 제보', '시스템 버그', '기타'];
@@ -18,7 +19,7 @@ export default function Survey({onClick}:{onClick:any}) {
 
                 <div className='SurveyPicture'>
                     <SurveyPicture Image='https://wallpaperaccess.com/full/1586538.jpg' Title='제보하기' V_Paragraph Paragraph='오락실 관련 정정사항이 있다면 제보 부탁드립니다.'/>
-                    <div className='Exit' onClick={onClick}></div>
+                    <Exit onClick={onClick}/>
                 </div>
 
                 <div className='GroupContent'>
@@ -26,7 +27,11 @@ export default function Survey({onClick}:{onClick:any}) {
                     <div className='SmallGroupContent'>  {/* 필독사항 */}
                         <ContentTitle Title='반드시 읽어주세요' V_Paragraph={false} Paragraph=''/>
                         <div className=''>
-                            <Alert V_LeftIcon LeftIcon='' Title='저작권에 위반되지 않도록 유의하십시오.' V_Paragraph={false} Paragraph=''/>
+                            <Alert V_LeftIcon LeftIcon='' Title='사진의 경우 저작권에 위반되지 않도록 유의하십시오.' V_Paragraph={false} Paragraph=''/>
+                            <hr/>
+                            <Alert V_LeftIcon LeftIcon='' Title='부적절한 내용 작성 시 익일 해당 IP가 차단될 수 있습니다.' V_Paragraph={false} Paragraph=''/>
+                            <hr/>
+                            <Alert V_LeftIcon LeftIcon='' Title='제보해 주신 내용은 접수 및 검토 후 빠른 시일 내에 반영됩니다.' V_Paragraph={false} Paragraph=''/>
                         </div>
                     </div>
 
@@ -74,22 +79,10 @@ export default function Survey({onClick}:{onClick:any}) {
                         gap: calc(var(--padding-activity) * 1.2);
                     }
 
-                        .Exit {
-                            z-index: 1000;
-                            font-family: var(--font-icon) !important;
-                            font-size: 2.8rem;
-                            font-weight: 700;
-                            cursor: pointer;
-                            position: absolute;
-                            top: var(--padding-activity);
-                            right: var(--padding-activity);
-                            color: white;
-                            font-feature-settings: "ss09" on;
-                        }
-
                     @media (max-width: 767.98px) {
                         .Survey {
                             width: 100%;
+                            min-width: 100%;
                             max-width: 100%;
                             height: 100%;
                             max-height: 100%;

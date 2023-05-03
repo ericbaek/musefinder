@@ -70,7 +70,6 @@
             .GroupAlert {
                 display: flex;
                 flex-direction: column;
-                gap: .8rem;
             }
 
     @media (min-width: 1280px) {

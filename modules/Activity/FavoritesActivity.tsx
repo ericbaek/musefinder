@@ -21,7 +21,7 @@ export default function Modal() {
                             LeftIcon=""
                             LeftIconBG="var(--box-icon-color)"
                             LeftIconImage=""
-                            AccentText="Dist"
+                            AccentText="Dist" 
                             AccentBG="var(--color-dynamic-muse)"
                             RightIcon=""
                             BG="var(--bg-color)"

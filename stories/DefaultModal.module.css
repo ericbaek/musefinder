@@ -1,0 +1,15 @@
+.Modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-color);
+    border-radius: var(--radius-activity);
+    padding: calc(1.5 * var(--padding-activity));
+    min-width: 200px;
+    width: 90vw;
+    max-width: 440px;
+    height: max-content;
+    max-height: 90vh;
+    z-index: 2000;
+}

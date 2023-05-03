@@ -12,6 +12,7 @@ import Button from '@/stories/Button';
 import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import { db } from '../../firebase';
 import SurveyActivity from './SurveyActivity';
+import TimeActivity from './TimeActivity';
 
 interface Props {
 arcadeID: string
@@ -25,14 +26,23 @@ interface ArcadeData {
 
 export default function ActiveActivity({ arcadeID }: Props) {
     const [arcadeData, setArcadeData] = useState<ArcadeData | null>(null);
-    const [showComponent, setShowComponent] = useState(false);
+    const [showSurvey, setShowSurvey] = useState(false);
+    const [showTimeModal, setShowTimeModal] = useState(false);
 
-    function OpenClick() {
-        setShowComponent(true);
+    function OpenSurvey() {
+        setShowSurvey(true);
     }
 
-    function CloseClick() {
-        setShowComponent(false);
+    function CloseSurvey() {
+        setShowSurvey(false);
+    }
+
+    function OpenTimeModal() {
+        setShowTimeModal(true);
+    }
+
+    function CloseTimeModal() {
+        setShowTimeModal(false);
     }
 
     useEffect(() => {
@@ -70,7 +80,8 @@ export default function ActiveActivity({ arcadeID }: Props) {
     return (
         <>
 
-            {showComponent && <SurveyActivity onClick={CloseClick} />}
+            {showSurvey && <SurveyActivity onClick={CloseSurvey} />}
+            {showTimeModal && <TimeActivity onClick={CloseTimeModal} />}
 
             <div className={styles.GroupPicture}>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
@@ -125,7 +136,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 AccentBG="var(--color-dynamic-muse)"
                                 RightIcon=""
                                 BG="var(--bg-color)"
-                                onClick={() => { }}
+                                onClick={OpenTimeModal}
                                 V_LeftIcon={false}
                                 V_LeftIconBG
                                 V_Paragraph
@@ -147,7 +158,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 AccentBG="var(--color-dynamic-muse)"
                                 RightIcon=""
                                 BG="var(--bg-color)"
-                                onClick={OpenClick}
+                                onClick={OpenSurvey}
                                 V_LeftIcon={false}
                                 V_LeftIconBG
                                 V_Paragraph
@@ -157,7 +168,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                                 V_BG={false}
                             />
                         </div>
-                        <Button Icon='' Title='예약' V_Icon={false}/>
+                        <Button Icon='' Title='기체 대여' V_Icon={false}/>
                         <Button Icon='' Title='길찾기' V_Icon={false}/>
                     </div>
                 </div>
@@ -166,6 +177,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
 
                 <div className={styles.GroupAlert}>
                     <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
+                    <hr/>
                     <Alert LeftIcon='' Title='댄스러시 누가 갖다 부숨' Paragraph='오후 9시' V_LeftIcon V_Paragraph/>
                 </div>
 
