@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Script from 'next/script';
 import InterfaceIcon from '@/stories/InterfaceIcon';
+import NAVER from '@/stories/assets/NAVER.svg';
 
 export default function NaverScript() {
 
@@ -38,6 +40,9 @@ export default function NaverScript() {
             <div className='LocationIcon'>
                 <InterfaceIcon Icon=''/>
             </div>
+            <div className='Naver'>
+                <Image src={NAVER} alt="Naver" fill sizes="60px"/>
+            </div>
             <Script id="navermap" strategy="beforeInteractive" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jvaprt0m2p" />
             <style jsx>{`
                 .LocationIcon {
@@ -53,13 +58,16 @@ export default function NaverScript() {
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    width: 100%;
-                    height: 100%;
+                    width: 105%;
+                    height: 105%;
                     z-index: 1;
                 }
 
-                .map_copyright {
-                    font-family: var(--font-sans-serif);
+                .Naver {
+                    position: fixed;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
                 }
             `}</style>
         </>

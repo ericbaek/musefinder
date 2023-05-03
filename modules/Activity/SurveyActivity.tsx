@@ -17,7 +17,7 @@ export default function Survey({onClick}:{onClick:any}) {
             <div className='Survey'>
 
                 <div className='SurveyPicture'>
-                    <SurveyPicture Image='https://wallpaperaccess.com/full/1586538.jpg' Title='제보하기' V_Paragraph Paragraph='버그가 있습니까? 바로 제보해 주세요.'/>
+                    <SurveyPicture Image='https://wallpaperaccess.com/full/1586538.jpg' Title='제보하기' V_Paragraph Paragraph='오락실 관련 정정사항이 있다면 제보 부탁드립니다.'/>
                     <div className='Exit' onClick={onClick}></div>
                 </div>
 

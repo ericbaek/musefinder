@@ -2,8 +2,9 @@ import React from 'react';
 import Button from '@/stories/Button';
 import Card from '@/stories/Card'
 import ContentTitle from '@/stories/ContentTitle';
+import Dimmed from '@/stories/Dimmed';
 
-function Modal() {
+export default function Modal() {
 
     return (
         <>
@@ -40,10 +41,8 @@ function Modal() {
 
             </div>
 
-            <div className='dimmed'/>
+            <Dimmed/>
             
         </>
     );
 }
-
-export default Modal;

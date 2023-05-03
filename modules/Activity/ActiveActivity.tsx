@@ -58,11 +58,11 @@ export default function ActiveActivity({ arcadeID }: Props) {
     }, [arcadeID]);
   
     if (!arcadeID) {
-      return <div>Invalid arcade ID</div>;
+      return <Alert LeftIcon='' Title='비정상적인 접근입니다.' V_LeftIcon V_Paragraph={false} Paragraph={''}/>;
     }
   
     if (!arcadeData) {
-      return <div>Loading arcade data...</div>;
+      return <Alert LeftIcon='' Title='잠시만 기다려 주세요.' V_LeftIcon V_Paragraph={false} Paragraph={''}/>;
     }
 
     console.log(arcadeData);
