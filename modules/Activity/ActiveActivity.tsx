@@ -22,7 +22,9 @@ arcadeID: string
 interface ArcadeData {
     name: string;
     address: string;
-    games: Record<string, { Gname: string; quantity: number; price: string }>;
+    address_tube: string;
+    games: Record<string, { Gname: string; quantity: number; price: string; note: string}>;
+
 }
 
 export default function ActiveActivity({ arcadeID }: Props) {
@@ -108,7 +110,7 @@ export default function ActiveActivity({ arcadeID }: Props) {
                         <div className='Span-2'>
                             <Card
                                 Title={arcadeData.address}
-                                Paragraph="건국대 1번출구에서 162m"
+                                Paragraph={arcadeData.address_tube}
                                 Paragraph2="Paragraph2"
                                 LeftIcon=""
                                 LeftIconBG="var(--box-icon-color)"

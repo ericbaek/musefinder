@@ -11,6 +11,7 @@ export default function Arcade() {
 
   return (
     <>
+      {console.log(arcadeIdNonNull)}
       <ActiveActivity arcadeID={arcadeIdNonNull}/>
 
       <div className='Back'>
