@@ -9,12 +9,13 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "cleanUrls": false,
+    "rewrites": [
+      {
+        "destination": "/arcade/[arcadeID].html",
+        "regex":"^/arcade/([^/]+?)(?:/)?$"
+      }
     ]
-  },
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }
-  ]
+  }
 }
