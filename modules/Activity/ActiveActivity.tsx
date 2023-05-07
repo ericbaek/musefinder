@@ -88,11 +88,11 @@ export default function ActiveActivity({ arcadeID }: Props) {
             {showSurvey && <SurveyActivity onClick={CloseSurvey} />}
             {showTimeModal && <TimeActivity onClick={CloseTimeModal} />}
 
-            <div className={styles.GroupPicture}>
+            {/* <div className={styles.GroupPicture}>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
                 <Picture Image='https://go.develoid.net/gate/bestphoto/BESTPHOTO.png'/>
-            </div>
+            </div> */}
 
             <div className='GroupContent'>
 

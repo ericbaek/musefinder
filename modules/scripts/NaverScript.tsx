@@ -41,7 +41,7 @@ export default function NaverScript() {
                 <InterfaceIcon Icon=''/>
             </div>
             <div className='Naver'>
-                <Image src={NAVER} alt="Naver" fill sizes="60px"/>
+                <Image src={NAVER} alt="Naver" width={500} height={200}/>
             </div>
             <Script id="navermap" strategy="beforeInteractive" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jvaprt0m2p" />
             <style jsx>{`

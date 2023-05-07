@@ -26,7 +26,7 @@
 
             .LeftIcon {
                 font-family: var(--font-icon);
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 2.2rem;
                 padding: calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 3) calc(var(--padding-activity) / 2) calc(var(--padding-activity) / 2);
                 cursor: pointer;

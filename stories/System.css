@@ -262,7 +262,8 @@ hr {
     display: flex;
     flex-direction: column;
     gap: var(--default-gap);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: visible;
 }
 
     .SmallGroupContent {
