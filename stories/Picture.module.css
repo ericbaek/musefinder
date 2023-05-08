@@ -1,6 +1,6 @@
 .Picture {
-    width: max-content;
-    height: 260px;
+    max-width: auto;
+    max-height: 260px;
     background: var(--box-color);
     border-radius: var(--radius-system);
     cursor: pointer;

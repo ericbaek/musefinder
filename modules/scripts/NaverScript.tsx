@@ -29,6 +29,12 @@ export default function NaverScript() {
         };
 
         const map = new naver.maps.Map(mapElement.current, mapOptions);
+
+        new naver.maps.Marker({
+            position: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
+            map,
+        });
+        
     }, []);
 
     console.log("MAIN RAN");
