@@ -7,13 +7,13 @@ import Icon from '@/stories/Icon';
 import LargeTitle from '@/stories/LargeTitle';
 import Picture from '@/stories/Picture';
 import Button from '@/stories/Button';
+import SurveyActivity from './SurveyActivity';
+import TimeActivity from './TimeActivity';
+import SystemNotification from '@/stories/SystemNotification';
 
 // Firebase 관련 import
 import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import { db } from '../../firebase';
-import SurveyActivity from './SurveyActivity';
-import TimeActivity from './TimeActivity';
-import SystemNotification from '@/stories/SystemNotification';
 
 interface Props {
 arcadeID: string
